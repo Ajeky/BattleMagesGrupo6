@@ -6,14 +6,15 @@ public class Personaje {
 	private String nombre;
 	private int salud;
 	private int mana;
+	private int posicion;
 	
-	
-	public Personaje(Elemento e, String nombre, int salud, int mana) {
+	public Personaje(Elemento e, String nombre, int salud, int mana, int posicion) {
 		
 		this.e = e;
 		this.nombre = nombre;
 		this.salud = salud;
 		this.mana = mana;
+		this.posicion = posicion;
 	}
 
 
@@ -61,6 +62,16 @@ public class Personaje {
 		this.mana = mana;
 	}
 
+
+
+	public int getPosicion() {
+		return posicion;
+	}
+
+
+	public void setPosicion(int posicion) {
+		this.posicion = posicion;
+	}
 
 
 	public String toString() {
