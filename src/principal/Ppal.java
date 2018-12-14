@@ -25,7 +25,7 @@ public class Ppal {
 
 	public static void main(String[] args) {
 		
-		String nombre = "", nickName, iaName= "BOT Francisco";
+		String nombre, nickName, iaName = "BOT Francisco";
 		int opcion, opcExit = 3;
 		
 		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
