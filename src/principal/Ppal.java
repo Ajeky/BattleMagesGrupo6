@@ -2,6 +2,7 @@ package principal;
 //�___MANTENIMIENTO_________________________________________________________________________________________
 
 import utilidades.Leer;
+import crud.CrudPersonaje;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -24,8 +25,8 @@ public class Ppal {
 
 	public static void main(String[] args) {
 		
-		String nombre = "", nickName;
-		int opcion, opcExit = 0;
+		String nombre = "", nickName, iaName= "BOT Francisco";
+		int opcion, opcExit = 3;
 		
 		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
 				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n" + 
@@ -82,12 +83,20 @@ public class Ppal {
 			
 			System.out.println("¿Qué desea hacer?");
 			
+			System.out.println("================================================================================================\n\n");
+			
 			opcion = Leer.datoInt();
 			
 			
 			switch(opcion) {
 			
 			case 1 :
+				
+				System.out.println("Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
+						+ "el campo de batalla.\n");
+				
+				System.out.printf("Primero de todo , te presento a %s, es algo tímido pero cuando coge confianza ¡se vuelve loco! ."
+						+ "Tu primer combate será contra él, un objetivo sencillo para coger la técnica, ¡que comience la pelea!.\n\n",iaName);
 				
 				
 				break;
@@ -99,11 +108,6 @@ public class Ppal {
 				break;
 				
 			case 3 :
-				
-				
-				break;
-				
-			case 0 :
 				
 				
 					System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.",nickName);
