@@ -24,8 +24,8 @@ public class Ppal {
 
 	public static void main(String[] args) {
 		
-		String nombre = "", nickName;
-		int opcion, opcExit = 0;
+		String nombre, nickName;
+		int opcion, opcExit = 3;
 		
 		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
 				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n" + 
@@ -99,11 +99,6 @@ public class Ppal {
 				break;
 				
 			case 3 :
-				
-				
-				break;
-				
-			case 0 :
 				
 				
 					System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.",nickName);
