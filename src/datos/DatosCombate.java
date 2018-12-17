@@ -40,5 +40,7 @@ public void setBatalla4(String[][] batalla4) {
 	this.batalla4 = batalla4;
 }
 
-
+public DatosCombate() {
+	
+}
 }

@@ -110,8 +110,8 @@ public class Ppal {
 			case 2 :
 				
 				
-				CrudCombate.crearCombate(p1, p2, contCombate);
-				contCombate++;
+				/*CrudCombate.crearCombate(p1, p2, contCombate);
+				contCombate++;*/
 								
 				break;
 				
