@@ -1,25 +1,25 @@
 package principal;
-//ï¿½___MANTENIMIENTO_________________________________________________________________________________________
+
 
 import utilidades.Leer;
 import crud.CrudPersonaje;
-
-//ï¿½                                12/12/2018                                                               ï¿½
-//ï¿½---------------------------------------------------------------------------------------------------------ï¿½
-//ï¿½	  # Creaciï¿½n de la clase model "Elemento"                       # - Alejandro Dï¿½az Santos               ï¿½
-//ï¿½   # Creaciï¿½n de la clase model "Personaje"                      # - Antonio Durï¿½n Falero                ï¿½
-//ï¿½	  # Organizaciï¿½n del juego, seï¿½alar requisitos funcionales      # - ï¿½lvaro Mï¿½rquez Mata                 ï¿½
-//ï¿½   # Creaciï¿½n de la clase model "Habilidad"                      # - Daniel Troncoso Rubio	            ï¿½
-//ï¿½---------------------------------------------------------------------------------------------------------ï¿½
-//ï¿½                                                                                                         ï¿½
-//ï¿½	                              13/12/2018                                                                ï¿½
-//ï¿½---------------------------------------------------------------------------------------------------------ï¿½
-//ï¿½   # Creaciï¿½n de la clase vista "Vista"                          # - Alejandro Dï¿½az Santos               ï¿½
-//ï¿½   # Creaciï¿½n de la clase datos "DatosElemento"                  # - Antonio Durï¿½n Falero                ï¿½
-//ï¿½   # Creaciï¿½n de las clases CRUD "Personaje, Elemento, Habilidad"# - ï¿½lvaro Mï¿½rques Mata                 ï¿½
-//ï¿½   # Creaciï¿½n de la clase datos"DatosHabilidad"                  # - Daniel Troncoso Rubio			    ï¿½
-//ï¿½---------------------------------------------------------------------------------------------------------ï¿½
-//ï¿½_________________________________________________________________________________________________________ï¿½	
+//¡___MANTENIMIENTO_________________________________________________________________________________________
+//¡                                12/12/2018                                                               ¡
+//¡---------------------------------------------------------------------------------------------------------¡
+//¡   # Creación de la clase model "Elemento"                         # - Alejandro Díaz Santos             ¡
+//¡   # Creación de la clase model "Personaje"                        # - Antonio Durán Falero              ¡
+//¡	  # Organización del juego, señalar requisitos funcionales        # - Álvaro Márquez Mata               ¡
+//¡   # Creación de la clase model "Habilidad"                        # - Daniel Troncoso Rubio	          ¡
+//¡---------------------------------------------------------------------------------------------------------¡
+//¡                                                                                                         ¡
+//¡	                              13/12/2018                                                              ¡
+//¡---------------------------------------------------------------------------------------------------------¡
+//¡   # Creación de la clase vista "Vista"                            # - Alejandro Díaz Santos             ¡
+//¡   # Creación de la clase datos "DatosElemento"                    # - Antonio Durán Falero              ¡	
+//¡   # Creación de las clases CRUD "Personaje, Elemento, Habilidad"  # - Álvaro Márques Mata               ¡	
+//¡   # Creación de la clase datos "DatosHabilidad"                   # - Daniel Troncoso Rubio			  ¡	
+//¡---------------------------------------------------------------------------------------------------------¡	
+//¡_________________________________________________________________________________________________________¡	
 
 public class Ppal {
 
@@ -81,7 +81,7 @@ public class Ppal {
 			
 			System.out.println("================================================================================================\n\n");
 			
-			System.out.println("Â¿QuÃ© desea hacer?");
+			System.out.println("¿Qué desea hacer?");
 			
 			System.out.println("================================================================================================\n\n");
 			
@@ -92,11 +92,11 @@ public class Ppal {
 			
 			case 1 :
 				
-				System.out.println("Bienvenido al Tutorial , aquÃ­ podrÃ¡s aprender las tÃ©cnicas y habilidades de combate bÃ¡sicos para defenderte en"
+				System.out.println("Bienvenido al Tutorial , aquí­ podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
 						+ "el campo de batalla.\n");
 				
-				System.out.printf("Primero de todo , te presento a %s, es algo tÃ­mido pero cuando coge confianza Â¡se vuelve loco! ."
-						+ "Tu primer combate serÃ¡ contra Ã©l, un objetivo sencillo para coger la tÃ©cnica, Â¡que comience la pelea!.\n\n",iaName);
+				System.out.printf("Primero de todo , te presento a %s, es algo tímido pero cuando coge confianza, ¡se vuelve loco! ."
+						+ "Tu primer combate será contra Ã©l, un objetivo sencillo para coger la técnica. ¡Que comience la pelea!.\n\n",iaName);
 				
 				
 				break;
