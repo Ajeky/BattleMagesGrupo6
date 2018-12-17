@@ -2,7 +2,10 @@ package principal;
 //�___MANTENIMIENTO_________________________________________________________________________________________
 
 import utilidades.Leer;
+import model.Combate;
 import crud.CrudPersonaje;
+import model.Personaje;
+import crud.CrudCombate;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -26,7 +29,9 @@ public class Ppal {
 	public static void main(String[] args) {
 		
 		String nombre, nickName, iaName = "BOT Francisco";
-		int opcion, opcExit = 3;
+		int opcion, opcExit = 3, contCombate =0 ;
+		Combate c1;
+		Personaje p1, p2;
 		
 		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
 				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n" + 
@@ -105,12 +110,15 @@ public class Ppal {
 			case 2 :
 				
 				
+				CrudCombate.crearCombate(p1, p2, contCombate);
+				contCombate++;
+								
 				break;
 				
 			case 3 :
 				
 				
-					System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.",nickName);
+					System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.\n\n",nickName);
 				
 				break;
 			
