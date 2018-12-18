@@ -8,46 +8,37 @@ import model.Habilidad;
 import vista.Vista;
 
 public class ControllerCombate {
-
-	// Atributos
-	private Combate c1;
-	private Personaje p1, p2;
-
+	
 	// Métodos
 
 	Vista v1 = new Vista();
+	
+	public Combate atacar(Combate c1, Habilidad h1, Habilidad h2) {
 
-	// p1 ataca, p2 recibe el daño
-	public void atacar(Personaje p1, Habilidad h1, Personaje p2, Habilidad h2) {
+		int dano = 0;
 
-		int manaP1 = p1.getMana(), potenciaH1 = h1.getPotencia(), tipoH1 = h1.getTipo(), manaH1 = h1.getCosteMana(),
-				saludP2 = p2.getSalud(), manaP2 = p2.getMana(), potenciaH2 = h2.getPotencia(), tipoH2 = h2.getTipo(),
-				manaH2 = h2.getCosteMana(), dano = 0;
+		c1.getP1().setMana(c1.getP1().getMana() - h1.getCosteMana());
 
-		manaP1 -= manaH1;
-		p1.setMana(manaP1);
+		if (h1.getTipo() == 1 || h1.getTipo() == 2) {
 
-		if (tipoH1 == 1 || tipoH1 == 2) {
+			if (h2.getTipo() == 3) {
 
-			if (tipoH2 == 3) {
+				c1.getP2().setMana(c1.getP2().getMana() - h2.getCosteMana());
 
-				manaP2 -= manaH2;
-				p1.setMana(manaP2);
-
-				dano = potenciaH1 - potenciaH2;
+				dano = h1.getPotencia() - h2.getPotencia();
 
 				if (dano < 0) {
 					dano = 0;
 				}
 			} else {
-				dano = potenciaH1;
+				dano = h1.getPotencia();
 			}
 		} else {
 			v1.habilidadIncorrecta();
 		}
-		saludP2 -= dano;
-		p2.setSalud(saludP2);
+		c1.getP2().setSalud(c1.getP2().getSalud() - dano);
 
+		return c1;
 	}
 
 }
