@@ -18,5 +18,32 @@ public class CrudCombate {
 		return c1;
 	}
 	
+	public static Combate eliminarCombate(Combate c1) {
+		
+		c1 = null;
+		
+		return c1;
+	}
+	
+	public static Combate actualizarCombate(int contCombate) {
+		
+		Personaje p1 = new Personaje();
+		Personaje p2 = new Personaje();
+		
+		Personaje player1 = new Personaje(p1.getE(), p1.getNombre(), p1.getSalud(), p1.getMana(), p1.getPosicion());
+		Personaje player2 = new Personaje(p2.getE(), p2.getNombre(), p2.getSalud(), p2.getMana(), p2.getPosicion());
+		DatosCombate datosComb = new DatosCombate();
+		
+		if(contCombate == 1) {
+			
+			mapa = datosComb.getBatalla1();
+		}
+		
+		
+		Combate updCombat = new Combate(player1, player2, mapa);
+		
+		return updCombat;
+	}
+	
 	
 }
