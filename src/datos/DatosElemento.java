@@ -6,13 +6,13 @@ import model.Elemento;
 
 public class DatosElemento {
 	
-	Elemento Fuego = new Elemento(DatosHabilidad.getHabilidadesFuego(), "Fuego");
-	Elemento Agua = new Elemento(DatosHabilidad.getHabilidadesAgua(), "Agua");
-	Elemento Tierra = new Elemento(DatosHabilidad.getHabilidadesTierra(), "Tierra");
-	Elemento Hielo = new Elemento(DatosHabilidad.getHabilidadesHielo(), "Hielo");
-	Elemento Aire = new Elemento(DatosHabilidad.getHabilidadesAire(), "Aire");
-	Elemento Electrico = new Elemento(DatosHabilidad.getHabilidadesElec(), "Electrico");
-	Elemento Veneno = new Elemento(DatosHabilidad.getHabilidadesVen(), "Veneno");
+	public static Elemento Fuego = new Elemento(DatosHabilidad.getHabilidadesFuego(), "Fuego");
+	public static Elemento Agua = new Elemento(DatosHabilidad.getHabilidadesAgua(), "Agua");
+	public static Elemento Tierra = new Elemento(DatosHabilidad.getHabilidadesTierra(), "Tierra");
+	public static Elemento Hielo = new Elemento(DatosHabilidad.getHabilidadesHielo(), "Hielo");
+	public static Elemento Aire = new Elemento(DatosHabilidad.getHabilidadesAire(), "Aire");
+	public static Elemento Electrico = new Elemento(DatosHabilidad.getHabilidadesElec(), "Electrico");
+	public static Elemento Veneno = new Elemento(DatosHabilidad.getHabilidadesVen(), "Veneno");
 	
 	private Elemento[] listaElementos = {Fuego, Agua, Tierra, Hielo, Aire, Electrico, Veneno};
 
