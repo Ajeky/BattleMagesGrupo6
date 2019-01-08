@@ -6,6 +6,8 @@ import model.Combate;
 import crud.CrudPersonaje;
 import model.Personaje;
 import crud.CrudCombate;
+import datos.DatosElemento;
+import datos.DatosCombate;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -29,9 +31,10 @@ public class Ppal {
 	public static void main(String[] args) {
 		
 		String nombre, nickName, iaName = "BOT Francisco";
+		String [][] campoBatalla;
 		int opcion, opcExit = 3, contCombate =0 ;
 		Combate c1;
-		Personaje p1, p2;
+		Personaje p1 = null, p2 = null;
 		
 		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
 				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n" + 
@@ -114,9 +117,46 @@ public class Ppal {
 				
 			case 2 :
 				
+				//Syso en construcción
+				System.out.println("[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
+						+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
 				
+				
+				//Syso provisional
+				System.out.println("¿A por qué enemigo deseas ir primero?"
+						+ "1. Álvaro (Fuego)"
+						+ "2. Antonio (Agua)"
+						+ "3. Alejandro (Tierra)"
+						+ "4. Dani (Aire)");
+				opcion = Leer.datoInt();
+				
+				switch (opcion) {
+				//No estoy seguro de que la posición de los personajes deba ser inicializada a 0. Provisional.
+				case 1:
+					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", 100, 100, 0);
+					break;
+					
+				case 2:
+					p2 = new Personaje(DatosElemento.Agua, "Antonio", 100, 100, 0);
+					break;
+					
+				case 3:
+					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", 100, 100, 0);
+					break;
+					
+				case 4:
+					p2 = new Personaje(DatosElemento.Hielo, "Dani", 100, 100, 0);
+					break;
+
+				default:
+					break;
+				}
+				
+				campoBatalla = DatosCombate.batalla1;
+				c1 = new Combate(p1, p2, campoBatalla);
 				/*CrudCombate.crearCombate(p1, p2, contCombate);
 				contCombate++;*/
+				
 								
 				break;
 				

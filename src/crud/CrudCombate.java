@@ -8,16 +8,19 @@ public class CrudCombate {
 	static String [][] mapa;
 
 	public static Combate crearCombate(Personaje p1, Personaje p2, int contCombate) {
-		DatosCombate DC = new DatosCombate();
 		
 		if (contCombate == 0) {
-			mapa = DC.getBatalla4();
+			mapa = DatosCombate.batalla4;
 		}
 		
 		Combate c1 = new Combate(p1, p2, mapa);
 		return c1;
 	}
 	
+	public static void borrarCombate(Combate c1) {
+		c1 = null;
+	}
+
 	public static Combate eliminarCombate(Combate c1) {
 		
 		c1 = null;
@@ -32,11 +35,10 @@ public class CrudCombate {
 		
 		Personaje player1 = new Personaje(p1.getE(), p1.getNombre(), p1.getSalud(), p1.getMana(), p1.getPosicion());
 		Personaje player2 = new Personaje(p2.getE(), p2.getNombre(), p2.getSalud(), p2.getMana(), p2.getPosicion());
-		DatosCombate datosComb = new DatosCombate();
 		
 		if(contCombate == 1) {
 			
-			mapa = datosComb.getBatalla1();
+			mapa = DatosCombate.batalla1;
 		}
 		
 		
@@ -44,6 +46,5 @@ public class CrudCombate {
 		
 		return updCombat;
 	}
-	
 	
 }
