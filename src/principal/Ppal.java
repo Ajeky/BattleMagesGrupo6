@@ -86,22 +86,27 @@ public class Ppal {
 			
 			System.out.println("================================================================================================\n\n");
 			
-			System.out.println("�Qu� desea hacer?");
-			
-			System.out.println("================================================================================================\n\n");
+			System.out.println("¿Qué deseas hacer? : ");
 			
 			opcion = Leer.datoInt();
 			
+			System.out.println("================================================================================================\n\n");		
 			
 			switch(opcion) {
 			
 			case 1 :
 				
-				System.out.println("Bienvenido al Tutorial , aqu� podr�s aprender las t�cnicas y habilidades de combate b�sicos para defenderte en"
+				System.out.println("Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
 						+ "el campo de batalla.\n");
 				
-				System.out.printf("Primero de todo , te presento a %s, es algo t�mido pero cuando coge confianza, �se vuelve loco! ."
-						+ "Tu primer combate ser� contra él, un objetivo sencillo para coger la t�cnica. �Que comience la pelea!.\n\n",iaName);
+				System.out.printf("Primero de todo , te presento a %s, es algo tímido pero cuando coge confianza, ¡ se vuelve loco! ."
+						+ "Tu primer combate será contra él, un objetivo sencillo para coger soltura . ¡ Que comience la pelea !.\n\n",iaName);
+				
+				System.out.printf("Ahora si %s, ya puedes elegir una mano : ",nickName);
+				
+					CrudCombate.crearCombate(p1, p2, contCombate);
+					
+					contCombate++;
 				
 				
 				break;
