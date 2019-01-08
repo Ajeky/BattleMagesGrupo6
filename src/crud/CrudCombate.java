@@ -18,5 +18,8 @@ public class CrudCombate {
 		return c1;
 	}
 	
+	public static void borrarCombate(Combate c1) {
+		c1 = null;
+	}
 	
 }
