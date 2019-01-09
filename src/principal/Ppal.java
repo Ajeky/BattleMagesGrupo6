@@ -38,9 +38,7 @@ public class Ppal {
 		int opcion, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
-		DatosElemento dEl = new DatosElemento();
 		Datos bd = new Datos();
-		ControllerCombate cb = new ControllerCombate();
 
 		System.out.println(
 				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n"
@@ -122,18 +120,14 @@ public class Ppal {
 				Vista.opcionManos();
 
 				opcMano = Leer.datoInt()-1;
-
-				// No recuerdo como coger la posición del array cuando hay un get.
-				// Este get va dentro de p1 reemplazando -> DatosElemento.Fuego.
-				dEl.getListaElementos()[0].getNombreElemento("Fuego");
-
+				
 				// Creamos el primer jugador
 
-				p1 = new Personaje(DatosElemento.Fuego, nickName, saludBase, manaBase, pocBase, false);
+				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, pocBase, false);
 
 				// Segundo jugador
 
-				p2 = new Personaje(DatosElemento.Hielo, iaName, saludBase, manaBase, pocBase, false);
+				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, pocBase, false);
 
 				// Creamos combate
 				
@@ -147,15 +141,22 @@ public class Ppal {
 				
 				do {
 				
-				System.out.printf("%s es tu turno , ¿qué habilidad deseas lanzar? : ",nickName);
+				System.out.printf("¿Qué habilidad deseas lanzar? : ",nickName);
 				
-				Vista.fuegoHabilidad();
+				//TODO Terminar esto una vez esten las vistas de todas las habilidades
+				if (p1.getE().equals("Fuego")) {
+					Vista.fuegoHabilidad();
+				} else if (p1.getE().equals("Agua")) {
+				}
 				
+				
+				//TODO Terminar el combate de manera que sea funcional
 				opcHabilidad = Leer.datoInt();			
 				
 				//Sacar habilidad con la posición de opcHabilidad.
 				
-				cb.atacar(c1, DatosHabilidad.getHabilidadesFuego(), DatosHabilidad.getHabilidadesHielo());
+				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+				c1 = ControllerCombate.atacar(c1, h1, h2, contCombate);								
 				
 				System.out.printf("%s ha utilizado %s",iaName, DatosHabilidad.getHabilidadesHielo()); //Coger posicion y nombre habilidad
 				
@@ -165,7 +166,7 @@ public class Ppal {
 				
 				contCombate++;
 				
-				}while(p2.getSalud() == 0);
+				}while(p2.isMuerte() == false);
 				
 				
 				
@@ -174,18 +175,18 @@ public class Ppal {
 
 			case 2:
 
-				// Syso en construcción
+				//TODO Syso en construcción
 				System.out.println(
 						"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
 								+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
 
-				// Syso provisional
+				//TODO Syso provisional
 				System.out.println("¿A por qué enemigo deseas ir primero?" + "1. Álvaro (Fuego)" + "2. Antonio (Agua)"
 						+ "3. Alejandro (Tierra)" + "4. Dani (Aire)");
 				opcion = Leer.datoInt();
 
 				switch (opcion) {
-				// No estoy seguro de que la posición de los personajes deba ser inicializada a
+				//TODO No estoy seguro de que la posición de los personajes deba ser inicializada a
 				// 0. Provisional.
 				case 1:
 					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase, false);
@@ -214,10 +215,7 @@ public class Ppal {
 					
 					
 				} while (p1.isMuerte() == false || p2.isMuerte() == false);
-				/*
-				 * CrudCombate.crearCombate(p1, p2, contCombate); contCombate++;
-				 */
-
+				
 				break;
 
 			case 3:
