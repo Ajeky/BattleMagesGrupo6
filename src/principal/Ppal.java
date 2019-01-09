@@ -1,12 +1,15 @@
 package principal;
 
-
 import utilidades.Leer;
+import vista.Vista;
 import model.Combate;
 import crud.CrudPersonaje;
 import model.Personaje;
+import controller.ControllerCombate;
 import crud.CrudCombate;
 import datos.DatosElemento;
+import datos.DatosHabilidad;
+import datos.Datos;
 import datos.DatosCombate;
 
 //�                                12/12/2018                                                               �
@@ -29,154 +32,184 @@ import datos.DatosCombate;
 public class Ppal {
 
 	public static void main(String[] args) {
-		
+
 		String nombre, nickName, iaName = "BOT Francisco";
-		String [][] campoBatalla;
-		int opcion, opcExit = 3, contCombate =0 ;
+		String[][] campoBatalla;
+		int opcion, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
-		
-		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n" + 
-				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n" + 
-				"██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     \r\n" + 
-				"██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     \r\n" + 
-				"██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║  ██║╚██████╔╝   ██║   ██║  ██║███████╗\r\n" + 
-				"╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝\r\n" + 
-				"                                                                                                \r\n" + 
-				"    ███████╗██████╗ ███████╗██╗     ██╗         ██████╗ ██████╗ ███████╗ █████╗ ██╗  ██╗        \r\n" + 
-				"    ██╔════╝██╔══██╗██╔════╝██║     ██║         ██╔══██╗██╔══██╗██╔════╝██╔══██╗██║ ██╔╝        \r\n" + 
-				"    ███████╗██████╔╝█████╗  ██║     ██║         ██████╔╝██████╔╝█████╗  ███████║█████╔╝         \r\n" + 
-				"    ╚════██║██╔═══╝ ██╔══╝  ██║     ██║         ██╔══██╗██╔══██╗██╔══╝  ██╔══██║██╔═██╗         \r\n" + 
-				"    ███████║██║     ███████╗███████╗███████╗    ██████╔╝██║  ██║███████╗██║  ██║██║  ██╗        \r\n" + 
-				"    ╚══════╝╚═╝     ╚══════╝╚══════╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝");
-		
-		System.out.println("            \\                                           ___/________\r\n" + 
-				"\t       ___   )                    ,  @                    /    \\  \\\r\n" + 
-				"\t    @___, \\ /                  @__\\  /\\              @___/      \\@/\r\n" + 
-				"\t   /\\__,   |                  /\\_, \\/ /             /\\__/        |\r\n" + 
-				"\t  / \\    / @\\                / \\   (               / \\ /        / \\\r\n" + 
-				"\t_/__|___/___/_______________/__|____\\_____________/__/__________|__\\__\n\n");
-		
-		System.out.println("================================================================================================\n\n");
-		
+		DatosElemento dEl = new DatosElemento();
+		Datos dbMapa = new Datos();
+		ControllerCombate cb = new ControllerCombate();
+
+		System.out.println(
+				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n"
+						+ "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n"
+						+ "██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     \r\n"
+						+ "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     \r\n"
+						+ "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║  ██║╚██████╔╝   ██║   ██║  ██║███████╗\r\n"
+						+ "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝\r\n"
+						+ "                                                                                                \r\n"
+						+ "    ███████╗██████╗ ███████╗██╗     ██╗         ██████╗ ██████╗ ███████╗ █████╗ ██╗  ██╗        \r\n"
+						+ "    ██╔════╝██╔══██╗██╔════╝██║     ██║         ██╔══██╗██╔══██╗██╔════╝██╔══██╗██║ ██╔╝        \r\n"
+						+ "    ███████╗██████╔╝█████╗  ██║     ██║         ██████╔╝██████╔╝█████╗  ███████║█████╔╝         \r\n"
+						+ "    ╚════██║██╔═══╝ ██╔══╝  ██║     ██║         ██╔══██╗██╔══██╗██╔══╝  ██╔══██║██╔═██╗         \r\n"
+						+ "    ███████║██║     ███████╗███████╗███████╗    ██████╔╝██║  ██║███████╗██║  ██║██║  ██╗        \r\n"
+						+ "    ╚══════╝╚═╝     ╚══════╝╚══════╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝");
+
+		System.out.println("            \\                                           ___/________\r\n"
+				+ "\t       ___   )                    ,  @                    /    \\  \\\r\n"
+				+ "\t    @___, \\ /                  @__\\  /\\              @___/      \\@/\r\n"
+				+ "\t   /\\__,   |                  /\\_, \\/ /             /\\__/        |\r\n"
+				+ "\t  / \\    / @\\                / \\   (               / \\ /        / \\\r\n"
+				+ "\t_/__|___/___/_______________/__|____\\_____________/__/__________|__\\__\n\n");
+
+		System.out.println(
+				"================================================================================================\n\n");
+
 		System.out.println("Bienvenido , introduzca su nick de jugador : ");
-		
+
 		nickName = Leer.dato();
-		
-		
+
 		do {
-			
-			System.out.println(" ██╗       ████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗ █████╗ ██╗     \r\n" + 
-					"███║       ╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔══██╗██║     \r\n" + 
-					"╚██║          ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║███████║██║     \r\n" + 
-					" ██║          ██║   ██║   ██║   ██║   ██║   ██║██╔══██╗██║██╔══██║██║     \r\n" + 
-					" ██║██╗       ██║   ╚██████╔╝   ██║   ╚██████╔╝██║  ██║██║██║  ██║███████╗\r\n" + 
-					" ╚═╝╚═╝       ╚═╝    ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\r\n" + 
-					"                                                                          \r\n" + 
-					"██████╗             ██╗██╗   ██╗ ██████╗  █████╗ ██████╗                  \r\n" + 
-					"╚════██╗            ██║██║   ██║██╔════╝ ██╔══██╗██╔══██╗                 \r\n" + 
-					" █████╔╝            ██║██║   ██║██║  ███╗███████║██████╔╝                 \r\n" + 
-					"██╔═══╝        ██   ██║██║   ██║██║   ██║██╔══██║██╔══██╗                 \r\n" + 
-					"███████╗██╗    ╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║                 \r\n" + 
-					"╚══════╝╚═╝     ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                 \r\n" + 
-					"                                                                          \r\n" + 
-					"██████╗        ███████╗ █████╗ ██╗     ██╗██████╗                         \r\n" + 
-					"╚════██╗       ██╔════╝██╔══██╗██║     ██║██╔══██╗                        \r\n" + 
-					" █████╔╝       ███████╗███████║██║     ██║██████╔╝                        \r\n" + 
-					" ╚═══██╗       ╚════██║██╔══██║██║     ██║██╔══██╗                        \r\n" + 
-					"██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n" + 
-					"╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
-			
-			System.out.println("================================================================================================\n\n");
-			
-			System.out.println("¿Qué deseas hacer? : ");
-			
+
+			System.out.println(" ██╗       ████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗ █████╗ ██╗     \r\n"
+					+ "███║       ╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔══██╗██║     \r\n"
+					+ "╚██║          ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║███████║██║     \r\n"
+					+ " ██║          ██║   ██║   ██║   ██║   ██║   ██║██╔══██╗██║██╔══██║██║     \r\n"
+					+ " ██║██╗       ██║   ╚██████╔╝   ██║   ╚██████╔╝██║  ██║██║██║  ██║███████╗\r\n"
+					+ " ╚═╝╚═╝       ╚═╝    ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\r\n"
+					+ "                                                                          \r\n"
+					+ "██████╗             ██╗██╗   ██╗ ██████╗  █████╗ ██████╗                  \r\n"
+					+ "╚════██╗            ██║██║   ██║██╔════╝ ██╔══██╗██╔══██╗                 \r\n"
+					+ " █████╔╝            ██║██║   ██║██║  ███╗███████║██████╔╝                 \r\n"
+					+ "██╔═══╝        ██   ██║██║   ██║██║   ██║██╔══██║██╔══██╗                 \r\n"
+					+ "███████╗██╗    ╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║                 \r\n"
+					+ "╚══════╝╚═╝     ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                 \r\n"
+					+ "                                                                          \r\n"
+					+ "██████╗        ███████╗ █████╗ ██╗     ██╗██████╗                         \r\n"
+					+ "╚════██╗       ██╔════╝██╔══██╗██║     ██║██╔══██╗                        \r\n"
+					+ " █████╔╝       ███████╗███████║██║     ██║██████╔╝                        \r\n"
+					+ " ╚═══██╗       ╚════██║██╔══██║██║     ██║██╔══██╗                        \r\n"
+					+ "██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n"
+					+ "╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
+
+			System.out.println(
+					"================================================================================================\n\n");
+
+			System.out.println("¿Qué deseas hacer?");
+
 			opcion = Leer.datoInt();
-			
-			System.out.println("================================================================================================\n\n");		
-			
-			switch(opcion) {
-			
-			case 1 :
+
+			System.out.println(
+					"================================================================================================\n\n");
+
+			switch (opcion) {
+
+			case 1:
+
+				System.out.println(
+						"Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
+								+ "el campo de batalla.\n");
+
+				System.out.printf(
+						"Primero de todo , te presento a %s, es algo tímido pero cuando coge confianza, ¡ Se vuelve loco ! ."
+								+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡ Qué comience la pelea !.\n\n",
+						iaName);
+
+				System.out.printf("%s es tu turno , ¿qué mano deseas elegir? : ", nickName);
+
+				Vista.opcionManos();
+
+				opcMano = Leer.datoInt();
+
+				// No recuerdo como coger la posición del array cuando hay un get.
+				// Este get va dentro de p1 reemplazando -> DatosElemento.Fuego.
+				dEl.getListaElementos();
+
+				// Creamos el primer jugador
+
+				p1 = new Personaje(DatosElemento.Fuego, nickName, saludBase, manaBase, pocBase);
+
+				// Segundo jugador
+
+				p2 = new Personaje(DatosElemento.Hielo, iaName, saludBase, manaBase, pocBase);
+
+				// Creamos combate
 				
-				System.out.println("Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
-						+ "el campo de batalla.\n");
+				c1 = new Combate(p1, p2, dbMapa.getBatalla1());
 				
-				System.out.printf("Primero de todo , te presento a %s, es algo tímido pero cuando coge confianza, ¡ se vuelve loco! ."
-						+ "Tu primer combate será contra él, un objetivo sencillo para coger soltura . ¡ Que comience la pelea !.\n\n",iaName);
+				// Da error porque es tipo String [][].
+
+				CrudCombate.crearCombate(p1, p2, dbMapa.getBatalla1(), contCombate);
 				
-				System.out.printf("Ahora si %s, ya puedes elegir una mano : ",nickName);
+				//Ataque del primer jugador
 				
+				System.out.println("%s es tu turno , ¿qué habilidad deseas lanzar? : ");
 				
+				Vista.fuegoHabilidad();
 				
+				opcHabilidad = Leer.datoInt();			
 				
-					CrudCombate.crearCombate(p1, p2, contCombate);
-					
-					contCombate++;
+				//Sacar habilidad con la posición de opcHabilidad.
+				
+				cb.atacar(c1, DatosHabilidad.getHabilidadesFuego(), DatosHabilidad.getHabilidadesHielo());
 				
 				
 				break;
-				
-				
-			case 2 :
-				
-				//Syso en construcción
-				System.out.println("[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
-						+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
-				
-				
-				//Syso provisional
-				System.out.println("¿A por qué enemigo deseas ir primero?"
-						+ "1. Álvaro (Fuego)"
-						+ "2. Antonio (Agua)"
-						+ "3. Alejandro (Tierra)"
-						+ "4. Dani (Aire)");
+
+			case 2:
+
+				// Syso en construcción
+				System.out.println(
+						"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
+								+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
+
+				// Syso provisional
+				System.out.println("¿A por qué enemigo deseas ir primero?" + "1. Álvaro (Fuego)" + "2. Antonio (Agua)"
+						+ "3. Alejandro (Tierra)" + "4. Dani (Aire)");
 				opcion = Leer.datoInt();
-				
+
 				switch (opcion) {
-				//No estoy seguro de que la posición de los personajes deba ser inicializada a 0. Provisional.
+				// No estoy seguro de que la posición de los personajes deba ser inicializada a
+				// 0. Provisional.
 				case 1:
-					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", 100, 100, 0);
+					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase);
 					break;
-					
+
 				case 2:
-					p2 = new Personaje(DatosElemento.Agua, "Antonio", 100, 100, 0);
+					p2 = new Personaje(DatosElemento.Agua, "Antonio", saludBase, manaBase, pocBase);
 					break;
-					
+
 				case 3:
-					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", 100, 100, 0);
+					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", saludBase, manaBase, pocBase);
 					break;
-					
+
 				case 4:
-					p2 = new Personaje(DatosElemento.Hielo, "Dani", 100, 100, 0);
+					p2 = new Personaje(DatosElemento.Hielo, "Dani", saludBase, manaBase, pocBase);
 					break;
 
 				default:
 					break;
 				}
-				
+
 				campoBatalla = DatosCombate.batalla1;
 				c1 = new Combate(p1, p2, campoBatalla);
-				/*CrudCombate.crearCombate(p1, p2, contCombate);
-				contCombate++;*/
-				
-								
+				/*
+				 * CrudCombate.crearCombate(p1, p2, contCombate); contCombate++;
+				 */
+
 				break;
-				
-			case 3 :
-				
-				
-					System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.\n\n",nickName);
-				
+
+			case 3:
+
+				System.out.printf("Gracias por utilizar nuestra app %s, hasta luego.\n\n", nickName);
+
 				break;
-			
-			
+
 			}
-			
-			
-			
-		}while(opcion != opcExit);
-		
+
+		} while (opcion != opcExit);
 
 	}
 

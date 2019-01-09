@@ -883,4 +883,23 @@ public class Vista {
 				"                                  %                                  \r\n" + 
 				"                                  %  ");
 	}
+	
+	public static void opcionManos() {
+		
+		System.out.println("1. Fuego");
+		System.out.println("2. Agua");
+		System.out.println("3. Tierra");
+		System.out.println("4. Hielo");
+		System.out.println("5. Aire");
+		System.out.println("6. Electrico");
+		System.out.println("7. Veneno");
+	}
+	
+	public static void fuegoHabilidad() {
+		
+		System.out.println("1. Bola de fuego");
+		System.out.println("2. Fogonazo");
+		System.out.println("3. Barrera Napalm");
+		System.out.println("4. Propulsión Ígnea");
+	}
 }
