@@ -7,10 +7,7 @@ import crud.CrudPersonaje;
 import model.Personaje;
 import controller.ControllerCombate;
 import crud.CrudCombate;
-import datos.DatosElemento;
-import datos.DatosHabilidad;
 import datos.Datos;
-import datos.DatosCombate;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -35,7 +32,7 @@ public class Ppal {
 
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad;
+		int opcion = 0, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad = 0, uno = 1;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
 		Datos bd = new Datos();
@@ -141,17 +138,26 @@ public class Ppal {
 				
 				do {
 				
-				System.out.printf("¿Qué habilidad deseas lanzar? : ",nickName);
+				System.out.println("¿Qué habilidad deseas lanzar? :");
 				
-				//TODO Terminar esto una vez esten las vistas de todas las habilidades
+				//TODO Terminar esto una vez esten terminadas las vistas de todas las habilidades
 				if (p1.getE().equals("Fuego")) {
 					Vista.fuegoHabilidad();
 				} else if (p1.getE().equals("Agua")) {
+					
+				} else if (p1.getE().equals("Tierra")) {
+					
+				} else if (p1.getE().equals("Hielo")) {
+					
+				} else if (p1.getE().equals("Aire")) {
+					
+				} else if (p1.getE().equals("Electrico")) {
+					
+				} else if (p1.getE().equals("Veneno")) {
+					
 				}
 				
-				
-				//TODO Terminar el combate de manera que sea funcional
-				opcHabilidad = Leer.datoInt();			
+				opcHabilidad = Leer.datoInt() - 1;			
 				
 				//Sacar habilidad con la posición de opcHabilidad.
 				
