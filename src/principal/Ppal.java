@@ -121,11 +121,11 @@ public class Ppal {
 
 				Vista.opcionManos();
 
-				opcMano = Leer.datoInt();
+				opcMano = Leer.datoInt()-1;
 
 				// No recuerdo como coger la posición del array cuando hay un get.
 				// Este get va dentro de p1 reemplazando -> DatosElemento.Fuego.
-				dEl.getListaElementos();
+				dEl.getListaElementos()[0].getNombreElemento("Fuego");
 
 				// Creamos el primer jugador
 
