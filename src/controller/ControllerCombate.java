@@ -2,8 +2,6 @@ package controller;
 
 import model.Combate;
 import model.Personaje;
-
-import datos.DatosElemento;
 import model.Habilidad;
 import vista.Vista;
 
