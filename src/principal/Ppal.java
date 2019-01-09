@@ -145,7 +145,9 @@ public class Ppal {
 				
 				//Ataque del primer jugador
 				
-				System.out.println("%s es tu turno , ¿qué habilidad deseas lanzar? : ");
+				do {
+				
+				System.out.printf("%s es tu turno , ¿qué habilidad deseas lanzar? : ",nickName);
 				
 				Vista.fuegoHabilidad();
 				
@@ -154,6 +156,16 @@ public class Ppal {
 				//Sacar habilidad con la posición de opcHabilidad.
 				
 				cb.atacar(c1, DatosHabilidad.getHabilidadesFuego(), DatosHabilidad.getHabilidadesHielo());
+				
+				System.out.printf("%s ha utilizado %s",iaName, DatosHabilidad.getHabilidadesHielo()); //Coger posicion y nombre habilidad
+				
+				//Actualiza el combate
+				
+				CrudCombate.actualizarCombate(c1, contCombate);
+				
+				}while(p2.getSalud() == 0);
+				
+				
 				
 				
 				break;
