@@ -163,6 +163,8 @@ public class Ppal {
 				
 				CrudCombate.actualizarCombate(c1, contCombate);
 				
+				contCombate++;
+				
 				}while(p2.getSalud() == 0);
 				
 				
