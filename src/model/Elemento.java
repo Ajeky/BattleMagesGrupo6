@@ -4,11 +4,11 @@ public class Elemento {
 
 	private Habilidad[] habilidades;
 	private String nombreElemento;
-	
+
 	public Elemento() {
-	
+
 	}
-		
+
 	public Elemento(Habilidad[] habilidades, String nombreElemento) {
 		super();
 		this.habilidades = habilidades;
@@ -33,9 +33,7 @@ public class Elemento {
 
 	@Override
 	public String toString() {
-		return "Elemento [Elemento = " + nombreElemento + "Habilidades = " + habilidades+"]";
+		return "Elemento [Elemento = " + nombreElemento + "Habilidades = " + habilidades + "]";
 	}
-	
-	
-	
+
 }

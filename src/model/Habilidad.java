@@ -42,11 +42,11 @@ public class Habilidad {
 	public void setCosteMana(int costeMana) {
 		this.costeMana = costeMana;
 	}
-	
+
 	public int getTipo() {
 		return tipo;
 	}
-	
+
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
