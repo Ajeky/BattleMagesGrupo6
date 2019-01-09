@@ -91,7 +91,7 @@ public class Vista {
 		System.out.println("Maná █████");
 	}
 	
-	public void habilidadIncorrecta() {
+	public static void habilidadIncorrecta() {
 		System.out.println("No se puede atacar usando una habilidad defensiva o evasiva.");
 	}
 	

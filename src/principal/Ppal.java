@@ -39,7 +39,7 @@ public class Ppal {
 		Combate c1;
 		Personaje p1 = null, p2 = null;
 		DatosElemento dEl = new DatosElemento();
-		Datos dbMapa = new Datos();
+		Datos bd = new Datos();
 		ControllerCombate cb = new ControllerCombate();
 
 		System.out.println(
@@ -129,19 +129,19 @@ public class Ppal {
 
 				// Creamos el primer jugador
 
-				p1 = new Personaje(DatosElemento.Fuego, nickName, saludBase, manaBase, pocBase);
+				p1 = new Personaje(DatosElemento.Fuego, nickName, saludBase, manaBase, pocBase, false);
 
 				// Segundo jugador
 
-				p2 = new Personaje(DatosElemento.Hielo, iaName, saludBase, manaBase, pocBase);
+				p2 = new Personaje(DatosElemento.Hielo, iaName, saludBase, manaBase, pocBase, false);
 
 				// Creamos combate
 				
-				c1 = new Combate(p1, p2, dbMapa.getBatalla1());
+				c1 = new Combate(p1, p2, bd.getBatalla1());
 				
 				// Da error porque es tipo String [][].
 
-				CrudCombate.crearCombate(p1, p2, dbMapa.getBatalla1(), contCombate);
+				CrudCombate.crearCombate(p1, p2, bd, contCombate);
 				
 				//Ataque del primer jugador
 				
@@ -174,27 +174,32 @@ public class Ppal {
 				// No estoy seguro de que la posición de los personajes deba ser inicializada a
 				// 0. Provisional.
 				case 1:
-					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 2:
-					p2 = new Personaje(DatosElemento.Agua, "Antonio", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Agua, "Antonio", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 3:
-					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 4:
-					p2 = new Personaje(DatosElemento.Hielo, "Dani", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Hielo, "Dani", saludBase, manaBase, pocBase, false);
 					break;
 
 				default:
 					break;
 				}
 
-				campoBatalla = DatosCombate.batalla1;
-				c1 = new Combate(p1, p2, campoBatalla);
+				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+				
+				do {
+					
+					
+					
+				} while (p1.isMuerte() == false || p2.isMuerte() == false);
 				/*
 				 * CrudCombate.crearCombate(p1, p2, contCombate); contCombate++;
 				 */

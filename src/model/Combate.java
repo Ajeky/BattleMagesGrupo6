@@ -6,6 +6,7 @@ public class Combate {
 	private Personaje p1;
 	private Personaje p2;
 	private String[][] campoBatalla;
+	private static int contCombate = 0;
 	
 	public Combate(Personaje p1, Personaje p2, String[][] campoBatalla) {
 		super();
@@ -41,6 +42,15 @@ public class Combate {
 	public void setCampoBatalla(String[][] campoBatalla) {
 		this.campoBatalla = campoBatalla;
 	}
+	
+	public static int getContCombate() {
+		return contCombate;
+	}
+
+	public static void setContCombate(int contCombate) {
+		Combate.contCombate = contCombate;
+	}
+
 
 	@Override
 	public String toString() {
