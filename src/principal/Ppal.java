@@ -107,6 +107,9 @@ public class Ppal {
 				
 				System.out.printf("Ahora si %s, ya puedes elegir una mano : ",nickName);
 				
+				
+				
+				
 					CrudCombate.crearCombate(p1, p2, contCombate);
 					
 					contCombate++;
