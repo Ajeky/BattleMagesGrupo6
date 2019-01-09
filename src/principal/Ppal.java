@@ -7,10 +7,7 @@ import crud.CrudPersonaje;
 import model.Personaje;
 import controller.ControllerCombate;
 import crud.CrudCombate;
-import datos.DatosElemento;
-import datos.DatosHabilidad;
 import datos.Datos;
-import datos.DatosCombate;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -35,12 +32,10 @@ public class Ppal {
 
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad;
+		int opcion = 0, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0, opcHabilidad = 0, uno = 1;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
-		DatosElemento dEl = new DatosElemento();
-		Datos dbMapa = new Datos();
-		ControllerCombate cb = new ControllerCombate();
+		Datos bd = new Datos();
 
 		System.out.println(
 				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n"
@@ -121,84 +116,112 @@ public class Ppal {
 
 				Vista.opcionManos();
 
-				opcMano = Leer.datoInt();
-
-				// No recuerdo como coger la posición del array cuando hay un get.
-				// Este get va dentro de p1 reemplazando -> DatosElemento.Fuego.
-				dEl.getListaElementos();
-
+				opcMano = Leer.datoInt()-1;
+				
 				// Creamos el primer jugador
 
-				p1 = new Personaje(DatosElemento.Fuego, nickName, saludBase, manaBase, pocBase);
+				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, pocBase, false);
 
 				// Segundo jugador
 
-				p2 = new Personaje(DatosElemento.Hielo, iaName, saludBase, manaBase, pocBase);
+				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, pocBase, false);
 
 				// Creamos combate
 				
-				c1 = new Combate(p1, p2, dbMapa.getBatalla1());
+				c1 = new Combate(p1, p2, bd.getBatalla1());
 				
 				// Da error porque es tipo String [][].
 
-				CrudCombate.crearCombate(p1, p2, dbMapa.getBatalla1(), contCombate);
+				CrudCombate.crearCombate(p1, p2, bd, contCombate);
 				
 				//Ataque del primer jugador
 				
-				System.out.println("%s es tu turno , ¿qué habilidad deseas lanzar? : ");
+				do {
 				
-				Vista.fuegoHabilidad();
+				System.out.println("¿Qué habilidad deseas lanzar? :");
 				
-				opcHabilidad = Leer.datoInt();			
+				//TODO Terminar esto una vez esten terminadas las vistas de todas las habilidades
+				if (p1.getE().equals("Fuego")) {
+					Vista.fuegoHabilidad();
+				} else if (p1.getE().equals("Agua")) {
+					
+				} else if (p1.getE().equals("Tierra")) {
+					
+				} else if (p1.getE().equals("Hielo")) {
+					
+				} else if (p1.getE().equals("Aire")) {
+					
+				} else if (p1.getE().equals("Electrico")) {
+					
+				} else if (p1.getE().equals("Veneno")) {
+					
+				}
+				
+				opcHabilidad = Leer.datoInt() - 1;			
 				
 				//Sacar habilidad con la posición de opcHabilidad.
 				
-				cb.atacar(c1, DatosHabilidad.getHabilidadesFuego(), DatosHabilidad.getHabilidadesHielo());
+				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+				c1 = ControllerCombate.atacar(c1, h1, h2, contCombate);								
+				
+				System.out.printf("%s ha utilizado %s",iaName, DatosHabilidad.getHabilidadesHielo()); //Coger posicion y nombre habilidad
+				
+				//Actualiza el combate
+				
+				CrudCombate.actualizarCombate(c1, contCombate);
+				
+				contCombate++;
+				
+				}while(p2.isMuerte() == false);
+				
+				
 				
 				
 				break;
 
 			case 2:
 
-				// Syso en construcción
+				//TODO Syso en construcción
 				System.out.println(
 						"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
 								+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
 
-				// Syso provisional
+				//TODO Syso provisional
 				System.out.println("¿A por qué enemigo deseas ir primero?" + "1. Álvaro (Fuego)" + "2. Antonio (Agua)"
 						+ "3. Alejandro (Tierra)" + "4. Dani (Aire)");
 				opcion = Leer.datoInt();
 
 				switch (opcion) {
-				// No estoy seguro de que la posición de los personajes deba ser inicializada a
+				//TODO No estoy seguro de que la posición de los personajes deba ser inicializada a
 				// 0. Provisional.
 				case 1:
-					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Fuego, "Álvaro", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 2:
-					p2 = new Personaje(DatosElemento.Agua, "Antonio", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Agua, "Antonio", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 3:
-					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Tierra, "Alejandro", saludBase, manaBase, pocBase, false);
 					break;
 
 				case 4:
-					p2 = new Personaje(DatosElemento.Hielo, "Dani", saludBase, manaBase, pocBase);
+					p2 = new Personaje(DatosElemento.Hielo, "Dani", saludBase, manaBase, pocBase, false);
 					break;
 
 				default:
 					break;
 				}
 
-				campoBatalla = DatosCombate.batalla1;
-				c1 = new Combate(p1, p2, campoBatalla);
-				/*
-				 * CrudCombate.crearCombate(p1, p2, contCombate); contCombate++;
-				 */
-
+				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+				
+				do {
+					
+					
+					
+				} while (p1.isMuerte() == false || p2.isMuerte() == false);
+				
 				break;
 
 			case 3:

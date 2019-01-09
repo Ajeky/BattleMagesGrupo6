@@ -2,7 +2,6 @@ package crud;
 import model.Combate;
 import model.Personaje;
 import datos.Datos;
-import datos.DatosCombate;
 
 public class CrudCombate {
 	

@@ -7,14 +7,16 @@ public class Personaje {
 	private int salud;
 	private int mana;
 	private int posicion;
+	private boolean muerte;
 	
-	public Personaje(Elemento e, String nombre, int salud, int mana, int posicion) {
+	public Personaje(Elemento e, String nombre, int salud, int mana, int posicion, boolean muerte) {
 		
 		this.e = e;
 		this.nombre = nombre;
 		this.salud = salud;
 		this.mana = mana;
 		this.posicion = posicion;
+		this.muerte = muerte;
 	}
 
 
@@ -71,6 +73,15 @@ public class Personaje {
 
 	public void setPosicion(int posicion) {
 		this.posicion = posicion;
+	}
+	
+	public boolean isMuerte() {
+		return muerte;
+	}
+
+
+	public void setMuerte(boolean muerte) {
+		this.muerte = muerte;
 	}
 
 
