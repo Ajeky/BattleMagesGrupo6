@@ -902,4 +902,54 @@ public class Vista {
 		System.out.println("3. Barrera Napalm");
 		System.out.println("4. Propulsión Ígnea");
 	}
+	
+	public static void tierraHabilidad() {
+		
+		System.out.println("1. Roca afilada");
+		System.out.println("2. Avalancha");
+		System.out.println("3. Muro sísmico");
+		System.out.println("4. Desprendimiento Forzoso");
+	}
+	
+	public static void hieloHabilidad() {
+		
+		System.out.println("1. Escarcha selecta");
+		System.out.println("2. Cero absoluto");
+		System.out.println("3. Iceberg");
+		System.out.println("4. Deslizamiento Nevado");
+	}
+	
+	public static void electHabilidad() {
+		
+		System.out.println("1. Sobrecarga");
+		System.out.println("2. Tormenta Eléctrica");
+		System.out.println("3. Muralla Volátil");
+		System.out.println("4. Desplazamiento Estático");
+	}
+	
+	public static void venenoHabilidad() {
+		
+		System.out.println("1. Dardo Envenenado");
+		System.out.println("2. Intoxicación");
+		System.out.println("3. Trampa de Agujas");
+		System.out.println("4. Bomba de Humo");
+	}
+	
+	public static void aguaHabilidad() {
+		
+		System.out.println("1. Rayo Burbuja");
+		System.out.println("2. Maremoto");
+		System.out.println("3. Torrente Cascada");
+		System.out.println("4. Escape Resbaloso");
+	}
+	
+	public static void aireHabilidad() {
+		
+		System.out.println("1. Viento Cortante");
+		System.out.println("2. Huracán");
+		System.out.println("3. Desviación Aérea");
+		System.out.println("4. Viento a Favor");
+	}
+	
+	
 }
