@@ -6,7 +6,8 @@ import model.Habilidad;
 import vista.Vista;
 
 public class ControllerCombate {
-
+   private static String Fuego ="Fuego";
+   private static  String Agua = "Agua",Tierra="Tierra",Hielo="Hielo",Aire="Aire",Electrico="Electrico",Veneno="Veneno";
 	// Métodos
 
 	public static Combate usarHabilidad(Combate c1, Habilidad h1, Habilidad h2, int contCombate) {
@@ -92,7 +93,27 @@ public class ControllerCombate {
 	
 	public static Personaje curar(Personaje p1) {
 		
-		
+		if(p1.getE().getNombreElemento().equals(Fuego)){
+			p1.setSalud(p1.getSalud()+20);
+		}
+		else if(p1.getE().getNombreElemento().equals(Agua)){
+			p1.setSalud(p1.getSalud()+30);
+		}
+		else if(p1.getE().getNombreElemento().equals(Tierra)){
+			p1.setSalud(p1.getSalud()+35);
+		}
+		else if(p1.getE().getNombreElemento().equals(Hielo)){
+			p1.setSalud(p1.getSalud()+25);
+		}
+		else if(p1.getE().getNombreElemento().equals(Aire)){
+			p1.setSalud(p1.getSalud()+30);
+		}
+		else if(p1.getE().getNombreElemento().equals(Electrico)){
+			p1.setSalud(p1.getSalud()+25);
+		}
+		else if(p1.getE().getNombreElemento().equals(Veneno)){
+			p1.setSalud(p1.getSalud()+20);
+		}
 		return p1;
 	}
 

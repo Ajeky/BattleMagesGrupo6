@@ -23,7 +23,7 @@ public class CrudCombate {
 			c = c1;
 			break;
 		case 1:
-			Combate c2 = new Combate(p1, p2, bd.getBatalla1());
+			Combate c2 = new Combate(p1, p2, bd.getBatalla2());
 			c2.getCampoBatalla()[9][c2.getP1().getPosicion()] = "******";
 			c2.getCampoBatalla()[10][c2.getP1().getPosicion()] = "|    |";
 			c2.getCampoBatalla()[11][c2.getP1().getPosicion()] = "******";
@@ -34,7 +34,7 @@ public class CrudCombate {
 			c = c2;
 			break;
 		case 2:
-			Combate c3 = new Combate(p1, p2, bd.getBatalla1());
+			Combate c3 = new Combate(p1, p2, bd.getBatalla3());
 			c3.getCampoBatalla()[6][c3.getP1().getPosicion()] = "******";
 			c3.getCampoBatalla()[7][c3.getP1().getPosicion()] = "|    |";
 			c3.getCampoBatalla()[8][c3.getP1().getPosicion()] = "******";
@@ -46,7 +46,7 @@ public class CrudCombate {
 			break;
 
 		case 3:
-			Combate c4 = new Combate(p1, p2, bd.getBatalla1());
+			Combate c4 = new Combate(p1, p2, bd.getBatalla4());
 			c4.getCampoBatalla()[4][c4.getP1().getPosicion()] = "******";
 			c4.getCampoBatalla()[5][c4.getP1().getPosicion()] = "|    |";
 			c4.getCampoBatalla()[6][c4.getP1().getPosicion()] = "******";
