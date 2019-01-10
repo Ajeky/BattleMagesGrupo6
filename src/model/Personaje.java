@@ -43,6 +43,11 @@ public class Personaje {
 		return salud;
 	}
 
+	public boolean getMuerte() {
+
+		return muerte;
+	}
+
 	public void setSalud(int salud) {
 		this.salud = salud;
 	}

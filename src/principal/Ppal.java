@@ -32,7 +32,7 @@ public class Ppal {
 
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion = 0, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, pocBase = 0,
+		int opcion = 0, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, posInicial = 0,
 				opcHabilidad = 0, uno = 1;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
@@ -120,11 +120,11 @@ public class Ppal {
 
 				// Creamos el primer jugador
 
-				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, pocBase, false);
+				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, posInicial, false);
 
 				// Segundo jugador
 
-				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, pocBase, false);
+				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, posInicial, false);
 
 				// Creamos combate
 
@@ -252,19 +252,19 @@ public class Ppal {
 					// inicializada a
 					// 0. Provisional.
 					case 1:
-						p2 = new Personaje(bd.getFuego(), "Álvaro", saludBase, manaBase, pocBase, false);
+						p2 = new Personaje(bd.getFuego(), "Álvaro", saludBase, manaBase, posInicial, false);
 						break;
 
 					case 2:
-						p2 = new Personaje(bd.getAgua(), "Antonio", saludBase, manaBase, pocBase, false);
+						p2 = new Personaje(bd.getAgua(), "Antonio", saludBase, manaBase, posInicial, false);
 						break;
 
 					case 3:
-						p2 = new Personaje(bd.getTierra(), "Alejandro", saludBase, manaBase, pocBase, false);
+						p2 = new Personaje(bd.getTierra(), "Alejandro", saludBase, manaBase, posInicial, false);
 						break;
 
 					case 4:
-						p2 = new Personaje(bd.getHielo(), "Dani", saludBase, manaBase, pocBase, false);
+						p2 = new Personaje(bd.getHielo(), "Dani", saludBase, manaBase, posInicial, false);
 						break;
 
 					default:

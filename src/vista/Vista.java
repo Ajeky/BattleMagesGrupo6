@@ -28,6 +28,11 @@ public class Vista {
 	public Integer MostrarManaEnemigo() {
 		return personaje2.getMana();
 	}
+	
+	public static void personajeMuerto() {
+		
+		System.out.println("¡Has muerto!");
+	}
 
 	public static void barraVida100() {
 
