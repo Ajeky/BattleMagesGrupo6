@@ -46,21 +46,53 @@ public class ControllerCombate {
 		return c1;
 	}
 
-	public static Personaje moverp1(Personaje p1, int direccion) {
+	public static Combate moverp1(Combate c1 ,int direccion) {
 
-		if (direccion == 1) {
-			if ((p1.getPosicion() - p1.getPosicion()) != 1) {
-				p1.setPosicion(p1.getPosicion() + 1);
-			} else {
-				// vista no se puede realizar esa orden
+		if(direccion ==1) {
+			if((c1.getP1().getPosicion()-c1.getP2().getPosicion())!=1) {
+				c1.getP1().setPosicion(c1.getP1().getPosicion()+1);
 			}
-		} else if (direccion == 0) {
-			if (p1.getPosicion() > 1) {
-				p1.setPosicion(p1.getPosicion() - 1);
+			else {
+				//vista no se puede realizar esa orden
+			}
+		}
+		else if(direccion==0){
+			if(c1.getP1().getPosicion()>1) {
+				c1.getP1().setPosicion(c1.getP1().getPosicion()-1);
 			}
 
 		}
 
+		return c1;
+	}
+	public static Combate moverp2(Combate c1 ,int direccion) {
+		
+		if(direccion ==0) {
+			if((c1.getP1().getPosicion()-c1.getP2().getPosicion())>1) {
+				c1.getP2().setPosicion(c1.getP2().getPosicion()+1);
+			}
+			else {
+				//vista no se puede realizar esa orden
+			}
+		}
+		
+		else if(direccion==1){
+			if(c1.getP1().getPosicion()<c1.getCampoBatalla().length-1) {
+				c1.getP1().setPosicion(c1.getP1().getPosicion()-1);
+			}
+		}
+		else {
+			//vista error
+		}
+		
+		return c1;
+	}
+	
+	
+	
+	public static Personaje curar(Personaje p1) {
+		
+		
 		return p1;
 	}
 
