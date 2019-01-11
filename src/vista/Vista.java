@@ -8,7 +8,10 @@ public class Vista {
 	private Personaje personaje1;
 	private Personaje personaje2;
 
-//	Falta public Integer MostrarDistanciaComabte(){}
+//	TODO Falta public Integer MostrarDistanciaComabte(){}
+//	TODO Falta error no se puede realizar esa orden (para el método moverp1/moverp2)
+//	TODO Falta error "te has curado demasiadas veces este combate"
+//	TODO Falta error "No te queda maná"
 	public String MostrarNombreHabilidades() {
 		return habilidad1.getNombre();
 	}

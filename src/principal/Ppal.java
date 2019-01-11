@@ -94,6 +94,7 @@ public class Ppal {
 					"================================================================================================\n\n");
 
 			System.out.println("¿Qué deseas hacer?");
+			
 
 			opcion = Leer.datoInt();
 
@@ -120,11 +121,11 @@ public class Ppal {
 
 				// Creamos el primer jugador
 
-				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, posInicial, false);
+				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, posInicial, false, 0);
 
 				// Segundo jugador
 
-				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, posInicial, false);
+				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, posInicial, false, 0);
 
 				// Creamos combate
 
@@ -252,19 +253,19 @@ public class Ppal {
 					// inicializada a
 					// 0. Provisional.
 					case 1:
-						p2 = new Personaje(bd.getFuego(), "Álvaro", saludBase, manaBase, posInicial, false);
+						p2 = new Personaje(bd.getFuego(), "Álvaro", saludBase, manaBase, posInicial, false, 0);
 						break;
 
 					case 2:
-						p2 = new Personaje(bd.getAgua(), "Antonio", saludBase, manaBase, posInicial, false);
+						p2 = new Personaje(bd.getAgua(), "Antonio", saludBase, manaBase, posInicial, false, 0);
 						break;
 
 					case 3:
-						p2 = new Personaje(bd.getTierra(), "Alejandro", saludBase, manaBase, posInicial, false);
+						p2 = new Personaje(bd.getTierra(), "Alejandro", saludBase, manaBase, posInicial, false, 0);
 						break;
 
 					case 4:
-						p2 = new Personaje(bd.getHielo(), "Dani", saludBase, manaBase, posInicial, false);
+						p2 = new Personaje(bd.getHielo(), "Dani", saludBase, manaBase, posInicial, false, 0);
 						break;
 
 					default:
@@ -279,7 +280,11 @@ public class Ppal {
 
 				} while (p1.isMuerte() == false || p2.isMuerte() == false);
 
+				
+				//Es el break del case 2 (Jugar)
 				break;
+				
+				
 
 			case 3:
 

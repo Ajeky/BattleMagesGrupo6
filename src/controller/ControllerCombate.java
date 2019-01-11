@@ -14,6 +14,7 @@ public class ControllerCombate {
 
 		int dano = 0;
 
+		
 		c1.getP1().setMana(c1.getP1().getMana() - h1.getCosteMana());
 
 		if (h1.getTipo() == 1 || h1.getTipo() == 2) {
@@ -94,32 +95,40 @@ public class ControllerCombate {
 	public static Personaje curar(Personaje p1) {
 		
 		if(p1.getE().getNombreElemento().equals(Fuego)){
-			p1.setSalud(p1.getSalud()+20);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-40);
 		}
 		else if(p1.getE().getNombreElemento().equals(Agua)){
-			p1.setSalud(p1.getSalud()+30);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-35);
 		}
 		else if(p1.getE().getNombreElemento().equals(Tierra)){
-			p1.setSalud(p1.getSalud()+35);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-60);
 		}
 		else if(p1.getE().getNombreElemento().equals(Hielo)){
-			p1.setSalud(p1.getSalud()+25);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-50);
 		}
 		else if(p1.getE().getNombreElemento().equals(Aire)){
-			p1.setSalud(p1.getSalud()+30);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-10);
 		}
 		else if(p1.getE().getNombreElemento().equals(Electrico)){
-			p1.setSalud(p1.getSalud()+25);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-35);
 		}
 		else if(p1.getE().getNombreElemento().equals(Veneno)){
-			p1.setSalud(p1.getSalud()+20);
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-40);
 		}
+		p1.setContCurar(p1.getContCurar() + 1);
 		return p1;
 	}
 
 	public static void mostrarVidaP1(Combate c1) {
 
-		if (c1.getP1().getMuerte()) {
+		if (c1.getP1().isMuerte()) {
 
 			Vista.personajeMuerto();
 		}
@@ -153,7 +162,7 @@ public class ControllerCombate {
 
 	public static void mostrarVidaP2(Combate c1) {
 
-		if (c1.getP2().getMuerte()) {
+		if (c1.getP2().isMuerte()) {
 
 			Vista.personajeMuerto();
 		}

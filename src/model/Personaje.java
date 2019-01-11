@@ -8,8 +8,9 @@ public class Personaje {
 	private int mana;
 	private int posicion;
 	private boolean muerte;
+	private int contCurar;
 
-	public Personaje(Elemento e, String nombre, int salud, int mana, int posicion, boolean muerte) {
+	public Personaje(Elemento e, String nombre, int salud, int mana, int posicion, boolean muerte, int contCurar) {
 
 		this.e = e;
 		this.nombre = nombre;
@@ -17,6 +18,7 @@ public class Personaje {
 		this.mana = mana;
 		this.posicion = posicion;
 		this.muerte = muerte;
+		this.contCurar = contCurar;
 	}
 
 	public Personaje() {
@@ -41,11 +43,6 @@ public class Personaje {
 
 	public int getSalud() {
 		return salud;
-	}
-
-	public boolean getMuerte() {
-
-		return muerte;
 	}
 
 	public void setSalud(int salud) {
@@ -74,6 +71,14 @@ public class Personaje {
 
 	public void setMuerte(boolean muerte) {
 		this.muerte = muerte;
+	}
+
+	public int getContCurar() {
+		return contCurar;
+	}
+
+	public void setContCurar(int contCurar) {
+		this.contCurar = contCurar;
 	}
 
 	public String toString() {
