@@ -71,33 +71,14 @@ public class Ppal {
 
 		do {
 
-			System.out.println(" ██╗       ████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗ █████╗ ██╗     \r\n"
-					+ "███║       ╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔══██╗██║     \r\n"
-					+ "╚██║          ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║███████║██║     \r\n"
-					+ " ██║          ██║   ██║   ██║   ██║   ██║   ██║██╔══██╗██║██╔══██║██║     \r\n"
-					+ " ██║██╗       ██║   ╚██████╔╝   ██║   ╚██████╔╝██║  ██║██║██║  ██║███████╗\r\n"
-					+ " ╚═╝╚═╝       ╚═╝    ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\r\n"
-					+ "                                                                          \r\n"
-					+ "██████╗             ██╗██╗   ██╗ ██████╗  █████╗ ██████╗                  \r\n"
-					+ "╚════██╗            ██║██║   ██║██╔════╝ ██╔══██╗██╔══██╗                 \r\n"
-					+ " █████╔╝            ██║██║   ██║██║  ███╗███████║██████╔╝                 \r\n"
-					+ "██╔═══╝        ██   ██║██║   ██║██║   ██║██╔══██║██╔══██╗                 \r\n"
-					+ "███████╗██╗    ╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║                 \r\n"
-					+ "╚══════╝╚═╝     ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                 \r\n"
-					+ "                                                                          \r\n"
-					+ "██████╗        ███████╗ █████╗ ██╗     ██╗██████╗                         \r\n"
-					+ "╚════██╗       ██╔════╝██╔══██╗██║     ██║██╔══██╗                        \r\n"
-					+ " █████╔╝       ███████╗███████║██║     ██║██████╔╝                        \r\n"
-					+ " ╚═══██╗       ╚════██║██╔══██║██║     ██║██╔══██╗                        \r\n"
-					+ "██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n"
-					+ "╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
+			//Menú principal
+			Vista.menuPrincipal();
 
 			System.out.println(
-					"================================================================================================\n\n");
-
-			System.out.println("¿Qué deseas hacer?");
+					"================================================================================================\n");
 
 			opcion = Leer.datoInt();
+			System.out.println("");
 
 			System.out.println(
 					"================================================================================================\n\n");
@@ -105,28 +86,12 @@ public class Ppal {
 			switch (opcion) {
 
 			case 1:
-
-				System.out.println(
-						"Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
-								+ "el campo de batalla.\n");
-
-				System.out.println(
-						"En Battle Mages, tus habilidades depende del elemento que elijas, y cada elemento tiene sus propias características.\n\n"
-								+ "FUEGO hace mucho daño a costa de peores habilidades defensivas.\nTIERRA es justo lo contrario, buena defensa pero un ataque pobre.\n"
-								+ "HIELO está en un punto medio, pero se decanta más por el atque.\nELÉCTRICO tiene menos potencia pero sus habilidades cuestan menos maná,\n"
-								+ "algo parecido le pasa a AIRE pero de manera más intensa, coste de maná muy bajo y muy poca potencia.\n"
-								+ "Las habilidades de VENENO cuestan bastante maná, pero son muy potentes.\nFinalmente AGUA es el más equilibrado.\n\n ¿Qué elemento deseas elegir? : ");
+				//Explicación de los elementos
+				Vista.tutorial();
 
 				Vista.opcionElementos();
 
 				opcElemento = Leer.datoInt() - 1;
-				
-				System.out.println("Bien. Antes de empezar, déjame explicarte como funciona el juego.\nCada elemento tiene 4 habilidades: un ataque normal, un ataque potente, una habilidad defensiva"
-						+ " y la habilidad de curación.");
-				
-				System.out.println("Te presento a " + iaName
-						+ ", es algo tímido pero cuando coge confianza, ¡se vuelve loco!\n"
-						+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡Que comience la pelea !\n\n");
 
 				// Creamos el primer jugador
 
@@ -135,6 +100,9 @@ public class Ppal {
 				// Segundo jugador
 
 				p2 = new Personaje(bd.getListaElementos()[opcElemento], iaName, p2SaludBase, p2ManaBase, posInicial, false, 0);
+				
+				//Explicación combate y presentación del Bot Francisco
+				Vista.tutorial2(p2);
 
 				// Creamos combate
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
