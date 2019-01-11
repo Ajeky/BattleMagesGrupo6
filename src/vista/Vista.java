@@ -8,10 +8,6 @@ public class Vista {
 	private Personaje personaje1;
 	private Personaje personaje2;
 
-//	TODO Falta public Integer MostrarDistanciaComabte(){}
-//	TODO Falta error no se puede realizar esa orden (para el método moverp1/moverp2)
-//	TODO Falta error "te has curado demasiadas veces este combate"
-//	TODO Falta error "No te queda maná"
 	public String MostrarNombreHabilidades() {
 		return habilidad1.getNombre();
 	}
@@ -31,9 +27,25 @@ public class Vista {
 	public Integer MostrarManaEnemigo() {
 		return personaje2.getMana();
 	}
-	
+
+	public static void movimientoPers() {
+
+		System.out.println("¡No puedes moverte en este momento!");
+
+	}
+
+	public static void errorCura() {
+
+		System.out.println("Has agotado todas las pociones...");
+	}
+
+	public static void errorMana() {
+
+		System.out.println("¡No te queda maná! , usa con cabeza las habilidades");
+	}
+
 	public static void personajeMuerto() {
-		
+
 		System.out.println("¡Has muerto!");
 	}
 
