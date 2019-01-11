@@ -32,7 +32,7 @@ public class Ppal {
 
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion = 0, opcExit = 3, contCombate = 0, opcMano, saludBase = 100, manaBase = 100, posInicial = 0,
+		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 100, p2ManaBase = 100, p1SaludBase = 500, p1ManaBase = 200, posInicial = 0,
 				opcHabilidad = 0, uno = 1;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
@@ -94,7 +94,6 @@ public class Ppal {
 					"================================================================================================\n\n");
 
 			System.out.println("¿Qué deseas hacer?");
-			
 
 			opcion = Leer.datoInt();
 
@@ -109,37 +108,37 @@ public class Ppal {
 						"Bienvenido al Tutorial , aquí podrás aprender las técnicas y habilidades de combate básicos para defenderte en"
 								+ "el campo de batalla.\n");
 
-				System.out.println("Primero de todo , te presento a " + iaName
-						+ ", es algo tímido pero cuando coge confianza, ¡Se vuelve loco! ."
-						+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡Que comience la pelea !.\n\n");
-
-				System.out.println("¿Qué elemento deseas elegir? : ");
+				System.out.println(
+						"En Battle Mages, tus habilidades depende del elemento que elijas, y cada elemento tiene sus propias características.\n"
+								+ "Fuego hace mucho daño a costa de peores habilidades defensivas.\nTierra es justo lo contrario, buena defensa pero un ataque pobre.\n"
+								+ "Hielo está en un punto medio, pero se decanta más por el atque.\nEléctrico tiene menos potencia pero sus habilidades cuestan menos maná,\n"
+								+ "algo parecido le pasa a aire pero de manera más intensa, coste de maná muy bajo y muy poca potencia.\n"
+								+ "Las habilidades venenosas cuestan bastante maná, pero son muy potentes.\nFinalmente agua es el más equilibrado.\n ¿Qué elemento deseas elegir? : ");
 
 				Vista.opcionElementos();
 
-				opcMano = Leer.datoInt() - 1;
+				opcElemento = Leer.datoInt() - 1;
+				
+				System.out.println("Te presento a " + iaName
+						+ ", es algo tímido pero cuando coge confianza, ¡Se vuelve loco! ."
+						+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡Que comience la pelea !.\n\n");
 
 				// Creamos el primer jugador
 
-				p1 = new Personaje(bd.getListaElementos()[opcMano], nickName, saludBase, manaBase, posInicial, false, 0);
+				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial, false, 0);
 
 				// Segundo jugador
 
-				p2 = new Personaje(bd.getListaElementos()[opcMano], iaName, saludBase, manaBase, posInicial, false, 0);
+				p2 = new Personaje(bd.getListaElementos()[opcElemento], iaName, p2SaludBase, p2ManaBase, posInicial, false, 0);
 
 				// Creamos combate
-
-				c1 = new Combate(p1, p2, bd.getBatalla1());
-
-				// Da error porque es tipo String [][].
-
-				CrudCombate.crearCombate(p1, p2, bd, contCombate);
+				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				// Ataque del primer jugador
 
 				do {
 
-					System.out.println("¿Qué habilidad deseas lanzar? :");
+					System.out.println("¿Qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 
 					if (p1.getE().getNombreElemento().equals("Fuego")) {
 						Vista.fuegoHabilidad();
@@ -147,15 +146,12 @@ public class Ppal {
 						opcHabilidad = Leer.datoInt() - 1;
 
 						// Sacar habilidad con la posición de opcHabilidad.
-
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-
 						if (bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 1
 								|| bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 2) {
-							c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesFuego()[opcHabilidad],
+							c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesFuego()[opcHabilidad],
 									bd.getHabilidadesFuego()[1], contCombate);
 						} else if (bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 3) {
-							c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesFuego()[opcHabilidad],
+							c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesFuego()[opcHabilidad],
 									bd.getHabilidadesFuego()[1], contCombate);
 						}
 
@@ -167,7 +163,7 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesAgua()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesAgua()[opcHabilidad],
 								bd.getHabilidadesAgua()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Tierra")) {
@@ -178,7 +174,7 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesTierra()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesTierra()[opcHabilidad],
 								bd.getHabilidadesTierra()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Hielo")) {
@@ -189,7 +185,7 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesHielo()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesHielo()[opcHabilidad],
 								bd.getHabilidadesHielo()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Aire")) {
@@ -200,7 +196,7 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesAire()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesAire()[opcHabilidad],
 								bd.getHabilidadesAire()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Electrico")) {
@@ -211,7 +207,7 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesElec()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesElec()[opcHabilidad],
 								bd.getHabilidadesElec()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Veneno")) {
@@ -222,17 +218,19 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.usarHabilidad(c1, bd.getHabilidadesVen()[opcHabilidad],
+						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesVen()[opcHabilidad],
 								bd.getHabilidadesVen()[0], contCombate);
 
 					}
 
 					CrudCombate.actualizarCombate(c1, contCombate);
 
-					contCombate++;
+					
 
 				} while (p2.isMuerte() == false);
-
+				
+				contCombate++;
+				
 				break;
 
 			case 2:
@@ -253,19 +251,19 @@ public class Ppal {
 					// inicializada a
 					// 0. Provisional.
 					case 1:
-						p2 = new Personaje(bd.getFuego(), "Álvaro", saludBase, manaBase, posInicial, false, 0);
+						p2 = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicial, false, 0);
 						break;
 
 					case 2:
-						p2 = new Personaje(bd.getAgua(), "Antonio", saludBase, manaBase, posInicial, false, 0);
+						p2 = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicial, false, 0);
 						break;
 
 					case 3:
-						p2 = new Personaje(bd.getTierra(), "Alejandro", saludBase, manaBase, posInicial, false, 0);
+						p2 = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicial, false, 0);
 						break;
 
 					case 4:
-						p2 = new Personaje(bd.getHielo(), "Dani", saludBase, manaBase, posInicial, false, 0);
+						p2 = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicial, false, 0);
 						break;
 
 					default:
@@ -280,11 +278,8 @@ public class Ppal {
 
 				} while (p1.isMuerte() == false || p2.isMuerte() == false);
 
-				
-				//Es el break del case 2 (Jugar)
+				// Es el break del case 2 (Jugar)
 				break;
-				
-				
 
 			case 3:
 

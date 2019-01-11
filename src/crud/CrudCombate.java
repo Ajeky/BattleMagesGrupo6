@@ -3,6 +3,7 @@ package crud;
 import model.Combate;
 import model.Personaje;
 import datos.Datos;
+import model.Habilidad;
 
 public class CrudCombate {
 
@@ -74,7 +75,7 @@ public class CrudCombate {
 		return c1;
 	}
 
-	public static Combate actualizarCombate(Combate c, int contCombate) {
+	public static Combate actualizarCombate(Combate c, int contCombate, Habilidad h1, Habilidad h2) {
 
 		// Personaje p1 = new Personaje();
 		// Personaje p2 = new Personaje();
@@ -153,6 +154,8 @@ public class CrudCombate {
 		default:
 			break;
 		}
+		
+		//TODO Hacer que cada jugador recupere 20 de mana
 
 		return c;
 	}

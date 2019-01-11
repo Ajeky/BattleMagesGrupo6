@@ -10,7 +10,68 @@ public class ControllerCombate {
    private static  String Agua = "Agua",Tierra="Tierra",Hielo="Hielo",Aire="Aire",Electrico="Electrico",Veneno="Veneno";
 	// Métodos
 
-	public static Combate usarHabilidad(Combate c1, Habilidad h1, Habilidad h2, int contCombate) {
+   public static int atacarP1(Combate c1, Habilidad h1) {
+	   c1.getP1().setMana(c1.getP1().getMana() - h1.getCosteMana());
+	   return h1.getPotencia();
+   }
+   
+   public static int atacarP2(Combate c1, Habilidad h1) {
+	   c1.getP2().setMana(c1.getP2().getMana() - h1.getCosteMana());
+	   return h1.getPotencia();
+   }
+   
+   public static int defenderP1(Combate c1, Habilidad h1) {
+	   c1.getP1().setMana(c1.getP1().getMana() - h1.getCosteMana());
+	   return h1.getPotencia();
+   }
+   
+   public static int defenderP2(Combate c1, Habilidad h1) {
+	   c1.getP2().setMana(c1.getP2().getMana() - h1.getCosteMana());
+	   return h1.getPotencia();
+   }
+   
+   public static int curarP1(Combate c1, Habilidad h1) {
+	   c1.getP1().setMana(c1.getP1().getMana() - h1.getCosteMana());
+	   c1.getP1().setContCurar(c1.getP1().getContCurar() + 1);
+	   return h1.getPotencia();
+   }
+   
+   
+   //TODO 
+   /*public static Personaje curar(Personaje p1) {
+		
+		if(p1.getE().getNombreElemento().equals(Fuego)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-40);
+		}
+		else if(p1.getE().getNombreElemento().equals(Agua)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-35);
+		}
+		else if(p1.getE().getNombreElemento().equals(Tierra)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-60);
+		}
+		else if(p1.getE().getNombreElemento().equals(Hielo)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-50);
+		}
+		else if(p1.getE().getNombreElemento().equals(Aire)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-10);
+		}
+		else if(p1.getE().getNombreElemento().equals(Electrico)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-35);
+		}
+		else if(p1.getE().getNombreElemento().equals(Veneno)){
+			p1.setSalud(p1.getSalud()+50);
+			p1.setMana(p1.getMana()-40);
+		}
+		p1.setContCurar(p1.getContCurar() + 1);
+		return p1;
+	} */
+	/*public static Combate atacarP1(Combate c1, Habilidad h1, Habilidad h2, int contCombate) {
 
 		int dano = 0;
 
@@ -46,7 +107,7 @@ public class ControllerCombate {
 		}
 
 		return c1;
-	}
+	}*/
 
 	public static Combate moverp1(Combate c1 ,int direccion) {
 
@@ -92,39 +153,7 @@ public class ControllerCombate {
 	
 	
 	
-	public static Personaje curar(Personaje p1) {
-		
-		if(p1.getE().getNombreElemento().equals(Fuego)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-40);
-		}
-		else if(p1.getE().getNombreElemento().equals(Agua)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-35);
-		}
-		else if(p1.getE().getNombreElemento().equals(Tierra)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-60);
-		}
-		else if(p1.getE().getNombreElemento().equals(Hielo)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-50);
-		}
-		else if(p1.getE().getNombreElemento().equals(Aire)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-10);
-		}
-		else if(p1.getE().getNombreElemento().equals(Electrico)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-35);
-		}
-		else if(p1.getE().getNombreElemento().equals(Veneno)){
-			p1.setSalud(p1.getSalud()+50);
-			p1.setMana(p1.getMana()-40);
-		}
-		p1.setContCurar(p1.getContCurar() + 1);
-		return p1;
-	}
+	
 
 	public static void mostrarVidaP1(Combate c1) {
 
@@ -249,6 +278,12 @@ public class ControllerCombate {
 
 			Vista.barraMana10();
 
+		}
+	}
+	
+	public static void comprobarCura(Personaje p1) {
+		if (p1.getContCurar() > 2) {
+			Vista.errorCura();
 		}
 	}
 
