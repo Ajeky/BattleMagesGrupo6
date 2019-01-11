@@ -1,5 +1,6 @@
 package vista;
 
+import model.Combate;
 import model.Habilidad;
 import model.Personaje;
 
@@ -940,5 +941,20 @@ public class Vista {
 		System.out.println("3. Desviación Aérea");
 		System.out.println("4. Viento a Favor");
 	}
+	
+	public static void mostrarMapa(Combate c1) {
+		 for (int x=0; x < c1.getCampoBatalla().length ; x++) 
+		 {
+		    for (int y=0; y < c1.getCampoBatalla()[x].length; y++) 
+		    {
+
+		     System.out.print (c1.getCampoBatalla()[x][y]);
+
+		    }
+		  System.out.println();
+
+		 }
+	}
+
 
 }
