@@ -36,6 +36,12 @@ public class ControllerCombate {
 	   return h1.getPotencia();
    }
    
+   public static int curarP2(Combate c1, Habilidad h1) {
+	   c1.getP2().setMana(c1.getP2().getMana() - h1.getCosteMana());
+	   c1.getP2().setContCurar(c1.getP2().getContCurar() + 1);
+	   return h1.getPotencia();
+   }
+   
    
    //TODO 
    /*public static Personaje curar(Personaje p1) {
@@ -162,27 +168,27 @@ public class ControllerCombate {
 			Vista.personajeMuerto();
 		}
 
-		if (c1.getP1().getSalud() > 80 && c1.getP1().getSalud() <= 100) {
+		if (c1.getP1().getSalud() > 400 && c1.getP1().getSalud() <= 500) {
 
 			Vista.barraVida100();
 
-		} else if (c1.getP1().getSalud() > 60 && c1.getP1().getSalud() <= 80) {
+		} else if (c1.getP1().getSalud() > 300 && c1.getP1().getSalud() <= 400) {
 
 			Vista.barraVida80();
 
-		} else if (c1.getP1().getSalud() > 40 && c1.getP1().getSalud() <= 60) {
+		} else if (c1.getP1().getSalud() > 200 && c1.getP1().getSalud() <= 300) {
 
 			Vista.barraVida60();
 
-		} else if (c1.getP1().getSalud() > 20 && c1.getP1().getSalud() <= 40) {
+		} else if (c1.getP1().getSalud() > 100 && c1.getP1().getSalud() <= 200) {
 
 			Vista.barraVida40();
 
-		} else if (c1.getP1().getSalud() > 10 && c1.getP1().getSalud() <= 20) {
+		} else if (c1.getP1().getSalud() > 50 && c1.getP1().getSalud() <= 100) {
 
 			Vista.barraVida20();
 
-		} else if (c1.getP1().getSalud() > 0 && c1.getP1().getSalud() <= 10) {
+		} else if (c1.getP1().getSalud() > 0 && c1.getP1().getSalud() <= 50) {
 
 			Vista.barraVida10();
 
@@ -225,27 +231,27 @@ public class ControllerCombate {
 
 	public static void mostrarManaP1(Combate c1) {
 
-		if (c1.getP1().getMana() > 80 && c1.getP1().getMana() <= 100) {
+		if (c1.getP1().getMana() > 160 && c1.getP1().getMana() <= 200) {
 
 			Vista.barraMana100();
 
-		} else if (c1.getP1().getMana() > 60 && c1.getP1().getMana() <= 80) {
+		} else if (c1.getP1().getMana() > 120 && c1.getP1().getMana() <= 160) {
 
 			Vista.barraMana80();
 
-		} else if (c1.getP1().getMana() > 40 && c1.getP1().getMana() <= 60) {
+		} else if (c1.getP1().getMana() > 80 && c1.getP1().getMana() <= 120) {
 
 			Vista.barraMana60();
 
-		} else if (c1.getP1().getMana() > 20 && c1.getP1().getMana() <= 40) {
+		} else if (c1.getP1().getMana() > 40 && c1.getP1().getMana() <= 80) {
 
 			Vista.barraMana40();
 
-		} else if (c1.getP1().getMana() > 10 && c1.getP1().getMana() <= 20) {
+		} else if (c1.getP1().getMana() > 20 && c1.getP1().getMana() <= 40) {
 
 			Vista.barraMana20();
 
-		} else if (c1.getP1().getMana() > 0 && c1.getP1().getMana() <= 10) {
+		} else if (c1.getP1().getMana() > 0 && c1.getP1().getMana() <= 20) {
 
 			Vista.barraMana10();
 

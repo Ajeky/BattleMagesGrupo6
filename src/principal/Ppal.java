@@ -8,6 +8,7 @@ import model.Personaje;
 import controller.ControllerCombate;
 import crud.CrudCombate;
 import datos.Datos;
+import model.Habilidad;
 
 //�                                12/12/2018                                                               �
 //�---------------------------------------------------------------------------------------------------------�
@@ -33,10 +34,11 @@ public class Ppal {
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
 		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 100, p2ManaBase = 100, p1SaludBase = 500, p1ManaBase = 200, posInicial = 0,
-				opcHabilidad = 0, uno = 1;
+				opcHabilidad = 0, uno = 1, comprobacion = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
 		Datos bd = new Datos();
+		Habilidad h1 = null, h2 = null;
 
 		System.out.println(
 				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n"
@@ -109,19 +111,22 @@ public class Ppal {
 								+ "el campo de batalla.\n");
 
 				System.out.println(
-						"En Battle Mages, tus habilidades depende del elemento que elijas, y cada elemento tiene sus propias características.\n"
-								+ "Fuego hace mucho daño a costa de peores habilidades defensivas.\nTierra es justo lo contrario, buena defensa pero un ataque pobre.\n"
-								+ "Hielo está en un punto medio, pero se decanta más por el atque.\nEléctrico tiene menos potencia pero sus habilidades cuestan menos maná,\n"
-								+ "algo parecido le pasa a aire pero de manera más intensa, coste de maná muy bajo y muy poca potencia.\n"
-								+ "Las habilidades venenosas cuestan bastante maná, pero son muy potentes.\nFinalmente agua es el más equilibrado.\n ¿Qué elemento deseas elegir? : ");
+						"En Battle Mages, tus habilidades depende del elemento que elijas, y cada elemento tiene sus propias características.\n\n"
+								+ "FUEGO hace mucho daño a costa de peores habilidades defensivas.\nTIERRA es justo lo contrario, buena defensa pero un ataque pobre.\n"
+								+ "HIELO está en un punto medio, pero se decanta más por el atque.\nELÉCTRICO tiene menos potencia pero sus habilidades cuestan menos maná,\n"
+								+ "algo parecido le pasa a AIRE pero de manera más intensa, coste de maná muy bajo y muy poca potencia.\n"
+								+ "Las habilidades de VENENO cuestan bastante maná, pero son muy potentes.\nFinalmente AGUA es el más equilibrado.\n\n ¿Qué elemento deseas elegir? : ");
 
 				Vista.opcionElementos();
 
 				opcElemento = Leer.datoInt() - 1;
 				
+				System.out.println("Bien. Antes de empezar, déjame explicarte como funciona el juego.\nCada elemento tiene 4 habilidades: un ataque normal, un ataque potente, una habilidad defensiva"
+						+ " y la habilidad de curación.");
+				
 				System.out.println("Te presento a " + iaName
-						+ ", es algo tímido pero cuando coge confianza, ¡Se vuelve loco! ."
-						+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡Que comience la pelea !.\n\n");
+						+ ", es algo tímido pero cuando coge confianza, ¡se vuelve loco!\n"
+						+ "Tu primer combate seá contra él, un objetivo sencillo para coger la técnica. ¡Que comience la pelea !\n\n");
 
 				// Creamos el primer jugador
 
@@ -137,6 +142,24 @@ public class Ppal {
 				// Ataque del primer jugador
 
 				do {
+					
+					Vista.mostrarMapa(c1);
+					
+					System.out.println(c1.getP1().getNombre());
+					ControllerCombate.mostrarVidaP1(c1);
+					Vista.mostrarVidaPersonaje(c1.getP1());
+					System.out.println(" ");
+					ControllerCombate.mostrarManaP1(c1);
+					Vista.mostrarManaPersonaje(c1.getP1());
+					System.out.println(" ");
+					
+					System.out.println(c1.getP2().getNombre());
+					ControllerCombate.mostrarVidaP2(c1);
+					Vista.mostrarVidaEnemigo(c1.getP2());
+					System.out.println(" ");
+					ControllerCombate.mostrarManaP2(c1);
+					Vista.mostrarManaEnemigo(c1.getP2());
+					System.out.println(" ");
 
 					System.out.println("¿Qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 
@@ -146,14 +169,7 @@ public class Ppal {
 						opcHabilidad = Leer.datoInt() - 1;
 
 						// Sacar habilidad con la posición de opcHabilidad.
-						if (bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 1
-								|| bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 2) {
-							c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesFuego()[opcHabilidad],
-									bd.getHabilidadesFuego()[1], contCombate);
-						} else if (bd.getHabilidadesFuego()[opcHabilidad].getTipo() == 3) {
-							c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesFuego()[opcHabilidad],
-									bd.getHabilidadesFuego()[1], contCombate);
-						}
+						
 
 					} else if (p1.getE().getNombreElemento().equals("Agua")) {
 						Vista.aguaHabilidad();
@@ -162,9 +178,7 @@ public class Ppal {
 
 						// Sacar habilidad con la posición de opcHabilidad.
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesAgua()[opcHabilidad],
-								bd.getHabilidadesAgua()[0], contCombate);
+						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);						
 
 					} else if (p1.getE().getNombreElemento().equals("Tierra")) {
 						Vista.tierraHabilidad();
@@ -174,8 +188,6 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesTierra()[opcHabilidad],
-								bd.getHabilidadesTierra()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Hielo")) {
 						Vista.hieloHabilidad();
@@ -185,8 +197,6 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesHielo()[opcHabilidad],
-								bd.getHabilidadesHielo()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Aire")) {
 						Vista.aireHabilidad();
@@ -196,8 +206,6 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesAire()[opcHabilidad],
-								bd.getHabilidadesAire()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Electrico")) {
 						Vista.electHabilidad();
@@ -207,8 +215,6 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesElec()[opcHabilidad],
-								bd.getHabilidadesElec()[0], contCombate);
 
 					} else if (p1.getE().getNombreElemento().equals("Veneno")) {
 						Vista.venenoHabilidad();
@@ -218,12 +224,10 @@ public class Ppal {
 						// Sacar habilidad con la posición de opcHabilidad.
 
 						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-						c1 = ControllerCombate.atacarP1(c1, bd.getHabilidadesVen()[opcHabilidad],
-								bd.getHabilidadesVen()[0], contCombate);
 
 					}
 
-					CrudCombate.actualizarCombate(c1, contCombate);
+					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
 
 					
 
