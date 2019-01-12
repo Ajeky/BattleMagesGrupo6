@@ -19,7 +19,7 @@ public class CrudPersonaje {
 		p.setMana(mana - h.getCosteMana());
 		return p;
 	}
-	
+
 	public static Personaje actualizarMuerte(Personaje p) {
 		p.setMuerte(true);
 		return p;

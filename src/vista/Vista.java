@@ -10,25 +10,26 @@ public class Vista {
 	private Personaje personaje1;
 	private Personaje personaje2;
 	private static Datos bd = new Datos();
-	
+
 	public static void tituloJuego() {
-		
-		System.out.println("██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     ███████╗       \r\n" + 
-				"██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     ██╔════╝    ██╗\r\n" + 
-				"██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     █████╗      ╚═╝\r\n" + 
-				"██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     ██╔══╝      ██╗\r\n" + 
-				"██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║  ██║╚██████╔╝   ██║   ██║  ██║███████╗███████╗    ╚═╝\r\n" + 
-				"╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝       \r\n" + 
-				"                                                                                                               \r\n" + 
-				"    ██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ███╗   ███╗ █████╗  ██████╗ ███████╗███████╗         \r\n" + 
-				"    ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ████╗ ████║██╔══██╗██╔════╝ ██╔════╝██╔════╝         \r\n" + 
-				"    ██████╔╝███████║   ██║      ██║   ██║     █████╗      ██╔████╔██║███████║██║  ███╗█████╗  ███████╗         \r\n" + 
-				"    ██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██║╚██╔╝██║██╔══██║██║   ██║██╔══╝  ╚════██║         \r\n" + 
-				"    ██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║ ╚═╝ ██║██║  ██║╚██████╔╝███████╗███████║         \r\n" + 
-				"    ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝         \r\n" + 
-				"                                                                                                               ");
+
+		System.out.println(
+				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     ███████╗       \r\n"
+						+ "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     ██╔════╝    ██╗\r\n"
+						+ "██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     █████╗      ╚═╝\r\n"
+						+ "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     ██╔══╝      ██╗\r\n"
+						+ "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║  ██║╚██████╔╝   ██║   ██║  ██║███████╗███████╗    ╚═╝\r\n"
+						+ "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝       \r\n"
+						+ "                                                                                                               \r\n"
+						+ "    ██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ███╗   ███╗ █████╗  ██████╗ ███████╗███████╗         \r\n"
+						+ "    ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ████╗ ████║██╔══██╗██╔════╝ ██╔════╝██╔════╝         \r\n"
+						+ "    ██████╔╝███████║   ██║      ██║   ██║     █████╗      ██╔████╔██║███████║██║  ███╗█████╗  ███████╗         \r\n"
+						+ "    ██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██║╚██╔╝██║██╔══██║██║   ██║██╔══╝  ╚════██║         \r\n"
+						+ "    ██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║ ╚═╝ ██║██║  ██║╚██████╔╝███████╗███████║         \r\n"
+						+ "    ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝         \r\n"
+						+ "                                                                                                               ");
 	}
-	
+
 	public static void imagenTitulo() {
 		System.out.println("            \\                                           ___/________\r\n"
 				+ "\t       ___   )                    ,  @                    /    \\  \\\r\n"
@@ -60,7 +61,7 @@ public class Vista {
 				+ "██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n"
 				+ "╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
 	}
-	
+
 	public static void tutorial() {
 		System.out.println(
 				"Bienvenido al Tutorial , aquí aprenderás las técnicas y habilidades de combate básicas para defenderte en el campo de batalla.\n\n"
@@ -80,11 +81,26 @@ public class Vista {
 						+ "No harás nada ese turno a cambio de recuperar 30 puntos de maná extra (además de los 20 que recuperas al principio de cada turno).\n"
 						+ "Empezarás con 500 puntos de vida frente a los 100 de tus oponentes. Esto es para compensar el hecho de que tendrás que ganar 4 batallas"
 						+ " seguidas para completar el juego. \nEl mapa se irá haciendo más pequeño a medida que avancen los combates, como en cualquier Battle"
-						+ " Royale que se precie."
-						+ " \n\n"
-						+ "Te presento al " + p1.getNombre()
+						+ " Royale que se precie." + " \n\n" + "Te presento al " + p1.getNombre()
 						+ ". Es algo tímido, pero cuando coge confianza, ¡se vuelve loco!\n"
 						+ "Tu primer combate será contra él. Un objetivo sencillo para coger la técnica. Introduce cualquier número cuando estés preparado.\n\n");
+	}
+	
+	public static void finTutorial() {
+		System.out.println("¡Muy bien hecho! Con eso debería ser suficiente para que puedas defenderte en el campo de batalla por ti mismo. \n"
+				+ "Introduce cualquier número cuando estés listo.");
+	}
+
+	public static void presentacion() {
+		System.out.println(
+				"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
+						+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]"
+						+ "¿A por qué enemigo deseas ir primero?" + "1. Álvaro (Fuego)" + "2. Antonio (Agua)"
+						+ "3. Alejandro (Tierra)" + "4. Dani (Aire)");
+	}
+	
+	public static void opcionesCombate(Personaje p) {
+		System.out.println(p.getNombre() + ", ¿qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 	}
 
 	public String mostrarNombreHabilidades() {
@@ -122,7 +138,7 @@ public class Vista {
 
 		System.out.println("¡No tienes suficiente maná! Usa las habilidades con cabeza.");
 	}
-	
+
 	public static void direccion() {
 		System.out.println("¿En qué dirección? \n0. Izquierda \n1. Derecha");
 	}
@@ -779,58 +795,86 @@ public class Vista {
 
 	public static void fuegoHabilidad() {
 
-		System.out.println("1. Bola de fuego. Daño:" + bd.getHabilidadesFuego()[0].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[0].getCosteMana());
-		System.out.println("2. Fogonazo. Daño:" + bd.getHabilidadesFuego()[1].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[1].getCosteMana());
-		System.out.println("3. Barrera Napalm. Potencia:" + bd.getHabilidadesFuego()[2].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[2].getCosteMana());
-		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesFuego()[3].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[3].getCosteMana());
+		System.out.println("1. Bola de fuego. Daño:" + bd.getHabilidadesFuego()[0].getPotencia() + " Maná:"
+				+ bd.getHabilidadesFuego()[0].getCosteMana());
+		System.out.println("2. Fogonazo. Daño:" + bd.getHabilidadesFuego()[1].getPotencia() + " Maná:"
+				+ bd.getHabilidadesFuego()[1].getCosteMana());
+		System.out.println("3. Barrera Napalm. Potencia:" + bd.getHabilidadesFuego()[2].getPotencia() + " Maná:"
+				+ bd.getHabilidadesFuego()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesFuego()[3].getPotencia() + " Maná:"
+				+ bd.getHabilidadesFuego()[3].getCosteMana());
 	}
 
 	public static void tierraHabilidad() {
 
-		System.out.println("1. Roca afilada. Daño:" + bd.getHabilidadesTierra()[0].getPotencia() + "Maná:" + bd.getHabilidadesTierra()[0].getCosteMana());
-		System.out.println("2. Avalancha. Daño:" + bd.getHabilidadesTierra()[1].getPotencia() + "Maná:" + bd.getHabilidadesTierra()[1].getCosteMana());
-		System.out.println("3. Muro sísmico. Daño:" +  bd.getHabilidadesTierra()[2].getPotencia() + "Maná:" + bd.getHabilidadesTierra()[2].getCosteMana());
-		System.out.println("4. Curar. Daño:" +  bd.getHabilidadesTierra()[3].getPotencia() + "Maná:" + bd.getHabilidadesTierra()[3].getCosteMana());
+		System.out.println("1. Roca afilada. Daño:" + bd.getHabilidadesTierra()[0].getPotencia() + "Maná:"
+				+ bd.getHabilidadesTierra()[0].getCosteMana());
+		System.out.println("2. Avalancha. Daño:" + bd.getHabilidadesTierra()[1].getPotencia() + "Maná:"
+				+ bd.getHabilidadesTierra()[1].getCosteMana());
+		System.out.println("3. Muro sísmico. Potencia:" + bd.getHabilidadesTierra()[2].getPotencia() + "Maná:"
+				+ bd.getHabilidadesTierra()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesTierra()[3].getPotencia() + "Maná:"
+				+ bd.getHabilidadesTierra()[3].getCosteMana());
 	}
 
 	public static void hieloHabilidad() {
 
-		System.out.println("1. Escarcha selecta Daño:" + bd.getHabilidadesHielo()[0].getPotencia() + "Maná" + bd.getHabilidadesHielo()[0].getCosteMana());
-		System.out.println("2. Cero absoluto Daño:" + bd.getHabilidadesHielo()[1].getPotencia() + "Maná" + bd.getHabilidadesHielo()[1].getCosteMana());
-		System.out.println("3. Iceberg Daño:" + bd.getHabilidadesHielo()[2].getPotencia() + "Maná" + bd.getHabilidadesHielo()[2].getCosteMana());
-		System.out.println("4. Curar Daño" + bd.getHabilidadesHielo()[3].getPotencia() + "Maná" + bd.getHabilidadesHielo()[3].getCosteMana());
+		System.out.println("1. Escarcha selecta. Daño:" + bd.getHabilidadesHielo()[0].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[0].getCosteMana());
+		System.out.println("2. Cero absoluto. Daño:" + bd.getHabilidadesHielo()[1].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[1].getCosteMana());
+		System.out.println("3. Iceberg. Potencia:" + bd.getHabilidadesHielo()[2].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia" + bd.getHabilidadesHielo()[3].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[3].getCosteMana());
 	}
 
 	public static void electHabilidad() {
 
-		System.out.println("1. Sobrecarga Daño:" + bd.getHabilidadesElec()[0].getPotencia() + "Maná" + bd.getHabilidadesHielo()[0].getCosteMana());
-		System.out.println("2. Tormenta Eléctrica Daño:" + bd.getHabilidadesElec()[1].getPotencia() + "Maná" + bd.getHabilidadesHielo()[1].getCosteMana() );
-		System.out.println("3. Muralla Volátil Daño:" + bd.getHabilidadesElec()[2].getPotencia() + "Maná" + bd.getHabilidadesHielo()[2].getCosteMana());
-		System.out.println("4. Curar Daño:" + bd.getHabilidadesElec()[3].getPotencia() + "Maná" + bd.getHabilidadesHielo()[3].getCosteMana());
+		System.out.println("1. Sobrecarga. Daño:" + bd.getHabilidadesElec()[0].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[0].getCosteMana());
+		System.out.println("2. Tormenta Eléctrica. Daño:" + bd.getHabilidadesElec()[1].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[1].getCosteMana());
+		System.out.println("3. Muralla Volátil. Potencia:" + bd.getHabilidadesElec()[2].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesElec()[3].getPotencia() + "Maná"
+				+ bd.getHabilidadesHielo()[3].getCosteMana());
 	}
 
 	public static void venenoHabilidad() {
 
-		System.out.println("1. Dardo Envenenado Daño:" + bd.getHabilidadesVen()[0].getPotencia() + "Maná" + bd.getHabilidadesVen()[0].getCosteMana());
-		System.out.println("2. Intoxicación Daño:" + bd.getHabilidadesVen()[1].getPotencia() + "Maná" + bd.getHabilidadesVen()[1].getCosteMana());
-		System.out.println("3. Trampa de Agujas Daño:" + bd.getHabilidadesVen()[2].getPotencia() + "Maná" + bd.getHabilidadesVen()[2].getCosteMana());
-		System.out.println("4. Curar Daño:" + bd.getHabilidadesVen()[3].getPotencia() + "Maná" + bd.getHabilidadesVen()[3].getCosteMana());
+		System.out.println("1. Dardo Envenenado. Daño:" + bd.getHabilidadesVen()[0].getPotencia() + "Maná"
+				+ bd.getHabilidadesVen()[0].getCosteMana());
+		System.out.println("2. Intoxicación. Daño:" + bd.getHabilidadesVen()[1].getPotencia() + "Maná"
+				+ bd.getHabilidadesVen()[1].getCosteMana());
+		System.out.println("3. Trampa de Agujas. Potencia:" + bd.getHabilidadesVen()[2].getPotencia() + "Maná"
+				+ bd.getHabilidadesVen()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesVen()[3].getPotencia() + "Maná"
+				+ bd.getHabilidadesVen()[3].getCosteMana());
 	}
 
 	public static void aguaHabilidad() {
 
-		System.out.println("1. Rayo Burbuja Daño:" + bd.getHabilidadesAgua()[0].getPotencia() + "Maná" + bd.getHabilidadesAgua()[0].getCosteMana());
-		System.out.println("2. Maremoto Daño:" + bd.getHabilidadesAgua()[1].getPotencia() + "Maná" + bd.getHabilidadesAgua()[1].getCosteMana());
-		System.out.println("3. Torrente Cascada Daño:" + bd.getHabilidadesAgua()[2].getPotencia() + "Maná" + bd.getHabilidadesAgua()[2].getCosteMana());
-		System.out.println("4. Curar Daño:" + bd.getHabilidadesAgua()[3].getPotencia() + "Maná" + bd.getHabilidadesAgua()[3].getCosteMana());
+		System.out.println("1. Rayo. Burbuja Daño:" + bd.getHabilidadesAgua()[0].getPotencia() + "Maná"
+				+ bd.getHabilidadesAgua()[0].getCosteMana());
+		System.out.println("2. Maremoto. Daño:" + bd.getHabilidadesAgua()[1].getPotencia() + "Maná"
+				+ bd.getHabilidadesAgua()[1].getCosteMana());
+		System.out.println("3. Torrente Cascada. Potencia:" + bd.getHabilidadesAgua()[2].getPotencia() + "Maná"
+				+ bd.getHabilidadesAgua()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesAgua()[3].getPotencia() + "Maná"
+				+ bd.getHabilidadesAgua()[3].getCosteMana());
 	}
 
 	public static void aireHabilidad() {
 
-		System.out.println("1. Viento Cortante Daño:" + bd.getHabilidadesAire()[0].getPotencia() + "Maná" + bd.getHabilidadesAire()[0].getCosteMana());
-		System.out.println("2. Huracán Daño:" + bd.getHabilidadesAire()[1].getPotencia() + "Maná" + bd.getHabilidadesAire()[1].getCosteMana());
-		System.out.println("3. Desviación Aérea Daño:" + bd.getHabilidadesAire()[2].getPotencia() + "Maná" + bd.getHabilidadesAire()[2].getCosteMana());
-		System.out.println("4. Curar Daño:" + bd.getHabilidadesAire()[3].getPotencia() + "Maná" + bd.getHabilidadesAire()[3].getCosteMana());
+		System.out.println("1. Viento Cortante. Daño:" + bd.getHabilidadesAire()[0].getPotencia() + "Maná"
+				+ bd.getHabilidadesAire()[0].getCosteMana());
+		System.out.println("2. Huracán. Daño:" + bd.getHabilidadesAire()[1].getPotencia() + "Maná"
+				+ bd.getHabilidadesAire()[1].getCosteMana());
+		System.out.println("3. Desviación Aérea. Potencia:" + bd.getHabilidadesAire()[2].getPotencia() + "Maná"
+				+ bd.getHabilidadesAire()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesAire()[3].getPotencia() + "Maná"
+				+ bd.getHabilidadesAire()[3].getCosteMana());
 	}
 
 	public static void mostrarMapa(Combate c1) {

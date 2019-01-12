@@ -14,7 +14,7 @@ public class Combate {
 		this.p2 = p2;
 		this.campoBatalla = campoBatalla;
 	}
-	
+
 	public Combate() {
 		super();
 	}
