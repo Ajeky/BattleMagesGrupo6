@@ -122,14 +122,16 @@ public class ControllerCombate {
 				c1.getP1().setPosicion(c1.getP1().getPosicion()+1);
 			}
 			else {
-				//vista no se puede realizar esa orden
+				Vista.movimientoPers();
 			}
 		}
 		else if(direccion==0){
 			if(c1.getP1().getPosicion()>1) {
 				c1.getP1().setPosicion(c1.getP1().getPosicion()-1);
+			}else{
+				Vista.movimientoPers();
 			}
-
+			
 		}
 
 		return c1;
@@ -142,7 +144,7 @@ public class ControllerCombate {
 				c1.getP2().setPosicion(c1.getP2().getPosicion()+1);
 			}
 			else {
-				//vista no se puede realizar esa orden
+				Vista.movimientoPers();
 			}
 		}
 		
@@ -151,8 +153,8 @@ public class ControllerCombate {
 				c1.getP1().setPosicion(c1.getP1().getPosicion()-1);
 			}
 		}
-		else {
-			//vista error
+			else {
+			Vista.movimientoPers();
 		}
 		
 		return c1;
