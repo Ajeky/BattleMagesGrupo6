@@ -85,22 +85,27 @@ public class Vista {
 						+ ". Es algo tímido, pero cuando coge confianza, ¡se vuelve loco!\n"
 						+ "Tu primer combate será contra él. Un objetivo sencillo para coger la técnica. Introduce cualquier número cuando estés preparado.\n\n");
 	}
-	
+
 	public static void finTutorial() {
-		System.out.println("¡Muy bien hecho! Con eso debería ser suficiente para que puedas defenderte en el campo de batalla por ti mismo. \n"
-				+ "Introduce cualquier número cuando estés listo.");
+		System.out.println(
+				"¡Muy bien hecho! Con eso debería ser suficiente para que puedas defenderte en el campo de batalla por ti mismo. \n"
+						+ "Introduce cualquier número cuando estés listo.");
 	}
 
 	public static void presentacion() {
 		System.out.println(
 				"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
 						+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]"
-						+ "¿A por qué enemigo deseas ir primero?" + "1. Álvaro (Fuego)" + "2. Antonio (Agua)"
-						+ "3. Alejandro (Tierra)" + "4. Dani (Aire)");
+						+ "¿A por qué enemigo deseas ir primero? \n" + "1. Álvaro (Fuego) \n" + "2. Antonio (Agua) \n"
+						+ "3. Alejandro (Tierra) \n" + "4. Dani (Aire) \n");
 	}
-	
+
 	public static void opcionesCombate(Personaje p) {
 		System.out.println(p.getNombre() + ", ¿qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
+	}
+
+	public static void despedida(String n) {
+		System.out.println("Gracias por utilizar nuestra app " + n + " hasta luego.\n");
 	}
 
 	public String mostrarNombreHabilidades() {
@@ -146,6 +151,14 @@ public class Vista {
 	public static void personajeMuerto() {
 
 		System.out.println("¡Has muerto!");
+	}
+
+	public static void numero1al3() {
+		System.out.println("Selecciona un número del 1 al 3 por favor");
+	}
+
+	public static void numero1al4() {
+		System.out.println("Por favor introduce un número del 1 al 4");
 	}
 
 	public static void barraVida100() {
@@ -208,10 +221,6 @@ public class Vista {
 	public static void barraMana10() {
 
 		System.out.println("Maná █████");
-	}
-
-	public static void numero1al3() {
-		System.out.println("Selecciona un número del 1 al 3 por favor");
 	}
 
 	public static void bolaFuego() {
