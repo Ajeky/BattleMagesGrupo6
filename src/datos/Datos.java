@@ -199,27 +199,28 @@ public class Datos {
 					"******", "******", "******", "******", "******", "******", "******", "******", "******", "******",
 					"******", "******", "******", "******", "***   " } };
 
-	private static Habilidad[] HabilidadesFuego = { new Habilidad("Bola de Fuego", 40, 20, 1),
-			new Habilidad("Fogonazo", 100, 50, 2), new Habilidad("Barrera napalm", 60, 20, 3),
-			new Habilidad("Curar", 50, 40, 4) };
-	private static Habilidad[] HabilidadesTierra = { new Habilidad("Roca afilada", 30, 15, 1),
-			new Habilidad("Avalancha", 100, 80, 2), new Habilidad("Muro Sísmico", 100, 25, 3),
-			new Habilidad("Curar", 50, 60, 4) };
-	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 60, 25, 1),
-			new Habilidad("Cero Absoluto", 80, 45, 2), new Habilidad("Iceberg", 75, 25, 3),
-			new Habilidad("Curar", 50, 50, 4) };
-	private static Habilidad[] HabilidadesElec = { new Habilidad("Sobrecarga", 20, 5, 1),
-			new Habilidad("Tormenta Eléctrica", 50, 30, 2), new Habilidad("Muralla Volátil", 40, 10, 3),
-			new Habilidad("Curar", 50, 35, 4) };
-	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 50, 25, 1),
-			new Habilidad("Intoxicación", 120, 65, 2), new Habilidad("Trampa de Agujas", 30, 5, 3),
-			new Habilidad("Curar", 50, 40, 4) };
-	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 25, 10, 1),
-			new Habilidad("Maremoto", 110, 60, 2), new Habilidad("Torrente Cascada", 70, 20, 3),
-			new Habilidad("Curar", 50, 35, 4) };
-	private static Habilidad[] HabilidadesAire = { new Habilidad("Viento Cortante", 15, 5, 1),
-			new Habilidad("Huracán", 100, 55, 2), new Habilidad("Desviación Aérea", 35, 5, 3),
-			new Habilidad("Curar", 50, 10, 4) };
+	private static Habilidad[] HabilidadesFuego = { new Habilidad("Bola de Fuego", 25, 20, 1),
+			new Habilidad("Fogonazo", 60, 50, 2), new Habilidad("Barrera napalm", 40, 20, 3),
+			new Habilidad("Curar", 30, 40, 4)};
+	private static Habilidad[] HabilidadesTierra = { new Habilidad("Roca afilada", 17, 15, 1),
+			new Habilidad("Avalancha", 60, 80, 2), new Habilidad("Muro Sísmico", 60, 25, 3),
+			new Habilidad("Curar", 30, 60, 4)};
+	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 35, 25, 1),
+			new Habilidad("Cero Absoluto", 45, 45, 2), new Habilidad("Iceberg", 40, 25, 3),
+			new Habilidad("Curar", 30, 50, 4)};
+	private static Habilidad[] HabilidadesElec = { new Habilidad("Sobrecarga", 13, 5, 1),
+			new Habilidad("Tormenta Eléctrica", 30, 30, 2), new Habilidad("Muralla Volátil", 25, 10, 3),
+			new Habilidad("Curar", 30, 35, 4)};
+	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 30, 25, 1),
+			new Habilidad("Intoxicación", 67, 65, 2), new Habilidad("Trampa de Agujas", 17, 5, 3),
+			new Habilidad("Curar", 30, 40, 4)};
+	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 15, 10, 1),
+			new Habilidad("Maremoto", 63, 60, 2), new Habilidad("Torrente Cascada", 37, 20, 3),
+			new Habilidad("Curar", 30, 35, 4)};
+	private static Habilidad[] HabilidadesAire = { new Habilidad("Viento Cortante", 13, 5, 1),
+			new Habilidad("Huracán", 55, 55, 2), new Habilidad("Desviación Aérea", 23, 5, 3),
+			new Habilidad("Curar", 30, 10, 4)};
+	private static Habilidad[] HabilidadesComunes = { new Habilidad("MoverseIzquierda", 0, 0, 5), new Habilidad("MoverseDerecha", 1, 0, 5), new Habilidad ("Descansar", 50, 0, 6) };
 
 	private static Elemento Fuego = new Elemento(HabilidadesFuego, "Fuego");
 	private static Elemento Agua = new Elemento(HabilidadesAgua, "Agua");
@@ -306,6 +307,14 @@ public class Datos {
 
 	public void setHabilidadesAire(Habilidad[] habilidadesAire) {
 		HabilidadesAire = habilidadesAire;
+	}		
+
+	public Habilidad[] getHabilidadesComunes() {
+		return HabilidadesComunes;
+	}
+
+	public void setHabilidadesComunes(Habilidad[] habilidadesComunes) {
+		HabilidadesComunes = habilidadesComunes;
 	}
 
 	public Elemento getFuego() {

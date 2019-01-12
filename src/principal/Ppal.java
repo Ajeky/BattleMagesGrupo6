@@ -31,10 +31,10 @@ public class Ppal {
 
 	public static void main(String[] args) {
 
-		String nombre, nickName, iaName = "BOT Francisco";
+		String nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 100, p2ManaBase = 100, p1SaludBase = 500, p1ManaBase = 100, posInicial = 0,
-				opcHabilidad = 0, uno = 1, comprobacion = 0;
+		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 200, p2ManaBase = 200, p1SaludBase = 800, p1ManaBase = 100, posInicial = 0,
+				opcHabilidad = 0, uno = 1, comprobacion = 0, p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
 		Datos bd = new Datos();
@@ -84,7 +84,7 @@ public class Ppal {
 
 				// Segundo jugador
 
-				p2 = new Personaje(bd.getListaElementos()[opcElemento], iaName, p2SaludBase, p2ManaBase, posInicial, false, 0);
+				p2 = new Personaje(bd.getListaElementos()[0], iaName, p2SaludBase, p2ManaBase, posInicial, false, 0);
 				
 				//Explicación combate y presentación del Bot Francisco
 				Vista.tutorial2(p2);
@@ -116,7 +116,8 @@ public class Ppal {
 					Vista.mostrarManaEnemigo(c1.getP2());
 					System.out.println(" ");
 
-					
+					do {
+					comprobacion = 0;
 					System.out.println("¿Qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 					
 					opcion = Leer.datoInt();
@@ -131,6 +132,15 @@ public class Ppal {
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesFuego()[opcHabilidad];
 							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
+							
 
 						} else if (p1.getE().getNombreElemento().equals("Agua")) {
 							Vista.aguaHabilidad();
@@ -138,6 +148,15 @@ public class Ppal {
 							opcHabilidad = Leer.datoInt() - 1;
 							// Sacar habilidad con la posición de opcHabilidad.				
 							h1 = bd.getHabilidadesAgua()[opcHabilidad];
+							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
 
 						} else if (p1.getE().getNombreElemento().equals("Tierra")) {
 							Vista.tierraHabilidad();
@@ -145,6 +164,15 @@ public class Ppal {
 							opcHabilidad = Leer.datoInt() - 1;
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesTierra()[opcHabilidad];
+							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
 
 						} else if (p1.getE().getNombreElemento().equals("Hielo")) {
 							Vista.hieloHabilidad();
@@ -152,6 +180,15 @@ public class Ppal {
 							opcHabilidad = Leer.datoInt() - 1;
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesHielo()[opcHabilidad];
+							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
 
 						} else if (p1.getE().getNombreElemento().equals("Aire")) {
 							Vista.aireHabilidad();
@@ -159,6 +196,15 @@ public class Ppal {
 							opcHabilidad = Leer.datoInt() - 1;
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesAire()[opcHabilidad];
+							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
 
 						} else if (p1.getE().getNombreElemento().equals("Electrico")) {
 							Vista.electHabilidad();
@@ -167,29 +213,74 @@ public class Ppal {
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesElec()[opcHabilidad];
 							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
+							
 						} else if (p1.getE().getNombreElemento().equals("Veneno")) {
 							Vista.venenoHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
 							// Sacar habilidad con la posición de opcHabilidad.
 							h1 = bd.getHabilidadesVen()[opcHabilidad];
+							
+							if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+								Vista.errorCura();
+								comprobacion = 1;
+							}
+							if (h1.getCosteMana() > p1.getMana()) {
+								Vista.errorMana();
+								comprobacion = 1;
+							}
 
 						}
 						
 						break;
+						
+					case 2:
+						Vista.direccion();
+						opcion = Leer.datoInt();
+						if (opcion == 0) {
+							h1 = bd.getHabilidadesComunes()[0];
+						} else if (opcion == 1) {
+							h1 = bd.getHabilidadesComunes()[1];
+						}
+						//TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a Antonio
+						break;
+						
+					case 3:
+						h1 = bd.getHabilidadesComunes()[2];
+						break;
 
 					default:
+						Vista.numero1al3();
 						break;
 					}
+					}while(comprobacion == 1);
 
+					h2 = bd.getHabilidadesFuego()[0];
+
+					c1 = CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
+					
+					if(p1.getSalud() <= 0) {
+						p1 = CrudPersonaje.actualizarMuerte(c1.getP1());
+					}
+					
+					if(p2.getSalud() <= 0) {
+						p2 = CrudPersonaje.actualizarMuerte(c1.getP2());
+					}
+					
 					
 
-					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
-
-					
-
-				} while (p2.isMuerte() == false);
+				} while (p2.isMuerte() == false && p1.isMuerte() == false);
 				
+				p1.setContCurar(0);
+				p2.setContCurar(0);
 				contCombate++;
 				
 				break;
