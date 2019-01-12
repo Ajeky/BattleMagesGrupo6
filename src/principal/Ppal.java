@@ -116,6 +116,7 @@ public class Ppal {
 					Vista.mostrarManaEnemigo(c1.getP2());
 					System.out.println(" ");
 
+					
 					System.out.println("¿Qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 					
 					opcion = Leer.datoInt();
@@ -127,51 +128,51 @@ public class Ppal {
 							Vista.fuegoHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesFuego()[opcHabilidad];
 							
 
 						} else if (p1.getE().getNombreElemento().equals("Agua")) {
 							Vista.aguaHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.				
+							h1 = bd.getHabilidadesAgua()[opcHabilidad];
 
 						} else if (p1.getE().getNombreElemento().equals("Tierra")) {
 							Vista.tierraHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesTierra()[opcHabilidad];
 
 						} else if (p1.getE().getNombreElemento().equals("Hielo")) {
 							Vista.hieloHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesHielo()[opcHabilidad];
 
 						} else if (p1.getE().getNombreElemento().equals("Aire")) {
 							Vista.aireHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesAire()[opcHabilidad];
 
 						} else if (p1.getE().getNombreElemento().equals("Electrico")) {
 							Vista.electHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesElec()[opcHabilidad];
 							
 						} else if (p1.getE().getNombreElemento().equals("Veneno")) {
 							Vista.venenoHabilidad();
 
 							opcHabilidad = Leer.datoInt() - 1;
-
 							// Sacar habilidad con la posición de opcHabilidad.
+							h1 = bd.getHabilidadesVen()[opcHabilidad];
 
 						}
 						

@@ -3,11 +3,13 @@ package vista;
 import model.Combate;
 import model.Habilidad;
 import model.Personaje;
+import datos.Datos;
 
 public class Vista {
 	private Habilidad habilidad1;
 	private Personaje personaje1;
 	private Personaje personaje2;
+	private static Datos bd = new Datos();
 	
 	public static void tituloJuego() {
 		
@@ -773,10 +775,10 @@ public class Vista {
 
 	public static void fuegoHabilidad() {
 
-		System.out.println("1. Bola de fuego");
-		System.out.println("2. Fogonazo");
-		System.out.println("3. Barrera Napalm");
-		System.out.println("4. Propulsión Ígnea");
+		System.out.println("1. Bola de fuego. Daño:" + bd.getHabilidadesFuego()[0].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[0].getCosteMana());
+		System.out.println("2. Fogonazo. Daño:" + bd.getHabilidadesFuego()[1].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[1].getCosteMana());
+		System.out.println("3. Barrera Napalm. Potencia:" + bd.getHabilidadesFuego()[2].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[2].getCosteMana());
+		System.out.println("4. Curar. Potencia:" + bd.getHabilidadesFuego()[3].getPotencia() + " Maná:" + bd.getHabilidadesFuego()[3].getCosteMana());
 	}
 
 	public static void tierraHabilidad() {
@@ -784,7 +786,7 @@ public class Vista {
 		System.out.println("1. Roca afilada");
 		System.out.println("2. Avalancha");
 		System.out.println("3. Muro sísmico");
-		System.out.println("4. Desprendimiento Forzoso");
+		System.out.println("4. Curar");
 	}
 
 	public static void hieloHabilidad() {
@@ -792,7 +794,7 @@ public class Vista {
 		System.out.println("1. Escarcha selecta");
 		System.out.println("2. Cero absoluto");
 		System.out.println("3. Iceberg");
-		System.out.println("4. Deslizamiento Nevado");
+		System.out.println("4. Curar");
 	}
 
 	public static void electHabilidad() {
@@ -800,7 +802,7 @@ public class Vista {
 		System.out.println("1. Sobrecarga");
 		System.out.println("2. Tormenta Eléctrica");
 		System.out.println("3. Muralla Volátil");
-		System.out.println("4. Desplazamiento Estático");
+		System.out.println("4. Curar");
 	}
 
 	public static void venenoHabilidad() {
@@ -808,7 +810,7 @@ public class Vista {
 		System.out.println("1. Dardo Envenenado");
 		System.out.println("2. Intoxicación");
 		System.out.println("3. Trampa de Agujas");
-		System.out.println("4. Bomba de Humo");
+		System.out.println("4. Curar");
 	}
 
 	public static void aguaHabilidad() {
@@ -816,7 +818,7 @@ public class Vista {
 		System.out.println("1. Rayo Burbuja");
 		System.out.println("2. Maremoto");
 		System.out.println("3. Torrente Cascada");
-		System.out.println("4. Escape Resbaloso");
+		System.out.println("4. Curar");
 	}
 
 	public static void aireHabilidad() {
@@ -824,7 +826,7 @@ public class Vista {
 		System.out.println("1. Viento Cortante");
 		System.out.println("2. Huracán");
 		System.out.println("3. Desviación Aérea");
-		System.out.println("4. Viento a Favor");
+		System.out.println("4. Curar");
 	}
 
 	public static void mostrarMapa(Combate c1) {

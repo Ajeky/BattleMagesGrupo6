@@ -134,6 +134,7 @@ public class ControllerCombate {
 
 		return c1;
 	}
+	
 	public static Combate moverp2(Combate c1 ,int direccion) {
 		
 		if(direccion ==0) {
