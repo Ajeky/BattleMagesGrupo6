@@ -26,6 +26,15 @@ public class Vista {
 				"    ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝         \r\n" + 
 				"                                                                                                               ");
 	}
+	
+	public static void imagenTitulo() {
+		System.out.println("            \\                                           ___/________\r\n"
+				+ "\t       ___   )                    ,  @                    /    \\  \\\r\n"
+				+ "\t    @___, \\ /                  @__\\  /\\              @___/      \\@/\r\n"
+				+ "\t   /\\__,   |                  /\\_, \\/ /             /\\__/        |\r\n"
+				+ "\t  / \\    / @\\                / \\   (               / \\ /        / \\\r\n"
+				+ "\t_/__|___/___/_______________/__|____\\_____________/__/__________|__\\__\n\n");
+	}
 
 	public static void menuPrincipal() {
 		System.out.println(" ██╗       ████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗ █████╗ ██╗     \r\n"
@@ -55,8 +64,8 @@ public class Vista {
 				"Bienvenido al Tutorial , aquí aprenderás las técnicas y habilidades de combate básicas para defenderte en el campo de batalla.\n\n"
 						+ "En Battle Mages, tus habilidades depende del elemento que elijas, y cada elemento tiene sus propias características.\n\n"
 						+ "FUEGO hace mucho daño a costa de peores habilidades defensivas.\nTIERRA es justo lo contrario, buena defensa pero un ataque pobre.\n"
-						+ "HIELO está en un punto medio, pero se decanta más por el atque.\nELÉCTRICO tiene menos potencia pero sus habilidades cuestan menos maná,\n"
-						+ "algo parecido le pasa a AIRE pero de manera más intensa, coste de maná muy bajo y muy poca potencia.\n"
+						+ "HIELO está en un punto medio, pero se decanta más por el atque.\nELÉCTRICO tiene menos potencia pero sus habilidades cuestan menos maná.\n"
+						+ "A AIRE le pasa algo parecido pero de manera más intensa; coste de maná muy bajo y muy poca potencia.\n"
 						+ "Las habilidades de VENENO cuestan bastante maná, pero son muy potentes.\nFinalmente AGUA es el más equilibrado.\n\n ¿Qué elemento deseas elegir? : ");
 	}
 
@@ -65,11 +74,15 @@ public class Vista {
 				"Bien. Antes de empezar, déjame explicarte como funciona el combate.\nCada elemento tiene 4 habilidades: un ataque normal, un ataque potente, una habilidad defensiva"
 						+ " y la habilidad de curación. Todas ellas cuestan maná, y tan solo puedes usar la curación dos veces por combate. \n"
 						+ "Aparte de las habilidades tienes otras dos opciones: moverte y descansar. Moverte te sirve para acercarte o alejarte de tu enemigo. "
-						+ "Cuanto más cerca estés más daño le harás, pero también él a ti, así que ten cuidado. \n"
+						+ "Cuanto más cerca estés más daño le harás, pero también él a ti, así que ten cuidado. \nDescansar sirve para cuando te quedas sin maná."
+						+ "No harás nada ese turno a cambio de recuperar 30 puntos de maná extra (además de los 20 que recuperas al principio de cada turno).\n"
+						+ "Empezarás con 500 puntos de vida frente a los 100 de tus oponentes. Esto es para compensar el hecho de que tendrás que ganar 4 batallas"
+						+ " seguidas para completar el juego. El mapa se irá haciendo más pequeño a medida que avancen los combates, como en cualquier Battle"
+						+ " Royale que se precie."
 						+ " \n\n"
 						+ "Te presento a " + p1.getNombre()
 						+ ". Es algo tímido, pero cuando coge confianza, ¡se vuelve loco!\n"
-						+ "Tu primer combate será contra él. Un objetivo sencillo para coger la técnica. ¡Que comience la pelea!\n\n");
+						+ "Tu primer combate será contra él. Un objetivo sencillo para coger la técnica. Pulsa cualquier tecla cuando estés preparado.\n\n");
 	}
 
 	public String mostrarNombreHabilidades() {

@@ -33,34 +33,16 @@ public class Ppal {
 
 		String nombre, nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
-		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 100, p2ManaBase = 100, p1SaludBase = 500, p1ManaBase = 200, posInicial = 0,
+		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 100, p2ManaBase = 100, p1SaludBase = 500, p1ManaBase = 100, posInicial = 0,
 				opcHabilidad = 0, uno = 1, comprobacion = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null;
 		Datos bd = new Datos();
 		Habilidad h1 = null, h2 = null;
 
-		System.out.println(
-				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     \r\n"
-						+ "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     \r\n"
-						+ "██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     \r\n"
-						+ "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     \r\n"
-						+ "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ██║  ██║╚██████╔╝   ██║   ██║  ██║███████╗\r\n"
-						+ "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝\r\n"
-						+ "                                                                                                \r\n"
-						+ "    ███████╗██████╗ ███████╗██╗     ██╗         ██████╗ ██████╗ ███████╗ █████╗ ██╗  ██╗        \r\n"
-						+ "    ██╔════╝██╔══██╗██╔════╝██║     ██║         ██╔══██╗██╔══██╗██╔════╝██╔══██╗██║ ██╔╝        \r\n"
-						+ "    ███████╗██████╔╝█████╗  ██║     ██║         ██████╔╝██████╔╝█████╗  ███████║█████╔╝         \r\n"
-						+ "    ╚════██║██╔═══╝ ██╔══╝  ██║     ██║         ██╔══██╗██╔══██╗██╔══╝  ██╔══██║██╔═██╗         \r\n"
-						+ "    ███████║██║     ███████╗███████╗███████╗    ██████╔╝██║  ██║███████╗██║  ██║██║  ██╗        \r\n"
-						+ "    ╚══════╝╚═╝     ╚══════╝╚══════╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝");
+		Vista.tituloJuego();
 
-		System.out.println("            \\                                           ___/________\r\n"
-				+ "\t       ___   )                    ,  @                    /    \\  \\\r\n"
-				+ "\t    @___, \\ /                  @__\\  /\\              @___/      \\@/\r\n"
-				+ "\t   /\\__,   |                  /\\_, \\/ /             /\\__/        |\r\n"
-				+ "\t  / \\    / @\\                / \\   (               / \\ /        / \\\r\n"
-				+ "\t_/__|___/___/_______________/__|____\\_____________/__/__________|__\\__\n\n");
+		Vista.imagenTitulo();
 
 		System.out.println(
 				"================================================================================================\n\n");
@@ -68,6 +50,8 @@ public class Ppal {
 		System.out.println("Bienvenido , introduzca su nick de jugador : ");
 
 		nickName = Leer.dato();
+		
+		System.out.println("\n\n");
 
 		do {
 
@@ -89,6 +73,7 @@ public class Ppal {
 				//Explicación de los elementos
 				Vista.tutorial();
 
+				//Elección del elemento
 				Vista.opcionElementos();
 
 				opcElemento = Leer.datoInt() - 1;
@@ -103,6 +88,8 @@ public class Ppal {
 				
 				//Explicación combate y presentación del Bot Francisco
 				Vista.tutorial2(p2);
+				
+				comprobacion = Leer.datoInt();
 
 				// Creamos combate
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
@@ -130,70 +117,71 @@ public class Ppal {
 					System.out.println(" ");
 
 					System.out.println("¿Qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
-
-					if (p1.getE().getNombreElemento().equals("Fuego")) {
-						Vista.fuegoHabilidad();
-
-						opcHabilidad = Leer.datoInt() - 1;
-
-						// Sacar habilidad con la posición de opcHabilidad.
+					
+					opcion = Leer.datoInt();
+					
+					switch (opcion) {
+					case 1:
 						
+						if (p1.getE().getNombreElemento().equals("Fuego")) {
+							Vista.fuegoHabilidad();
 
-					} else if (p1.getE().getNombreElemento().equals("Agua")) {
-						Vista.aguaHabilidad();
+							opcHabilidad = Leer.datoInt() - 1;
 
-						opcHabilidad = Leer.datoInt() - 1;
+							// Sacar habilidad con la posición de opcHabilidad.
+							
 
-						// Sacar habilidad con la posición de opcHabilidad.
+						} else if (p1.getE().getNombreElemento().equals("Agua")) {
+							Vista.aguaHabilidad();
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);						
+							opcHabilidad = Leer.datoInt() - 1;
 
-					} else if (p1.getE().getNombreElemento().equals("Tierra")) {
-						Vista.tierraHabilidad();
+							// Sacar habilidad con la posición de opcHabilidad.				
 
-						opcHabilidad = Leer.datoInt() - 1;
+						} else if (p1.getE().getNombreElemento().equals("Tierra")) {
+							Vista.tierraHabilidad();
 
-						// Sacar habilidad con la posición de opcHabilidad.
+							opcHabilidad = Leer.datoInt() - 1;
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+							// Sacar habilidad con la posición de opcHabilidad.
 
-					} else if (p1.getE().getNombreElemento().equals("Hielo")) {
-						Vista.hieloHabilidad();
+						} else if (p1.getE().getNombreElemento().equals("Hielo")) {
+							Vista.hieloHabilidad();
 
-						opcHabilidad = Leer.datoInt() - 1;
+							opcHabilidad = Leer.datoInt() - 1;
 
-						// Sacar habilidad con la posición de opcHabilidad.
+							// Sacar habilidad con la posición de opcHabilidad.
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+						} else if (p1.getE().getNombreElemento().equals("Aire")) {
+							Vista.aireHabilidad();
 
-					} else if (p1.getE().getNombreElemento().equals("Aire")) {
-						Vista.aireHabilidad();
+							opcHabilidad = Leer.datoInt() - 1;
 
-						opcHabilidad = Leer.datoInt() - 1;
+							// Sacar habilidad con la posición de opcHabilidad.
 
-						// Sacar habilidad con la posición de opcHabilidad.
+						} else if (p1.getE().getNombreElemento().equals("Electrico")) {
+							Vista.electHabilidad();
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+							opcHabilidad = Leer.datoInt() - 1;
 
-					} else if (p1.getE().getNombreElemento().equals("Electrico")) {
-						Vista.electHabilidad();
+							// Sacar habilidad con la posición de opcHabilidad.
+							
+						} else if (p1.getE().getNombreElemento().equals("Veneno")) {
+							Vista.venenoHabilidad();
 
-						opcHabilidad = Leer.datoInt() - 1;
+							opcHabilidad = Leer.datoInt() - 1;
 
-						// Sacar habilidad con la posición de opcHabilidad.
+							// Sacar habilidad con la posición de opcHabilidad.
 
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
+						}
+						
+						break;
 
-					} else if (p1.getE().getNombreElemento().equals("Veneno")) {
-						Vista.venenoHabilidad();
-
-						opcHabilidad = Leer.datoInt() - 1;
-
-						// Sacar habilidad con la posición de opcHabilidad.
-
-						c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
-
+					default:
+						break;
 					}
+
+					
 
 					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
 

@@ -231,27 +231,27 @@ public class ControllerCombate {
 
 	public static void mostrarManaP1(Combate c1) {
 
-		if (c1.getP1().getMana() > 160 && c1.getP1().getMana() <= 200) {
+		if (c1.getP1().getMana() > 80 && c1.getP1().getMana() <= 100) {
 
 			Vista.barraMana100();
 
-		} else if (c1.getP1().getMana() > 120 && c1.getP1().getMana() <= 160) {
+		} else if (c1.getP1().getMana() > 60 && c1.getP1().getMana() <= 80) {
 
 			Vista.barraMana80();
 
-		} else if (c1.getP1().getMana() > 80 && c1.getP1().getMana() <= 120) {
+		} else if (c1.getP1().getMana() > 40 && c1.getP1().getMana() <= 60) {
 
 			Vista.barraMana60();
 
-		} else if (c1.getP1().getMana() > 40 && c1.getP1().getMana() <= 80) {
+		} else if (c1.getP1().getMana() > 20 && c1.getP1().getMana() <= 40) {
 
 			Vista.barraMana40();
 
-		} else if (c1.getP1().getMana() > 20 && c1.getP1().getMana() <= 40) {
+		} else if (c1.getP1().getMana() > 10 && c1.getP1().getMana() <= 20) {
 
 			Vista.barraMana20();
 
-		} else if (c1.getP1().getMana() > 0 && c1.getP1().getMana() <= 20) {
+		} else if (c1.getP1().getMana() > 0 && c1.getP1().getMana() <= 10) {
 
 			Vista.barraMana10();
 
