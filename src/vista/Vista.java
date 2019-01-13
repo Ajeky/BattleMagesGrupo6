@@ -939,18 +939,18 @@ public class Vista {
 		
 		System.out.println("Bienvenido a Battle Mages, te parecerá un ambiente bonito con el cielo soleado"
 				+ ", los pájaros cantando, las abejas absorbiendo el néctar de las flores y los magos jugando"
-				+ "a las magic pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro todo se transforma...");
+				+ " a las magic pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro todo se transforma...");
 	}
 	
 	public static void descripcionJugadores() {
 		
 		System.out.println("¿¡Pero qué...!? , ¿Poor-por qué el cielo ahora está oscuro y tormentoso? , ¿y ..yy.. esos sonidos tan fuertes?");
 		
-		System.out.println("Esos 4 de ahí en frente me están mirando mal , de izquierda a derecha puedo"
-				+ "ver como a cada uno le sobresale una aureola de su elemento y vestidos totalmente diferentes el uno del otro");
+		System.out.println("Esos 4 de ahí enfrente me están mirando mal , de izquierda a derecha puedo"
+				+ " ver como a cada uno le sobresale una aureola de su elemento y vestidos totalmente diferentes el uno del otro");
 		
 		System.out.println("Parece ser que me quieren a mi , pero no soy una pieza fácil de conseguir , yo también tengo"
-				+ "unos poderes ocultos que enseñarles jeje.. veníd aquí.");
+				+ " unos poderes ocultos que enseñarles jeje.. veníd aquí.");
 	}
 	
 	public static void introduceNumero() {
