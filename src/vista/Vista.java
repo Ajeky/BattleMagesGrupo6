@@ -108,14 +108,7 @@ public class Vista {
 						+ "Introduce cualquier número cuando estés listo.");
 	}
 
-	public static void presentacion() {
-		System.out.println(
-				"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
-						+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]"
-						+ "¿A por qué enemigo deseas ir primero? \n" + "1. Álvaro (Fuego) \n" + "2. Antonio (Agua) \n"
-						+ "3. Alejandro (Tierra) \n" + "4. Dani (Aire) \n");
-	}
-
+	
 	public static void opcionesCombate(Personaje p) {
 		System.out.println(p.getNombre() + ", ¿qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 	}
@@ -963,6 +956,31 @@ public class Vista {
 		System.out.println("Parece ser que me quieren a mi , pero no soy una pieza fácil de conseguir , yo también tengo"
 				+ " unos poderes ocultos que enseñarles jeje.. veníd aquí.");
 	}
+	
+	public static void antesDani() {
+
+        System.out.println("Qué raro , de repente tengo mucho frio y noto como si tuviese una presencia detrás de mi"
+                + ", ¡joder! , ¡que susto! , \nme doy la vuelta y encuentro al mago de hielo , tendré que abrigarme bien"
+                + " antes de enfrentarme a él");
+    }
+	
+	public static void despuesDani() {
+		System.out.println("Te sacudes las estalactitas que cuelgan de tu nariz y tus orejas, contemplando el frío cuerpo que yace ante ti. \n"
+				+ "Todavía estás recuperándote del susto cuando sientes un temblor bajo tus pies. La tierra se separa y empiezás a crecer rocas donde no había nada. \n"
+				+ "Te giras y ves a un mago envuelto en una túnica marrón que te sonríe desafiante, mientras con la mano te hace gestos para que te acerques. \n"
+				+ "No te queda otra. Empiezas a canalizar energía arcana hacia tus manos mientras caminas decidido hacia él.");
+	}
+	
+	public static void despuesAlex() {
+        System.out.println("Después del combate, Alex no dudó en levantar un pilar de Tierra para hacerle saber a aquellos que pasaran por esa arena el grandioso mago que \n"
+                + "derrotó a 'Alex, el guardián de la Tierra'. Durante unos minutos, el mago simbolizó el pilar con toda la sabiduría en un idioma que le transmitió al nuevo heredero, \n"
+                + "dejándole como últimas palabras las siguientes: 'Tú... Ahora defenderás aquello que me costó una vida aprender a mi.. La sabiduría recorrerá todos tus sentidos..."); }
+	
+	public static void despuesAntonio() {
+        System.out.println("Tras derrotar a tu último rival  te das cuenta de que la Tormenta sigue avanzando, lo que solo indica una cosa todavia hay enemigos vivos \n"
+                + "Tomas unos segundos de descanso sabiendo que en cualquier momento entblaras contacto visual con otro enemigo que probablemente será el último.\n"
+                +"Tras unos segundos vez como alguien aparece en el horizonte, hay está otro enemigo al que derrotar, y puede ser el último para alzarte con la victoria.\n\n");
+    }
 	
 	public static void despuesAlvaro() {
 		System.out.println("Caes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
