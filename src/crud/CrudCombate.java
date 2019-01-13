@@ -2,6 +2,7 @@ package crud;
 
 import model.Combate;
 import model.Personaje;
+import vista.Vista;
 import datos.Datos;
 import model.Habilidad;
 import controller.ControllerCombate;
@@ -91,73 +92,7 @@ public class CrudCombate {
 		int posJ2 = c.getP2().getPosicion();
 		int xD = 1;
 		int danoP1 = 0, danoP2 = 0;
-		switch (contCombate) {
-
-		case 0:
-
-			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
-				c.getCampoBatalla()[11][i] = "      ";
-				c.getCampoBatalla()[12][i] = "      ";
-				c.getCampoBatalla()[13][i] = "      ";
-			}
-			c.getCampoBatalla()[11][posJ1] = "******";
-			c.getCampoBatalla()[12][posJ1] = "|    |";
-			c.getCampoBatalla()[13][posJ1] = "******";
-
-			c.getCampoBatalla()[11][posJ2] = "******";
-			c.getCampoBatalla()[12][posJ2] = "|    |";
-			c.getCampoBatalla()[13][posJ2] = "******";
-			break;
-		case 1:
-
-			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
-				c.getCampoBatalla()[9][i] = "      ";
-				c.getCampoBatalla()[10][i] = "      ";
-				c.getCampoBatalla()[11][i] = "      ";
-			}
-			c.getCampoBatalla()[9][posJ1] = "******";
-			c.getCampoBatalla()[10][posJ1] = "|    |";
-			c.getCampoBatalla()[11][posJ1] = "******";
-
-			c.getCampoBatalla()[9][posJ2] = "******";
-			c.getCampoBatalla()[10][posJ2] = "|    |";
-			c.getCampoBatalla()[11][posJ2] = "******";
-			break;
-		case 2:
-
-			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
-				c.getCampoBatalla()[6][i] = "      ";
-				c.getCampoBatalla()[7][i] = "      ";
-				c.getCampoBatalla()[8][i] = "      ";
-			}
-			c.getCampoBatalla()[6][posJ1] = "******";
-			c.getCampoBatalla()[7][posJ1] = "|    |";
-			c.getCampoBatalla()[8][posJ1] = "******";
-
-			c.getCampoBatalla()[6][posJ2] = "******";
-			c.getCampoBatalla()[7][posJ2] = "|    |";
-			c.getCampoBatalla()[8][posJ2] = "******";
-			break;
-		case 3:
-
-			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
-				c.getCampoBatalla()[4][i] = "      ";
-				c.getCampoBatalla()[5][i] = "      ";
-				c.getCampoBatalla()[6][i] = "      ";
-			}
-			c.getCampoBatalla()[4][posJ1] = "******";
-			c.getCampoBatalla()[5][posJ1] = "|    |";
-			c.getCampoBatalla()[6][posJ1] = "******";
-
-			c.getCampoBatalla()[4][posJ2] = "******";
-			c.getCampoBatalla()[5][posJ2] = "|    |";
-			c.getCampoBatalla()[6][posJ2] = "******";
-			break;
-
-		default:
-			break;
-		}
-
+		
 		if (h1.getTipo() == 4) {
 			c.getP1().setSalud(c.getP1().getSalud() + ControllerCombate.curarP1(c, h1));
 		}
@@ -244,6 +179,81 @@ public class CrudCombate {
 		c.getP2().setMana(c.getP2().getMana() + 20);
 		if (c.getP2().getMana() > 100) {
 			c.getP2().setMana(100);
+		}
+		
+		if (h1.getTipo() == 1 || h1.getTipo() == 2 || h1.getTipo() == 3) {
+			Vista.imprimirHabilidad(h1);
+		}
+		
+		if (h2.getTipo() == 1 || h2.getTipo() == 2 || h2.getTipo() == 3) {
+			Vista.imprimirHabilidad(h2);
+		}
+		
+		switch (contCombate) {
+
+		case 0:
+
+			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
+				c.getCampoBatalla()[11][i] = "      ";
+				c.getCampoBatalla()[12][i] = "      ";
+				c.getCampoBatalla()[13][i] = "      ";
+			}
+			c.getCampoBatalla()[11][posJ1] = "******";
+			c.getCampoBatalla()[12][posJ1] = "|    |";
+			c.getCampoBatalla()[13][posJ1] = "******";
+
+			c.getCampoBatalla()[11][posJ2] = "******";
+			c.getCampoBatalla()[12][posJ2] = "|    |";
+			c.getCampoBatalla()[13][posJ2] = "******";
+			break;
+		case 1:
+
+			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
+				c.getCampoBatalla()[9][i] = "      ";
+				c.getCampoBatalla()[10][i] = "      ";
+				c.getCampoBatalla()[11][i] = "      ";
+			}
+			c.getCampoBatalla()[9][posJ1] = "******";
+			c.getCampoBatalla()[10][posJ1] = "|    |";
+			c.getCampoBatalla()[11][posJ1] = "******";
+
+			c.getCampoBatalla()[9][posJ2] = "******";
+			c.getCampoBatalla()[10][posJ2] = "|    |";
+			c.getCampoBatalla()[11][posJ2] = "******";
+			break;
+		case 2:
+
+			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
+				c.getCampoBatalla()[6][i] = "      ";
+				c.getCampoBatalla()[7][i] = "      ";
+				c.getCampoBatalla()[8][i] = "      ";
+			}
+			c.getCampoBatalla()[6][posJ1] = "******";
+			c.getCampoBatalla()[7][posJ1] = "|    |";
+			c.getCampoBatalla()[8][posJ1] = "******";
+
+			c.getCampoBatalla()[6][posJ2] = "******";
+			c.getCampoBatalla()[7][posJ2] = "|    |";
+			c.getCampoBatalla()[8][posJ2] = "******";
+			break;
+		case 3:
+
+			for (int i = 1; i < c.getCampoBatalla()[xD].length - 1; i++) {
+				c.getCampoBatalla()[4][i] = "      ";
+				c.getCampoBatalla()[5][i] = "      ";
+				c.getCampoBatalla()[6][i] = "      ";
+			}
+			c.getCampoBatalla()[4][posJ1] = "******";
+			c.getCampoBatalla()[5][posJ1] = "|    |";
+			c.getCampoBatalla()[6][posJ1] = "******";
+
+			c.getCampoBatalla()[4][posJ2] = "******";
+			c.getCampoBatalla()[5][posJ2] = "|    |";
+			c.getCampoBatalla()[6][posJ2] = "******";
+			break;
+
+		default:
+			break;
 		}
 
 		return c;

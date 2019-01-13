@@ -3,6 +3,7 @@ package datos;
 
 import model.Elemento;
 import model.Habilidad;
+import vista.Vista;
 
 public class Datos {
 
@@ -199,26 +200,26 @@ public class Datos {
 					"******", "******", "******", "******", "******", "******", "******", "******", "******", "******",
 					"******", "******", "******", "******", "***   " } };
 
-	private static Habilidad[] HabilidadesFuego = { new Habilidad("Bola de Fuego", 25, 20, 1),
-			new Habilidad("Fogonazo", 60, 50, 2), new Habilidad("Barrera napalm", 40, 20, 3),
+	private static Habilidad[] HabilidadesFuego = { new Habilidad("Bola de Fuego", 25, 20, 1, Vista.bolaFuego()),
+			new Habilidad("Fogonazo", 60, 50, 2, Vista.fogonazo()), new Habilidad("Barrera napalm", 40, 20, 3, Vista.napalm()),
 			new Habilidad("Curar", 30, 40, 4)};
-	private static Habilidad[] HabilidadesTierra = { new Habilidad("Roca afilada", 17, 15, 1),
-			new Habilidad("Avalancha", 60, 80, 2), new Habilidad("Muro Sísmico", 60, 25, 3),
+	private static Habilidad[] HabilidadesTierra = { new Habilidad("Roca afilada", 17, 15, 1, Vista.rocaAfilada()),
+			new Habilidad("Avalancha", 60, 80, 2, Vista.avalancha()), new Habilidad("Muro Sísmico", 60, 25, 3, Vista.muroSismico()),
 			new Habilidad("Curar", 30, 60, 4)};
-	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 35, 25, 1),
-			new Habilidad("Cero Absoluto", 45, 45, 2), new Habilidad("Iceberg", 40, 25, 3),
+	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 35, 25, 1/*TODO no tiene icono*/),
+			new Habilidad("Cero Absoluto", 45, 45, 2, Vista.ceroAbsoluto()), new Habilidad("Iceberg", 40, 25, 3, Vista.iceberg()),
 			new Habilidad("Curar", 30, 50, 4)};
-	private static Habilidad[] HabilidadesElec = { new Habilidad("Sobrecarga", 13, 5, 1),
-			new Habilidad("Tormenta Eléctrica", 30, 30, 2), new Habilidad("Muralla Volátil", 25, 10, 3),
+	private static Habilidad[] HabilidadesElec = { new Habilidad("Sobrecarga", 13, 5, 1, Vista.sobreCarga()),
+			new Habilidad("Tormenta Eléctrica", 30, 30, 2, Vista.tormentaElectrica()), new Habilidad("Muralla Volátil", 25, 10, 3, Vista.murallaVolatil()),
 			new Habilidad("Curar", 30, 35, 4)};
-	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 30, 25, 1),
-			new Habilidad("Intoxicación", 500, 0, 2), new Habilidad("Trampa de Agujas", 17, 5, 3),
+	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 30, 25, 1, Vista.dardoEnvenenado()),
+			new Habilidad("Intoxicación", 500, 0, 2, Vista.intoxicacion()), new Habilidad("Trampa de Agujas", 17, 5, 3, Vista.trampaAgujas()),
 			new Habilidad("Curar", 30, 40, 4)};
-	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 15, 10, 1),
-			new Habilidad("Maremoto", 63, 60, 2), new Habilidad("Torrente Cascada", 37, 20, 3),
+	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 15, 10, 1, Vista.rayoBurbuja()),
+			new Habilidad("Maremoto", 63, 60, 2, Vista.maremoto()), new Habilidad("Torrente Cascada", 37, 20, 3, Vista.torrenteCascada()),
 			new Habilidad("Curar", 30, 35, 4)};
-	private static Habilidad[] HabilidadesAire = { new Habilidad("Viento Cortante", 13, 5, 1),
-			new Habilidad("Huracán", 55, 55, 2), new Habilidad("Desviación Aérea", 23, 5, 3),
+	private static Habilidad[] HabilidadesAire = { new Habilidad("Viento Cortante", 13, 5, 1, Vista.vientoCortante()),
+			new Habilidad("Huracán", 55, 55, 2, Vista.huracan()), new Habilidad("Desviación Aérea", 23, 5, 3, Vista.desviacionAerea()),
 			new Habilidad("Curar", 30, 10, 4)};
 	private static Habilidad[] HabilidadesComunes = { new Habilidad("MoverseIzquierda", 0, 0, 5), new Habilidad("MoverseDerecha", 1, 0, 5), new Habilidad ("Descansar", 50, 0, 6) };
 

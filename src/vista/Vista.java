@@ -228,9 +228,9 @@ public class Vista {
 		System.out.println("Maná █████");
 	}
 
-	public static void bolaFuego() {
+	public static String bolaFuego() {
 
-		System.out.println("                                                ,#         \r\n"
+		return ("                                                ,#         \r\n"
 				+ "                                        (#    /**          \r\n"
 				+ "                                #(    /( .*(,(%%           \r\n"
 				+ "                         .  .*((*(*(#(/##. ((%(/..,        \r\n"
@@ -253,9 +253,9 @@ public class Vista {
 				+ "               .*(####(/,                                  \r\n" + "                           ");
 	}
 
-	public static void fogonazo() {
+	public static String fogonazo() {
 
-		System.out.println("                            .`                              \r\n"
+		return ("                            .`                              \r\n"
 				+ "                          `-:`                              \r\n"
 				+ "                          ./-                               \r\n"
 				+ "                          :/:                               \r\n"
@@ -289,9 +289,9 @@ public class Vista {
 				+ "               ``.--```..``.`                     ``  ");
 	}
 
-	public static void napalm() {
+	public static String napalm() {
 
-		System.out.println("                 &&/                  &&&                  \r\n"
+		return ("                 &&/                  &&&                  \r\n"
 				+ "                  &%#&          &&%##*&(                   \r\n"
 				+ "            /    (((#%%%#%%%((%/////,&   ( (#%&       *(&  \r\n"
 				+ "    (&      &    &*,*,*###******&*/###&&##%      &/ &  \r\n"
@@ -325,9 +325,9 @@ public class Vista {
 				+ " **                                         . ..,..,.*,.*. ");
 	}
 
-	public static void rocaAfilada() {
+	public static String rocaAfilada() {
 
-		System.out.println("                            %%%%%%%.                       \r\n"
+		return ("                            %%%%%%%.                       \r\n"
 				+ "                         @@@###%###%@@                     \r\n"
 				+ "                       @@@##%&&&&&&%##%@                   \r\n"
 				+ "                       @@#&&&&&&@@%##%&@                 \r\n"
@@ -351,9 +351,9 @@ public class Vista {
 				+ "                          @@@@@@@@@@@@@@           ");
 	}
 
-	public static void avalancha() {
+	public static String avalancha() {
 
-		System.out.println("                              .#(((                        \r\n"
+		return ("                              .#(((                        \r\n"
 				+ "                      ,%%, #%%%%(%%#.,,,..                 \r\n"
 				+ "                     ./%%#%(%%%%%%%(,,,,,*,                \r\n"
 				+ "            .%%%##*///*%%(%(%####%@&&//(#%%/,              \r\n"
@@ -378,9 +378,9 @@ public class Vista {
 				+ "              .,*****                                      \r\n" + "                 .,.  ");
 	}
 
-	public static void muroSismico() {
+	public static String muroSismico() {
 
-		System.out.println("/((((//(((((#(#%((#*******************/////////////////////\r\n"
+		return ("/((((//(((((#(#%((#*******************/////////////////////\r\n"
 				+ "/(//////(//((((#((####(((,,,,,,,,,************/////////////\r\n"
 				+ "((/*//////(////#///(/////((%/((,,,,,,,,,**************//***\r\n"
 				+ "(#//*//////////(//******///#*/(((/((%/,,,..,,,,************\r\n"
@@ -398,9 +398,9 @@ public class Vista {
 				+ "#####%%#%%####%##(#%####%##%(#####(////*///(/*/(/#(##(#####");
 	}
 
-	public static void ceroAbsoluto() {
+	public static String ceroAbsoluto() {
 
-		System.out.println("           *&@@@/            \r\n" + "       @@@@@@@@@@@@@@        \r\n"
+		return ("           *&@@@/            \r\n" + "       @@@@@@@@@@@@@@        \r\n"
 				+ "     @@@@@@@    @@@@@@@      \r\n" + "    @@@@@@@      @@@@@@@.    \r\n"
 				+ "   @@@@@@@*      %@@@@@@@    \r\n" + "  @@@@@@@@        @@@@@@@@   \r\n"
 				+ "  @@@@@@@@        @@@@@@@@   \r\n" + " %@@@@@@@@        @@@@@@@@&  \r\n"
@@ -443,9 +443,9 @@ public class Vista {
 				"                       `+/+  o+o.             ");
 	}
 
-	public static void iceberg() {
+	public static String iceberg() {
 
-		System.out.println(" , ,  , ,  , ,  , .  , , .,* .,, , ,, , ,. , .  , ,  , ,  ,\r\n"
+		return (" , ,  , ,  , ,  , .  , , .,* .,, , ,, , ,. , .  , ,  , ,  ,\r\n"
 				+ " , ,  , ,  , ,  , ,  , , .& ,  , , ,, , ,. , ,  , ,  , ,  ,\r\n"
 				+ " . .  . .  . .  . .  . . @ ( (  @. .@@. .. . .  . .  . .  .\r\n"
 				+ ", , ., , ,, , ,. , ,. , & ((((((  .  ,.*  , , ., , ., , ,, \r\n"
@@ -465,10 +465,9 @@ public class Vista {
 				+ " . @ /((((((#####################/((((##(((#####((((((#(( ,");
 	}
 
-	public static void sobreCarga() {
+	public static String sobreCarga() {
 
-		System.out
-				.println("     ,                                   ((                                  (.          \r\n"
+		return ("     ,                                   ((                                  (.          \r\n"
 						+ "       ./                            (.      ,                           ( ((            \r\n"
 						+ "          (.((                       ,   (( *    ( /.(                 ((((              \r\n"
 						+ "            ((((         ./           /   (       (((((              /(                  \r\n"
@@ -495,9 +494,9 @@ public class Vista {
 						+ "                                         (((((((((((((  ");
 	}
 
-	public static void tormentaElectrica() {
+	public static String tormentaElectrica() {
 
-		System.out.println("                                                           \r\n"
+		return ("                                                           \r\n"
 				+ "                                                           \r\n"
 				+ "                                                           \r\n"
 				+ "                                           ,               \r\n"
@@ -533,9 +532,9 @@ public class Vista {
 				+ "                ,                                          \r\n" + "                    ");
 	}
 
-	public static void murallaVolatil() {
+	public static String murallaVolatil() {
 
-		System.out.println("*************************,,,,**/***********/**/********************************\r\n"
+		return ("*************************,,,,**/***********/**/********************************\r\n"
 				+ "**********************,,,,,,,,,,***********,,,,,,******************************\r\n"
 				+ "*********************,,,,,,,,,,,,*//*,,,,,,,,,,,,,*****************************\r\n"
 				+ "********************/,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,/*/******************\r\n"
@@ -576,9 +575,9 @@ public class Vista {
 				+ "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/@/*@***********@@@@@@@@@@@@@/***#%#########");
 	}
 
-	public static void dardoEnvenenado() {
+	public static String dardoEnvenenado() {
 
-		System.out.println("            /(/.                                           \r\n"
+		return ("            /(/.                                           \r\n"
 				+ "           %%%%%%%/                                        \r\n"
 				+ "        .,(%%%%%%%%%.                                      \r\n"
 				+ "        %(((#%%%%%%%%,                                     \r\n"
@@ -603,9 +602,9 @@ public class Vista {
 				+ "                                                     %");
 	}
 
-	public static void intoxicacion() {
+	public static String intoxicacion() {
 
-		System.out.println("                                                           \r\n"
+		return ("                                                           \r\n"
 				+ "                                                           \r\n"
 				+ "                                                           \r\n"
 				+ "                            @@@                            \r\n"
@@ -635,9 +634,9 @@ public class Vista {
 				+ "                                                           \r\n");
 	}
 
-	public static void trampaAgujas() {
+	public static String trampaAgujas() {
 
-		System.out.println("                                                           \r\n"
+		return ("                                                           \r\n"
 				+ "                                                           \r\n"
 				+ "                         .*       .                        \r\n"
 				+ "               /.        ..      ..        .               \r\n"
@@ -668,9 +667,9 @@ public class Vista {
 				+ "                            ..    ");
 	}
 
-	public static void rayoBurbuja() {
+	public static String rayoBurbuja() {
 
-		System.out.println("@@@@@@@@@@&@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&&&&&@@@@@@&&&&&&&@@@\r\n"
+		return ("@@@@@@@@@@&@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&&&&&@@@@@@&&&&&&&@@@\r\n"
 				+ "@@@@@@@@&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n"
 				+ "@@&&@&@&&&&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n"
 				+ "@@@&&&&&&&&&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n"
@@ -696,10 +695,9 @@ public class Vista {
 				+ "@@@@@@@@&&&%%%%%%%%%%%%%%%%%%%%%%%%%%%&&&&&&&@@@@@@@@@@@@@@@@@@@@&&&&&&&&&&&&&&");
 	}
 
-	public static void maremoto() {
+	public static String maremoto() {
 
-		System.out
-				.println("                                                                                         \r\n"
+		return ("                                                                                         \r\n"
 						+ "                                                                                         \r\n"
 						+ "                                                                                         \r\n"
 						+ "           ##                             ##**/(##                                       \r\n"
@@ -712,9 +710,9 @@ public class Vista {
 						+ "(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((");
 	}
 
-	public static void torrenteCascada() {
+	public static String torrenteCascada() {
 
-		System.out.println("@@@@@@@@@@.@@@@@@@@@@@@@@@@.@@@@@@@@@@@\r\n" + "@@@@*/.*/./..**..../...*,.***../.@@@@@@\r\n"
+		return ("@@@@@@@@@@.@@@@@@@@@@@@@@@@.@@@@@@@@@@@\r\n" + "@@@@*/.*/./..**..../...*,.***../.@@@@@@\r\n"
 				+ "@@@*.*/./(.**./.**.**.*///*,./*((*@@@@@\r\n" + "@@..*/(.(/..(.*(.*(*/.**/**(.*/(((@@@@@\r\n"
 				+ "@@..(**/*/*.(*/./*((*(*/**(*/(*/*(,@@@@\r\n" + "@@..*@*(**/(*/*./*((*(*//*(*((*/(/.@@@@\r\n"
 				+ "@@@.@@@*/*/(/(/./(((/((//*/*(*/(/.@@@@@\r\n" + "@@..@@@*(*,(/(/.*(((/.((/*/*(*/*.@@@@@@\r\n"
@@ -732,9 +730,9 @@ public class Vista {
 
 	}
 
-	public static void vientoCortante() {
+	public static String vientoCortante() {
 
-		System.out.println("                        @@@@@@@@@@@@@.                               \r\n"
+		return ("                        @@@@@@@@@@@@@.                               \r\n"
 				+ "                        ..&*********,&@                              \r\n"
 				+ "                          @,,,,,,,,,,&@          @@@                 \r\n"
 				+ "                           @@///////,&@          @*,@/               \r\n"
@@ -770,9 +768,9 @@ public class Vista {
 				+ "                     //,//***/         /***//,//");
 	}
 
-	public static void huracan() {
+	public static String huracan() {
 
-		System.out.println("                                               ,@@@@@@               \r\n"
+		return ("                                               ,@@@@@@               \r\n"
 				+ "             @@@@@@@@@@%                            @@@@@@@@%        \r\n"
 				+ "      @@@@@@@@@@@                                       @@@@@@@@@    \r\n"
 				+ "    @@@@@@@@@      @@@@%                       ,@@@@@@      ,@@@@@@  \r\n"
@@ -804,9 +802,9 @@ public class Vista {
 				+ "                              ## ");
 	}
 
-	public static void desviacionAerea() {
+	public static String desviacionAerea() {
 
-		System.out.println("                                                                     \r\n"
+		return ("                                                                     \r\n"
 				+ "                                .%%                                  \r\n"
 				+ "                              %   %                                  \r\n"
 				+ "                             %    %                                  \r\n"
@@ -824,6 +822,10 @@ public class Vista {
 				+ "                                  %                                  \r\n"
 				+ "                                  %                                  \r\n"
 				+ "                                  %  ");
+	}
+	
+	public static void imprimirHabilidad(Habilidad h1) {
+		System.out.println(h1.getIcono());
 	}
 
 	public static void opcionElementos() {
