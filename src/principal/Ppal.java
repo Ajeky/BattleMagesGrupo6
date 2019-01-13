@@ -97,7 +97,8 @@ public class Ppal {
 
 				// Segundo jugador
 
-				p2 = new Personaje(bd.getListaElementos()[0], iaName, p2SaludBase, p2ManaBase, posInicial, false, 0);
+				posInicialP2 = bd.getBatalla1()[0].length - 2;
+				p2 = new Personaje(bd.getListaElementos()[0], iaName, p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 
 				// Explicación combate y presentación del Bot Francisco
 				Vista.tutorial2(p2);
