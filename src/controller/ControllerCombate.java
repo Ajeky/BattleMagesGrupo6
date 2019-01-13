@@ -66,7 +66,7 @@ public class ControllerCombate {
 	public static Combate moverp1(Combate c1, int direccion) {
 
 		if (direccion == 1) {
-			if ((c1.getP1().getPosicion() - c1.getP2().getPosicion()) != 1) {
+			if ((c1.getP2().getPosicion() - c1.getP1().getPosicion()) > 1) {
 				c1.getP1().setPosicion(c1.getP1().getPosicion() + 1);
 			} else {
 				Vista.movimientoPers();
@@ -86,16 +86,16 @@ public class ControllerCombate {
 	public static Combate moverp2(Combate c1, int direccion) {
 
 		if (direccion == 0) {
-			if ((c1.getP1().getPosicion() - c1.getP2().getPosicion()) > 1) {
-				c1.getP2().setPosicion(c1.getP2().getPosicion() + 1);
+			if ((c1.getP2().getPosicion() - c1.getP1().getPosicion()) > 1) {
+				c1.getP2().setPosicion(c1.getP2().getPosicion() - 1);
 			} else {
 				Vista.movimientoPers();
 			}
 		}
 
 		else if (direccion == 1) {
-			if (c1.getP1().getPosicion() < c1.getCampoBatalla()[0].length - 1) {
-				c1.getP1().setPosicion(c1.getP1().getPosicion() - 1);
+			if (c1.getP2().getPosicion() < c1.getCampoBatalla()[0].length - 2) {
+				c1.getP2().setPosicion(c1.getP2().getPosicion() + 1);
 			}
 		} else {
 			Vista.movimientoPers();
