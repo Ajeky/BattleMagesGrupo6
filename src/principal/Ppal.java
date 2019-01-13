@@ -177,7 +177,7 @@ public class Ppal {
 			// Tutorial
 			case 1:
 				contCombate = 0;
-				
+
 				// Explicación de los elementos
 				Vista.tutorial();
 
@@ -364,6 +364,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h1 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -392,9 +393,9 @@ public class Ppal {
 					}
 
 				} while (p2.isMuerte() == false && p1.isMuerte() == false);
-				
+
 				opcion = 0;
-				
+
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -414,7 +415,7 @@ public class Ppal {
 				break;
 
 			case 2:
-				
+
 				contCombate = 0;
 
 				Vista.introduccionJuego();
@@ -430,11 +431,11 @@ public class Ppal {
 						false, 0);
 
 				Vista.descripcionJugadores();
-				
+
 				Vista.antesDani();
 
 				posInicialP2 = bd.getBatalla1()[0].length - 2;
-				dani = new Personaje(bd.getVeneno(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
+				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = dani;
 
 				System.out.println("¡Te enfrentarás contra Dani!\n");
@@ -443,7 +444,7 @@ public class Ppal {
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
 
-				Vista.imagenFight();				
+				Vista.imagenFight();
 
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
@@ -469,153 +470,152 @@ public class Ppal {
 					System.out.println(" ");
 
 					do {
-						do {
-							comprobacion = 0;
+						comprobacion = 0;
 
-							Vista.opcionesCombate(p1);
+						Vista.opcionesCombate(p1);
 
-							opcion = Leer.datoInt();
+						opcion = Leer.datoInt();
 
-							switch (opcion) {
-							case 1:
+						switch (opcion) {
+						case 1:
 
-								if (p1.getE().getNombreElemento().equals("Fuego")) {
-									Vista.fuegoHabilidad();
+							if (p1.getE().getNombreElemento().equals("Fuego")) {
+								Vista.fuegoHabilidad();
 
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesFuego()[opcHabilidad];
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesFuego()[opcHabilidad];
 
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Agua")) {
-									Vista.aguaHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesAgua()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Tierra")) {
-									Vista.tierraHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesTierra()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Hielo")) {
-									Vista.hieloHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesHielo()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Aire")) {
-									Vista.aireHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesAire()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Electrico")) {
-									Vista.electHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesElec()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
-								} else if (p1.getE().getNombreElemento().equals("Veneno")) {
-									Vista.venenoHabilidad();
-
-									opcHabilidad = Leer.datoInt() - 1;
-									// Sacar habilidad con la posición de opcHabilidad.
-									h1 = bd.getHabilidadesVen()[opcHabilidad];
-
-									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-										Vista.errorCura();
-										comprobacion = 1;
-									}
-									if (h1.getCosteMana() > p1.getMana()) {
-										Vista.errorMana();
-										comprobacion = 1;
-									}
-
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
 								}
 
-								break;
+							} else if (p1.getE().getNombreElemento().equals("Agua")) {
+								Vista.aguaHabilidad();
 
-							case 2:
-								Vista.direccion();
-								opcion = Leer.datoInt();
-								if (opcion == 0) {
-									h1 = bd.getHabilidadesComunes()[0];
-								} else if (opcion == 1) {
-									h1 = bd.getHabilidadesComunes()[1];
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesAgua()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
 								}
-								// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
-								// Antonio
-								break;
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
 
-							case 3:
-								h1 = bd.getHabilidadesComunes()[2];
-								break;
+							} else if (p1.getE().getNombreElemento().equals("Tierra")) {
+								Vista.tierraHabilidad();
 
-							default:
-								Vista.numero1al3();
-								break;
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesTierra()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
+
+							} else if (p1.getE().getNombreElemento().equals("Hielo")) {
+								Vista.hieloHabilidad();
+
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesHielo()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
+
+							} else if (p1.getE().getNombreElemento().equals("Aire")) {
+								Vista.aireHabilidad();
+
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesAire()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
+
+							} else if (p1.getE().getNombreElemento().equals("Electrico")) {
+								Vista.electHabilidad();
+
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesElec()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
+
+							} else if (p1.getE().getNombreElemento().equals("Veneno")) {
+								Vista.venenoHabilidad();
+
+								opcHabilidad = Leer.datoInt() - 1;
+								// Sacar habilidad con la posición de opcHabilidad.
+								h1 = bd.getHabilidadesVen()[opcHabilidad];
+
+								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+									Vista.errorCura();
+									comprobacion = 1;
+								}
+								if (h1.getCosteMana() > p1.getMana()) {
+									Vista.errorMana();
+									comprobacion = 1;
+								}
+
 							}
-						} while (opcion > 3 || opcion < 1);
+
+							break;
+
+						case 2:
+							Vista.direccion();
+							opcion = Leer.datoInt();
+							if (opcion == 0) {
+								h1 = bd.getHabilidadesComunes()[0];
+							} else if (opcion == 1) {
+								h1 = bd.getHabilidadesComunes()[1];
+							}
+							opcion = 1;
+							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
+							// Antonio
+							break;
+
+						case 3:
+							h1 = bd.getHabilidadesComunes()[2];
+							break;
+
+						default:
+							Vista.numero1al3();
+							break;
+						}
 					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
@@ -753,6 +753,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h2 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -780,9 +781,9 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
-				
+
 				opcion = 0;
-				
+
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -961,6 +962,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h1 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1110,6 +1112,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h2 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1137,9 +1140,9 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
-				
+
 				opcion = 0;
-				
+
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -1319,6 +1322,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h1 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1468,6 +1472,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h2 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1495,9 +1500,9 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
-				
+
 				opcion = 0;
-				
+
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -1543,7 +1548,7 @@ public class Ppal {
 					Vista.mostrarManaEnemigo(c1.getP2());
 					System.out.println(" ");
 
-						do {
+					do {
 						comprobacion = 0;
 
 						Vista.opcionesCombate(p1);
@@ -1677,6 +1682,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h1 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1826,6 +1832,7 @@ public class Ppal {
 							} else if (opcion == 1) {
 								h2 = bd.getHabilidadesComunes()[1];
 							}
+							opcion = 1;
 							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
 							// Antonio
 							break;
@@ -1853,9 +1860,9 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
-				
+
 				opcion = 0;
-				
+
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -1864,7 +1871,7 @@ public class Ppal {
 					break;
 				}
 
-				Vista.despuesAlvaro();		
+				Vista.despuesAlvaro();
 				Vista.victoria();
 				Vista.introduceNumero();
 				comprobacion = Leer.datoInt();

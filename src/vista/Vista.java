@@ -95,7 +95,7 @@ public class Vista {
 						+ "Aparte de las habilidades, tienes otras dos opciones: moverte y descansar. \nMoverte te sirve para acercarte o alejarte de tu enemigo. "
 						+ "Cuanto más cerca estés de él más daño le harás, pero también él a ti, así que ten cuidado. \nDescansar sirve para cuando te quedas sin maná. "
 						+ "No harás nada ese turno a cambio de recuperar 30 puntos de maná extra (además de los 20 que recuperas al principio de cada turno).\n"
-						+ "Empezarás con 500 puntos de vida frente a los 100 de tus oponentes. Esto es para compensar el hecho de que tendrás que ganar 4 batallas"
+						+ "Empezarás con 800 puntos de vida frente a los 200 de tus oponentes. Esto es para compensar el hecho de que tendrás que ganar 4 batallas"
 						+ " seguidas para completar el juego. \nEl mapa se irá haciendo más pequeño a medida que avancen los combates, como en cualquier Battle"
 						+ " Royale que se precie." + " \n\n" + "Te presento al " + p1.getNombre()
 						+ ". Es algo tímido, pero cuando coge confianza, ¡se vuelve loco!\n"

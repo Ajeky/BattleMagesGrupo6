@@ -213,7 +213,7 @@ public class Datos {
 			new Habilidad("Tormenta Eléctrica", 30, 30, 2, Vista.tormentaElectrica()), new Habilidad("Muralla Volátil", 25, 10, 3, Vista.murallaVolatil()),
 			new Habilidad("Curar", 30, 35, 4)};
 	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 30, 25, 1, Vista.dardoEnvenenado()),
-			new Habilidad("Intoxicación", 500, 0, 2, Vista.intoxicacion()), new Habilidad("Trampa de Agujas", 17, 5, 3, Vista.trampaAgujas()),
+			new Habilidad("Intoxicación", 67, 60, 2, Vista.intoxicacion()), new Habilidad("Trampa de Agujas", 17, 5, 3, Vista.trampaAgujas()),
 			new Habilidad("Curar", 30, 40, 4)};
 	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 15, 10, 1, Vista.rayoBurbuja()),
 			new Habilidad("Maremoto", 63, 60, 2, Vista.maremoto()), new Habilidad("Torrente Cascada", 37, 20, 3, Vista.torrenteCascada()),
