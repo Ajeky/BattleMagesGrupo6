@@ -94,7 +94,7 @@ public class ControllerCombate {
 		}
 
 		else if (direccion == 1) {
-			if (c1.getP1().getPosicion() < c1.getCampoBatalla().length - 1) {
+			if (c1.getP1().getPosicion() < c1.getCampoBatalla()[0].length - 1) {
 				c1.getP1().setPosicion(c1.getP1().getPosicion() - 1);
 			}
 		} else {

@@ -323,7 +323,7 @@ public class Ppal {
 				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial,
 						false, 0);
 				
-				posInicialP2 = bd.getBatalla1().length - 1;
+				posInicialP2 = bd.getBatalla1()[0].length - 2;
 				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = dani;	
 				
@@ -670,7 +670,7 @@ public class Ppal {
 				
 				//TODO Meter sysos de por medio 
 				
-				posInicialP2 = bd.getBatalla2().length - 1;
+				posInicialP2 = bd.getBatalla2()[0].length - 2;
 				alex = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alex;
 				System.out.println("¡Te enfrentarás contra Alex!\n");
@@ -1014,7 +1014,7 @@ public class Ppal {
 				
 				//TODO meter sysos para rellenar
 
-				posInicialP2 = bd.getBatalla3().length - 1;
+				posInicialP2 = bd.getBatalla3()[0].length - 2;
 				antonio = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = antonio;
 				System.out.println("¡Te enfrentarás contra Antonio!\n");
@@ -1358,7 +1358,7 @@ public class Ppal {
 				
 				//TODO meter sysos pa rellenar
 				
-				posInicialP2 = bd.getBatalla4().length - 1;
+				posInicialP2 = bd.getBatalla4()[0].length - 2;
 				alvaro = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alvaro;
 				System.out.println("Te enfrentarás contra Álvaro\n");
