@@ -302,15 +302,16 @@ public class Ppal {
 					Vista.introduceNumero();
 					comprobacion = Leer.datoInt();
 					comprobacion = 0;
-					break;
 				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
 
-				Vista.finTutorial();
-				comprobacion = Leer.datoInt();
-				comprobacion = 0;
+				if (p1.isMuerte() == false) {
+					Vista.finTutorial();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+				}
 
 				break;
 
