@@ -411,6 +411,36 @@ public class Vista {
 				+ "  ,@@@@@@@       *@@@@@@@/   \r\n" + "   &@@@@@@@      @@@@@@@@    \r\n"
 				+ "    %@@@@@@,    #@@@@@@#     \r\n" + "      @@@@@@@/#@@@@@@@       \r\n"
 				+ "         @@@@@@@@@@       ");
+		
+	}
+	
+	public static void escarchaSelecta() {
+		
+		System.out.println("\r\n" + 
+				"                        .o+/  :oo:                      \r\n" + 
+				"              `++/`   .y`+/  -s s-   `++o.             \r\n" + 
+				"              `y.-s` `y.:s    /+`y. `s-.y`             \r\n" + 
+				"               `s:.y`s--s`     o/.y.s-:s`              \r\n" + 
+				"       `////:--.`o/.s+.y`       s--s`/s.-://///+`      \r\n" + 
+				"       .s/-----://o. `y. `///`  `y` `/:::--:///o.      \r\n" + 
+				"     -/. `.-:://////+`o/`s-`:s. /o`o////::-.`          \r\n" + 
+				"    `h.+o`          -y`/s.+y/.ss/.y.          :o/y     \r\n" + 
+				"     .s:.s:    `+////+/  s: :s`. ++///+`    `o/.o:     \r\n" + 
+				"       :s./o`  .y`.o///o:-s`.y.:+//o.`y.   /o./o`      \r\n" + 
+				"        `o/.s:  .y`o/  `o/.sy./o  ++`y.  .s:-s-        \r\n" + 
+				"   ++/////o: :///+/ +////o.``-o//// /+///+``s+/////+.  \r\n" + 
+				"   /+/////s: /+//o/ +////s-` -o////`++////`.s//////o.  \r\n" + 
+				"        `o/.s:  -y`o/   o/.ys`++  ++`y.  -s-:s.        \r\n" + 
+				"       /o.+o`  .y`.o///o:-s..y.:+//o.`y.  `++.o+`      \r\n" + 
+				"     .s:-s-    `+////+/  s: :s`. ++///+`    -s--s-     \r\n" + 
+				"     o++o`          -y.+s.+s/.ss/.y.         `+o`s-    \r\n" + 
+				"      `` `.-:///////+`o/.s-`:s` ++`o/////:--.` ./:`    \r\n" + 
+				"       `y/----:://o.``o: `///   -y` .//:::--:/+s`      \r\n" + 
+				"        -///:-.``o/.ys`s-      `y`+s`+o.-:://///       \r\n" + 
+				"               `s:-s./o`y.    `y.:o.y.:s`              \r\n" + 
+				"               y.-s`  +/.y`   o:-y` `y-.y              \r\n" + 
+				"               -/:`    s::s  ++`y.   `++/              \r\n" + 
+				"                       `+/+  o+o.             ");
 	}
 
 	public static void iceberg() {
@@ -901,6 +931,13 @@ public class Vista {
 			System.out.println();
 
 		}
+	}
+	
+	public static void introducionJuego() {
+		
+		System.out.println("Bienvenido a Battle Mages, te parecerá un ambiente bonito con el cielo soleado"
+				+ ", los pájaros cantando, las abejas absorbiendo el néctar de las flores y los magos jugando"
+				+ "a las magic pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro todo se tranforma...");
 	}
 
 }
