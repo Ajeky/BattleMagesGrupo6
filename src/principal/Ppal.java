@@ -44,7 +44,7 @@ public class Ppal {
 		String nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
 		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 200, p2ManaBase = 100,
-				p1SaludBase = 800, p1ManaBase = 100, posInicial = 0, opcHabilidad = 0, uno = 1, comprobacion = 0,
+				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, opcHabilidad = 0, uno = 1, comprobacion = 0,
 				p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null, alvaro, antonio, alex, dani;
@@ -79,7 +79,8 @@ public class Ppal {
 					"================================================================================================\n\n");
 
 			switch (opcion) {
-
+			
+			//Tutorial
 			case 1:
 				// Explicación de los elementos
 				Vista.tutorial();
