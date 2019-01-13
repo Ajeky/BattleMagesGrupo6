@@ -114,7 +114,7 @@ public class Vista {
 	}
 
 	public static void despedida(String n) {
-		System.out.println("Gracias por utilizar nuestra app " + n + " hasta luego.\n");
+		System.out.println("Gracias por utilizar nuestra app " + n + ". ¡Hasta luego!\n");
 	}
 
 	public String mostrarNombreHabilidades() {
@@ -941,20 +941,20 @@ public class Vista {
 	
 	public static void introduccionJuego() {
 		
-		System.out.println("Bienvenido a Battle Mages, te parecerá un ambiente bonito con el cielo soleado"
+		System.out.println("Bienvenido a Battle Mages. Te parecerá un ambiente bonito con el cielo soleado"
 				+ ", los pájaros cantando, las abejas absorbiendo el néctar de las flores y los magos jugando"
-				+ " a las magic pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro todo se transforma...");
+				+ " a las magic, pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro... todo se transforma...");
 	}
 	
 	public static void descripcionJugadores() {
 		
-		System.out.println("¿¡Pero qué...!? , ¿Poor-por qué el cielo ahora está oscuro y tormentoso? , ¿y ..yy.. esos sonidos tan fuertes?");
+		System.out.println("¿¡Pero qué...!? ¿Poor-por qué el cielo ahora está oscuro y tormentoso? ¿Y... yy... y esos sonidos tan fuertes?");
 		
 		System.out.println("Esos 4 de ahí enfrente me están mirando mal , de izquierda a derecha puedo"
-				+ " ver como a cada uno le sobresale una aureola de su elemento y vestidos totalmente diferentes el uno del otro");
+				+ " ver como a cada uno le sobresale una aureola de su elemento y van vestidos totalmente diferentes el uno del otro.");
 		
-		System.out.println("Parece ser que me quieren a mi , pero no soy una pieza fácil de conseguir , yo también tengo"
-				+ " unos poderes ocultos que enseñarles jeje.. veníd aquí.");
+		System.out.println("Parece ser que me quieren a mi, pero no soy una pieza fácil de conseguir. Yo también tengo"
+				+ " unos poderes ocultos que enseñarles, jeje.. veníd aquí.");
 	}
 	
 	public static void antesDani() {
