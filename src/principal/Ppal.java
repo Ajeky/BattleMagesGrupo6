@@ -309,10 +309,7 @@ public class Ppal {
 				
 								
 
-				// TODO Syso en construcción
-				System.out.println(
-						"[Breve introducción a la historia del juego. Descripción del paisaje que ve el jugador. Descripción de los 4 "
-								+ "enemigos a los que se puede enfrentar, dando a entender que los está viendo a los 4 y que están a una distancia similar.]");
+				Vista.introduccionJuego();
 				
 				// Elección del elemento
 				Vista.opcionElementos();
@@ -324,11 +321,17 @@ public class Ppal {
 				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial,
 						false, 0);
 				
+				Vista.descripcionJugadores();
+				
 				posInicialP2 = bd.getBatalla1()[0].length - 2;
 				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = dani;	
 				
 				System.out.println("¡Te enfrentarás contra Dani!\n");
+				
+				Vista.introduceNumero();
+				comprobacion = Leer.datoInt();
+				comprobacion = 0;
 				
 				Vista.imagenFight();
 				

@@ -952,5 +952,9 @@ public class Vista {
 		System.out.println("Parece ser que me quieren a mi , pero no soy una pieza fácil de conseguir , yo también tengo"
 				+ "unos poderes ocultos que enseñarles jeje.. veníd aquí.");
 	}
+	
+	public static void introduceNumero() {
+		System.out.println("Introduce cualquier número para continuar.");
+	}
 
 }
