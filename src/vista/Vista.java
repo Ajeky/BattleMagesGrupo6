@@ -964,6 +964,15 @@ public class Vista {
 				+ " unos poderes ocultos que enseñarles jeje.. veníd aquí.");
 	}
 	
+	public static void despuesAlvaro() {
+		System.out.println("Caes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
+				+ "Pero no sientes felicidad. No sientes nada. Estás demasiado cansado como para que nada importe. Solo piensas en qué pasará ahora. \nEn cómo vas a volver a casa "
+				+ "si apenas puedes mantener los ojos abiertos. Te duele cada músculo, incluso algunos que ni siquiera sabías que tenías. \nLa Tormenta se disipa rápidamente, dejando "
+				+ "ver un cálido sol que despierta una tímida brisa por todo el valle. El mundo ha recuperado su color. Y tú eres el único que queda para verlo. \n"
+				+ "Encuentras este pensamiento extrañamente reconfortante, y por fin te decides a intentar levantarte. Tras unos cuantos tropiezos y un dolor intenso consigues erguirte, \n"
+				+ "y esbozando una ligera sonrisa, emprendes el camino a casa.");
+	}
+	
 	public static void introduceNumero() {
 		System.out.println("Introduce cualquier número para continuar.");
 	}

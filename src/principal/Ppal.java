@@ -1746,11 +1746,7 @@ public class Ppal {
 					break;
 				}
 
-				p1.setContCurar(0);
-				p2.setContCurar(0);
-				contCombate++;
-
-				// TODO meter syso final de despedida y enhorabuena por completar el juego
+				Vista.despuesAlvaro();
 
 				// Es el break del case 2 (Jugar)
 				break;
