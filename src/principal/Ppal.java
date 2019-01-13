@@ -1756,7 +1756,8 @@ public class Ppal {
 					break;
 				}
 
-				Vista.despuesAlvaro();				
+				Vista.despuesAlvaro();		
+				Vista.victoria();
 				Vista.introduceNumero();
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
