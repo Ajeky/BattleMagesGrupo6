@@ -206,7 +206,7 @@ public class Datos {
 	private static Habilidad[] HabilidadesTierra = { new Habilidad("Roca afilada", 17, 15, 1, Vista.rocaAfilada()),
 			new Habilidad("Avalancha", 60, 80, 2, Vista.avalancha()), new Habilidad("Muro Sísmico", 60, 25, 3, Vista.muroSismico()),
 			new Habilidad("Curar", 30, 60, 4)};
-	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 35, 25, 1/*TODO no tiene icono*/),
+	private static Habilidad[] HabilidadesHielo = { new Habilidad("Escarcha selecta", 35, 25, 1, Vista.escarchaSelecta()),
 			new Habilidad("Cero Absoluto", 45, 45, 2, Vista.ceroAbsoluto()), new Habilidad("Iceberg", 40, 25, 3, Vista.iceberg()),
 			new Habilidad("Curar", 30, 50, 4)};
 	private static Habilidad[] HabilidadesElec = { new Habilidad("Sobrecarga", 13, 5, 1, Vista.sobreCarga()),

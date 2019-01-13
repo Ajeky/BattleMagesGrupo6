@@ -414,9 +414,9 @@ public class Vista {
 		
 	}
 	
-	public static void escarchaSelecta() {
+	public static String escarchaSelecta() {
 		
-		System.out.println("\r\n" + 
+		return ("\r\n" + 
 				"                        .o+/  :oo:                      \r\n" + 
 				"              `++/`   .y`+/  -s s-   `++o.             \r\n" + 
 				"              `y.-s` `y.:s    /+`y. `s-.y`             \r\n" + 

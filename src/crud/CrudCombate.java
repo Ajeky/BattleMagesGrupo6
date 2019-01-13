@@ -164,11 +164,11 @@ public class CrudCombate {
 		ControllerCombate.danarP2(c, danoP2);
 
 		if (c.getP1().getSalud() > 800) {
-			c.getP1().setSalud(500);
+			c.getP1().setSalud(800);
 		}
 
 		if (c.getP2().getSalud() > 200) {
-			c.getP2().setSalud(100);
+			c.getP2().setSalud(200);
 		}
 
 		c.getP1().setMana(c.getP1().getMana() + 20);
