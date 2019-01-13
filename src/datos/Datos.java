@@ -212,7 +212,7 @@ public class Datos {
 			new Habilidad("Tormenta Eléctrica", 30, 30, 2), new Habilidad("Muralla Volátil", 25, 10, 3),
 			new Habilidad("Curar", 30, 35, 4)};
 	private static Habilidad[] HabilidadesVen = { new Habilidad("Dardo Envenenado", 30, 25, 1),
-			new Habilidad("Intoxicación", 500, 65, 2), new Habilidad("Trampa de Agujas", 17, 5, 3),
+			new Habilidad("Intoxicación", 500, 0, 2), new Habilidad("Trampa de Agujas", 17, 5, 3),
 			new Habilidad("Curar", 30, 40, 4)};
 	private static Habilidad[] HabilidadesAgua = { new Habilidad("Rayo Burbuja", 15, 10, 1),
 			new Habilidad("Maremoto", 63, 60, 2), new Habilidad("Torrente Cascada", 37, 20, 3),
