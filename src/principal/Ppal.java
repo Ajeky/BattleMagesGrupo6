@@ -44,7 +44,7 @@ public class Ppal {
 		String nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
 		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 200, p2ManaBase = 100,
-				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, opcHabilidad = 0, uno = 1, comprobacion = 0,
+				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, posInicialP2 = 0, opcHabilidad = 0, uno = 1, comprobacion = 0,
 				p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null, alvaro, antonio, alex, dani;
@@ -306,10 +306,7 @@ public class Ppal {
 
 			case 2:
 				
-				alvaro = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicial, false, 0);
-				antonio = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicial, false, 0);
-				alex = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicial, false, 0);
-				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicial, false, 0);
+								
 
 				// TODO Syso en construcción
 				System.out.println(
@@ -326,8 +323,8 @@ public class Ppal {
 				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial,
 						false, 0);
 				
-				
-				
+				posInicialP2 = bd.getBatalla1()[0].length - 2;
+				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = dani;	
 				
 				System.out.println("¡Te enfrentarás contra Dani!\n");
@@ -673,6 +670,8 @@ public class Ppal {
 				
 				//TODO Meter sysos de por medio 
 				
+				posInicialP2 = bd.getBatalla2()[0].length - 2;
+				alex = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alex;
 				System.out.println("¡Te enfrentarás contra Alex!\n");
 				Vista.imagenFight();
@@ -1014,7 +1013,9 @@ public class Ppal {
 				contCombate++;
 				
 				//TODO meter sysos para rellenar
-				
+
+				posInicialP2 = bd.getBatalla3()[0].length - 2;
+				antonio = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = antonio;
 				System.out.println("¡Te enfrentarás contra Antonio!\n");
 				Vista.imagenFight();
@@ -1356,6 +1357,9 @@ public class Ppal {
 				contCombate++;
 				
 				//TODO meter sysos pa rellenar
+				
+				posInicialP2 = bd.getBatalla4()[0].length - 2;
+				alvaro = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alvaro;
 				System.out.println("Te enfrentarás contra Álvaro\n");
 				Vista.imagenFight();
