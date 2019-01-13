@@ -959,36 +959,36 @@ public class Vista {
 	
 	public static void antesDani() {
 
-        System.out.println("Qué raro, de repente tengo mucho frío y noto como si hubiese una presencia detrás de mi..."
+        System.out.println("\nQué raro, de repente tengo mucho frío y noto como si hubiese una presencia detrás de mi..."
                 + " ¡Joder! ¡Qué susto! \nMe doy la vuelta y veo al mago de hielo. Tendré que abrigarme bien"
                 + " antes de enfrentarme a él...");
     }
 	
 	public static void despuesDani() {
-		System.out.println("Te sacudes las estalactitas que cuelgan de tu nariz y tus orejas, contemplando el frío cuerpo que yace ante ti. \n"
+		System.out.println("\n\nTe sacudes las estalactitas que cuelgan de tu nariz y tus orejas, contemplando el frío cuerpo que yace ante ti. \n"
 				+ "Todavía estás recuperándote del susto cuando sientes un temblor bajo tus pies. La tierra se separa y empiezan a crecer rocas donde antes no había nada. \n"
 				+ "Te giras y ves a un mago envuelto en una túnica marrón que te sonríe desafiante, mientras con la mano te hace gestos para que te acerques. \n"
 				+ "No te queda otra. Empiezas a canalizar energía arcana hacia tus manos mientras caminas decidido hacia él.");
 	}
 	
 	public static void despuesAlex() {
-        System.out.println("Después del combate, Alex no dudó en levantar un pilar de Tierra para hacerle recordar a aquellos que pasaran por esa arena al grandioso mago que \n"
+        System.out.println("\n\nDespués del combate, Alex no dudó en levantar un pilar de Tierra para hacerle recordar a aquellos que pasaran por esa arena al grandioso mago que \n"
                 + "derrotó a 'Alex, el guardián de la Tierra'. Durante unos minutos, el mago talló el pilar con runas de sabiduría en un idioma que le transmitió al nuevo heredero, \n"
                 + "dejándole estas últimas palabras: 'Tú... Ahora defenderás aquello que me costó una vida aprender a mi.. La sabiduría recorrerá todos tus sentidos..."); }
 	
 	public static void despuesAntonio() {
-        System.out.println("Tras derrotar a tu último rival  te das cuenta de que la Tormenta sigue avanzando, lo que solo indica una cosa todaváa hay enemigos vivos \n"
+        System.out.println("\n\nTras derrotar a tu último rival  te das cuenta de que la Tormenta sigue avanzando, lo que solo indica una cosa todaváa hay enemigos vivos \n"
                 + "Tomas unos segundos de descanso sabiendo que en cualquier momento entablarás contacto visual con otro enemigo que esperas que sea el último.\n"
                 +"Tras unos segundos ves como alguien aparece en el horizonte, ahí está el otro enemigo al que derrotar, y puede ser el último para alzarte con la victoria.\n\n");
     }
 	
 	public static void despuesAlvaro() {
-		System.out.println("Caes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
+		System.out.println("\n\nCaes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
 				+ "Pero no sientes felicidad. No sientes nada. Estás demasiado cansado como para que nada importe. Solo piensas en qué pasará ahora. \nEn cómo vas a volver a casa "
 				+ "si apenas puedes mantener los ojos abiertos. Te duele cada músculo, incluso algunos que ni siquiera sabías que tenías. \nLa Tormenta se disipa rápidamente, dejando "
 				+ "ver un cálido sol que despierta una tímida brisa por todo el valle. El mundo ha recuperado su color. Y tú eres el único que queda para verlo. \n"
 				+ "Encuentras este pensamiento extrañamente reconfortante, y por fin te decides a intentar levantarte. Tras unos cuantos tropiezos y un dolor intenso consigues erguirte, \n"
-				+ "y esbozando una ligera sonrisa, emprendes el camino a casa.");
+				+ "y esbozando una ligera sonrisa, emprendes el camino a casa.\n\n\n\n\n");
 	}
 	
 	public static void introduceNumero() {

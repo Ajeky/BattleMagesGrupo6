@@ -82,6 +82,8 @@ public class Ppal {
 
 			// Tutorial
 			case 1:
+				contCombate = 0;
+				
 				// Explicación de los elementos
 				Vista.tutorial();
 
@@ -297,6 +299,8 @@ public class Ppal {
 
 				} while (p2.isMuerte() == false && p1.isMuerte() == false);
 				
+				opcion = 0;
+				
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -316,6 +320,8 @@ public class Ppal {
 				break;
 
 			case 2:
+				
+				contCombate = 0;
 
 				Vista.introduccionJuego();
 
@@ -681,6 +687,8 @@ public class Ppal {
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
 				
+				opcion = 0;
+				
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -1035,6 +1043,8 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				opcion = 0;
 				
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
@@ -1392,6 +1402,8 @@ public class Ppal {
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
 				
+				opcion = 0;
+				
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
 					Vista.introduceNumero();
@@ -1747,6 +1759,8 @@ public class Ppal {
 					}
 
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				opcion = 0;
 				
 				if (p1.isMuerte() == true) {
 					Vista.gameOver();
