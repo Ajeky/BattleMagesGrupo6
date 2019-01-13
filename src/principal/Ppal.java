@@ -10,32 +10,126 @@ import crud.CrudCombate;
 import datos.Datos;
 import model.Habilidad;
 
-//�                                12/12/2018                                                               �
-//�---------------------------------------------------------------------------------------------------------�
-//�	  # Creación de la clase model "Elemento"                     # - Alejandro Díaz Santos               �
-//�   # Creación de la clase model "Personaje"                      # - Antonio Durán Falero                �
-//�	  # Organización del juego, señalar requisitos funcionales    # - Álvaro Márquez Mata                 �
-//�   # Creación de la clase model "Habilidad"                      # - Daniel Troncoso Rubio	            �
-//�---------------------------------------------------------------------------------------------------------�
-//�                                                                                                         �
-//�                                                                                                         �
-//�	                              13/12/2018                                                                �
-//�---------------------------------------------------------------------------------------------------------�
-//�   # Creación de la clase vista "Vista"                          # - Alejandro Díaz Santos               �
-//�   # Creación de la clase datos "DatosElemento"                  # - Antonio Durán Falero                �
-//�   # Creación de las clases CRUD "Personaje, Elemento, Habilidad"# - Álvaro Márquez Mata                 �
-//�   # Creación de la clase datos"DatosHabilidad"                  # - Daniel Troncoso Rubio			    �
-//�---------------------------------------------------------------------------------------------------------�
-//�                                                                                                         �
-//�                                12/12/2018                                                               �
-//�---------------------------------------------------------------------------------------------------------�
-//�	  # Creación de la clase model "Elemento"                     # - Alejandro Díaz Santos               �
-//�   # Creación de la clase model "Personaje"                      # - Antonio Durán Falero                �
-//�	  # Organización del juego, señalar requisitos funcionales    # - Álvaro Márquez Mata                 �
-//�   # Creación de la clase model "Habilidad"                      # - Daniel Troncoso Rubio	            �
-//�---------------------------------------------------------------------------------------------------------�
-//�                                                                                                         �
-//�_________________________________________________________________________________________________________�	
+/*
+--------------------------------------------------------------------------Antonio Durán Falero---------------------------------------------------------------------------------------
+Creado todas las clases de combate (tanto model datos como crud)
+Introducción de los distintos mapas a la base de datos  creacion de todos los métodos que este relacionado como acciones sobre el mapa.(controller actualizar mapa)
+Controller.moverp1 y moverp2
+Crud(Crearcombate)
+Datos entre yo y alvaro
+MODEL(combate, personaje)
+
+
+
+----------------------------------------------------------------------------Daniel Troncoso Rubio------------------------------------------------------------------------------
+
+-Creada la clase Habilidad
+-Array habilidades añadido a DatosHabilidad (Movido a Datos.java)
+-Creado el paquete utilidades con la clase Leer
+-Creada la estructura de Ppal de inicio (Luego modificada por Álvaro)
+-Creado los métodos de la vista (barra de mana , barra de vida, game over, magical victory,
+-menú, título del juego, los menús de lasd habilidades,erroresCura, erroresMovimiento, todos los métodos de habilidades de fuego,viento,tierra, hielo, electrico..)
+-Rellenado las habilidades de los elementos en DatosHabilidad con el nombre , potencia y daño. (Modificada por Álvaro y movidas a Datos.java)
+-Creado métodos de delete y update en CrudCombate.
+-Tutorial en la clase Ppal (Terminado y modificado por Álvaro)
+-Creado métodos en ControllerCombate para mostrarvida y mostrarmaná de ambos personajes.
+
+
+
+
+
+---------------------------------------------------------------------Alejandro Díaz Santos--------------------------------------------------------------------
+- Model elemento
+- despuesAlex()
+- Intento de método en el cual haya una probabilidad para el método atacar y esquivar. 
+Si la probabilidad del método de atacar p1 es mayor que la de esquivar de P2, P1 atacará a P2. (No implementado) 
+- Clase crudPersonaje actualizar salud y maná, actualizar lista de lo que se ha hecho
+- Corrección de caracteres
+- Creación clase Vista
+- Ppal sysos "Te enfrentaras a..",
+- Método imagenFight con syso "FIGHT!" 
+- Cambio de título de "Battle Royale Spell Break" a "Battle Mages: Battle Royale"
+
+
+
+
+--------------------------------------------------------------------Álvaro Márquez Mata------------------------------------------------------------------------------
+12/12/2018
+-Creadas clases:	ControllerElemento, ControllerHabilidad, ControllerPersonaje
+			CrudHabilidad, DatosElemento, DatosHabilidad, Habilidad
+13/12/2018
+-Creados métodos:	CrudElemento: anadir, eliminar
+			CrudPersonaje: actualizarposicion
+			DatosElemento: Elemento[] listaElementos
+			DatosHabilidad: Habilidad[] HabilidadesFuego, Habilidad[] HabilidadesTierra, HabilidadesHielo, HabilidadesElec,
+					y creados getters&setters
+			Personaje: Constructor, nuevo atributo "posicion", getter&setter.
+14/12/2018
+#Añadido array listaElementos a la clase DatosElemento. Getter&Setter.
+#Añadidos arrays de Habilidades a la clase DatosHabilidad. Getter&Setter.
+#Creada clase ControllerCombate, creados los objetos Elemento en DatosElemento.
+#Añadidos constructores, Getters&Setters y toString.
+
+17/12/2018
+#Creado método atacar en ControllerCombate. Posteriormente eliminado.
+#Añadidos tipos de habilidad a DatosHabilidad.
+#Añadido atributo tipo a model.Habilidad. Getter&Setter creado.
+#Añadido método habilidadIncorrecta a la clase Vista.
+#Añadido método crearCombate a CrudCombate
+#Añadidos Getters&Setters a la clase DatosCombate
+
+
+7/1/2018
+#Comenzado el trabajo de la clase principal. Creados los personajes y el primer combate.
+#Añadido método borrarCombate a la clase CrudCombate
+
+9/1/2018
+#Añadido atributo muerte a model.Personaje, además de isMuerte y setMuerte.
+#Creados Getter&Setter para contCombate en la clase model.Combate.
+#Convertidos en static algunos métodos que no lo eran.
+#Terminadas de juntar todas las clases del paquete "datos" en una sola
+#Avanzado el desarrollo de la clase principal
+
+11/1/2018
+#Añadido coste de maná al método curar de ControllerCombate (más tarde simplificado en otro método)
+#Corrección de errores
+#Añadidas las habilidades Curar a la clase Datos
+#Avanzado el desarrollo del tutorial de la clase principal (estructura creada por Dani, finalmente hecho por mí)
+#Cambiado el método atacar de CrudCombate (modificado más aún posteriormente)
+#Aumentada cantidad de vida de los jugadores y reducido el daño de las habilidades para balancear el juego
+#Corrección de algunos métodos de la clase Vista
+
+12/1/2018
+#Avanzado desarrollo de la clase Principal
+#Corregidos algunos métodos de la clase Vista
+#Balanceo de maná, devuelto a 100 puntos por personaje
+#Añadido el coste y la potencia al syso de Fuego de clase Vista en que se muestran al jugador las habilidades disponibles. (Resto de elementos hechos por Antonio)
+#Eliminada clase CrudHabilidad
+#Reformada la clase CrudCombate para el método actualizarCombate; ahora hace muchas cosas que antes se hacían en ControllerCombate
+#Dividido el macrométodo atacar en otros más pequeños, llamados luegos por el método actualizarCombate de la clase CrudCombate
+#Creado array HabilidadesComunes en Datos
+#Crado método actualizarMuerte en CrudPersonaje, convertidos en static unos métodos que no lo eran.
+#Más correcciones de la clase Vista
+#Desarrollo del tutorial de la clase Principal
+#Terminado método actualizarCombate de la clase CrudCombate
+#Terminado el tutorial
+#Clase principal casi terminada, faltando solo sysos y corrección de errores
+#Corregido el movimiento de los personajes, tanto los métodos moverse como la posición inicial del jugador 2 (hecho entre todos)
+#Añadido que se impriman los iconos de las habilidades al usarlas con la ayuda de Daniel
+#Movido parte del método actualizarCombate de CrudCombate a ControllerCombate, creando otro método llamado actualizarMapa.
+#Corrección de errores de la clase Ppal.
+#Añadido método vista "despuesAlvaro()"
+#Añadido cartel de Game Over (craedo por Dani) a la clase Ppal
+#Correcciones gramaticales de algunos métodos de la clase Vista
+#Terminado por completo el desarrollo de la clase Ppal.
+
+Documentación ofrecida por Alejandro.
+Si quieres mirar los cambios de forma más exhaustiva, en nuestro repositorio de GitHub están todos los cambios
+realizados por cada uno de nosotros: https://github.com/Ajeky/BattleMagesGrupo6
+
+
+
+*/
 
 public class Ppal {
 
