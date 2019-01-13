@@ -44,8 +44,8 @@ public class Ppal {
 		String nickName, iaName = "BOT Francisco";
 		String[][] campoBatalla;
 		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 200, p2ManaBase = 100,
-				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, posInicialP2 = 0, opcHabilidad = 0, uno = 1, comprobacion = 0,
-				p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
+				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, posInicialP2 = 0, opcHabilidad = 0, uno = 1,
+				comprobacion = 0, p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null, alvaro, antonio, alex, dani;
 		Datos bd = new Datos();
@@ -79,15 +79,15 @@ public class Ppal {
 					"================================================================================================\n\n");
 
 			switch (opcion) {
-			
-			//Tutorial
+
+			// Tutorial
 			case 1:
 				// Explicación de los elementos
 				Vista.tutorial();
 
 				// Elección del elemento
 				Vista.opcionElementos();
-				
+
 				opcElemento = Leer.datoInt() - 1;
 
 				// Creamos el primer jugador
@@ -105,9 +105,9 @@ public class Ppal {
 
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
-				
+
 				Vista.imagenFight();
-				
+
 				// Creamos combate
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
@@ -115,6 +115,7 @@ public class Ppal {
 
 				do {
 
+					ControllerCombate.actualizarMapa(c1, contCombate);
 					Vista.mostrarMapa(c1);
 
 					System.out.println(c1.getP1().getNombre());
@@ -135,7 +136,7 @@ public class Ppal {
 
 					do {
 						comprobacion = 0;
-						
+
 						Vista.opcionesCombate(p1);
 
 						opcion = Leer.datoInt();
@@ -279,7 +280,7 @@ public class Ppal {
 							Vista.numero1al3();
 							break;
 						}
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
 					h2 = bd.getHabilidadesFuego()[0];
@@ -295,6 +296,14 @@ public class Ppal {
 					}
 
 				} while (p2.isMuerte() == false && p1.isMuerte() == false);
+				
+				if (p1.isMuerte() == true) {
+					Vista.gameOver();
+					Vista.introduceNumero();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+					break;
+				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
@@ -306,11 +315,9 @@ public class Ppal {
 				break;
 
 			case 2:
-				
-								
 
 				Vista.introduccionJuego();
-				
+
 				// Elección del elemento
 				Vista.opcionElementos();
 
@@ -320,25 +327,26 @@ public class Ppal {
 
 				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial,
 						false, 0);
-				
+
 				Vista.descripcionJugadores();
-				
+
 				posInicialP2 = bd.getBatalla1()[0].length - 2;
-				dani = new Personaje(bd.getHielo(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
-				p2 = dani;	
-				
+				dani = new Personaje(bd.getVeneno(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
+				p2 = dani;
+
 				System.out.println("¡Te enfrentarás contra Dani!\n");
-				
+
 				Vista.introduceNumero();
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
-				
+
 				Vista.imagenFight();
-				
+
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				do {
 
+					ControllerCombate.actualizarMapa(c1, contCombate);
 					Vista.mostrarMapa(c1);
 
 					System.out.println(c1.getP1().getNombre());
@@ -358,152 +366,154 @@ public class Ppal {
 					System.out.println(" ");
 
 					do {
-						comprobacion = 0;
-						
-						Vista.opcionesCombate(p1);
+						do {
+							comprobacion = 0;
 
-						opcion = Leer.datoInt();
+							Vista.opcionesCombate(p1);
 
-						switch (opcion) {
-						case 1:
-
-							if (p1.getE().getNombreElemento().equals("Fuego")) {
-								Vista.fuegoHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesFuego()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Agua")) {
-								Vista.aguaHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesAgua()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Tierra")) {
-								Vista.tierraHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesTierra()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Hielo")) {
-								Vista.hieloHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesHielo()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Aire")) {
-								Vista.aireHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesAire()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Electrico")) {
-								Vista.electHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesElec()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							} else if (p1.getE().getNombreElemento().equals("Veneno")) {
-								Vista.venenoHabilidad();
-
-								opcHabilidad = Leer.datoInt() - 1;
-								// Sacar habilidad con la posición de opcHabilidad.
-								h1 = bd.getHabilidadesVen()[opcHabilidad];
-
-								if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
-									Vista.errorCura();
-									comprobacion = 1;
-								}
-								if (h1.getCosteMana() > p1.getMana()) {
-									Vista.errorMana();
-									comprobacion = 1;
-								}
-
-							}
-
-							break;
-
-						case 2:
-							Vista.direccion();
 							opcion = Leer.datoInt();
-							if (opcion == 0) {
-								h1 = bd.getHabilidadesComunes()[0];
-							} else if (opcion == 1) {
-								h1 = bd.getHabilidadesComunes()[1];
+
+							switch (opcion) {
+							case 1:
+
+								if (p1.getE().getNombreElemento().equals("Fuego")) {
+									Vista.fuegoHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesFuego()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Agua")) {
+									Vista.aguaHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesAgua()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Tierra")) {
+									Vista.tierraHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesTierra()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Hielo")) {
+									Vista.hieloHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesHielo()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Aire")) {
+									Vista.aireHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesAire()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Electrico")) {
+									Vista.electHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesElec()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								} else if (p1.getE().getNombreElemento().equals("Veneno")) {
+									Vista.venenoHabilidad();
+
+									opcHabilidad = Leer.datoInt() - 1;
+									// Sacar habilidad con la posición de opcHabilidad.
+									h1 = bd.getHabilidadesVen()[opcHabilidad];
+
+									if (opcHabilidad == 3 && p1.getContCurar() >= 2) {
+										Vista.errorCura();
+										comprobacion = 1;
+									}
+									if (h1.getCosteMana() > p1.getMana()) {
+										Vista.errorMana();
+										comprobacion = 1;
+									}
+
+								}
+
+								break;
+
+							case 2:
+								Vista.direccion();
+								opcion = Leer.datoInt();
+								if (opcion == 0) {
+									h1 = bd.getHabilidadesComunes()[0];
+								} else if (opcion == 1) {
+									h1 = bd.getHabilidadesComunes()[1];
+								}
+								// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
+								// Antonio
+								break;
+
+							case 3:
+								h1 = bd.getHabilidadesComunes()[2];
+								break;
+
+							default:
+								Vista.numero1al3();
+								break;
 							}
-							// TODO Comprobacion de limite de mapa? Demasiado complicado? Preguntar a
-							// Antonio
-							break;
-
-						case 3:
-							h1 = bd.getHabilidadesComunes()[2];
-							break;
-
-						default:
-							Vista.numero1al3();
-							break;
-						}
-					} while (comprobacion == 1);
+						} while (opcion > 3 || opcion < 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
 					do {
@@ -653,11 +663,11 @@ public class Ppal {
 							break;
 						}
 
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
-					
+
 					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
-					
+
 					if (p1.getSalud() <= 0) {
 						p1 = CrudPersonaje.actualizarMuerte(c1.getP1());
 					}
@@ -665,15 +675,23 @@ public class Ppal {
 					if (p2.getSalud() <= 0) {
 						p2 = CrudPersonaje.actualizarMuerte(c1.getP2());
 					}
-					
+
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				if (p1.isMuerte() == true) {
+					Vista.gameOver();
+					Vista.introduceNumero();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+					break;
+				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
 				contCombate++;
-				
-				//TODO Meter sysos de por medio 
-				
+
+				// TODO Meter sysos de por medio
+
 				posInicialP2 = bd.getBatalla2()[0].length - 2;
 				alex = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alex;
@@ -683,6 +701,7 @@ public class Ppal {
 
 				do {
 
+					ControllerCombate.actualizarMapa(c1, contCombate);
 					Vista.mostrarMapa(c1);
 
 					System.out.println(c1.getP1().getNombre());
@@ -703,7 +722,7 @@ public class Ppal {
 
 					do {
 						comprobacion = 0;
-						
+
 						Vista.opcionesCombate(p1);
 
 						opcion = Leer.datoInt();
@@ -847,7 +866,7 @@ public class Ppal {
 							Vista.numero1al3();
 							break;
 						}
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
 					do {
@@ -997,11 +1016,11 @@ public class Ppal {
 							break;
 						}
 
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
-					
+
 					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
-					
+
 					if (p1.getSalud() <= 0) {
 						p1 = CrudPersonaje.actualizarMuerte(c1.getP1());
 					}
@@ -1009,14 +1028,22 @@ public class Ppal {
 					if (p2.getSalud() <= 0) {
 						p2 = CrudPersonaje.actualizarMuerte(c1.getP2());
 					}
-					
+
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				if (p1.isMuerte() == true) {
+					Vista.gameOver();
+					Vista.introduceNumero();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+					break;
+				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
 				contCombate++;
-				
-				//TODO meter sysos para rellenar
+
+				// TODO meter sysos para rellenar
 
 				posInicialP2 = bd.getBatalla3()[0].length - 2;
 				antonio = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
@@ -1027,6 +1054,7 @@ public class Ppal {
 
 				do {
 
+					ControllerCombate.actualizarMapa(c1, contCombate);
 					Vista.mostrarMapa(c1);
 
 					System.out.println(c1.getP1().getNombre());
@@ -1047,7 +1075,7 @@ public class Ppal {
 
 					do {
 						comprobacion = 0;
-						
+
 						Vista.opcionesCombate(p1);
 
 						opcion = Leer.datoInt();
@@ -1191,7 +1219,7 @@ public class Ppal {
 							Vista.numero1al3();
 							break;
 						}
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
 					do {
@@ -1341,11 +1369,11 @@ public class Ppal {
 							break;
 						}
 
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
-					
+
 					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
-					
+
 					if (p1.getSalud() <= 0) {
 						p1 = CrudPersonaje.actualizarMuerte(c1.getP1());
 					}
@@ -1353,15 +1381,23 @@ public class Ppal {
 					if (p2.getSalud() <= 0) {
 						p2 = CrudPersonaje.actualizarMuerte(c1.getP2());
 					}
-					
+
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				if (p1.isMuerte() == true) {
+					Vista.gameOver();
+					Vista.introduceNumero();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+					break;
+				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
 				contCombate++;
-				
-				//TODO meter sysos pa rellenar
-				
+
+				// TODO meter sysos pa rellenar
+
 				posInicialP2 = bd.getBatalla4()[0].length - 2;
 				alvaro = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
 				p2 = alvaro;
@@ -1371,6 +1407,7 @@ public class Ppal {
 
 				do {
 
+					ControllerCombate.actualizarMapa(c1, contCombate);
 					Vista.mostrarMapa(c1);
 
 					System.out.println(c1.getP1().getNombre());
@@ -1389,9 +1426,9 @@ public class Ppal {
 					Vista.mostrarManaEnemigo(c1.getP2());
 					System.out.println(" ");
 
-					do {
+						do {
 						comprobacion = 0;
-						
+
 						Vista.opcionesCombate(p1);
 
 						opcion = Leer.datoInt();
@@ -1535,7 +1572,7 @@ public class Ppal {
 							Vista.numero1al3();
 							break;
 						}
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
 
 					do {
@@ -1685,11 +1722,11 @@ public class Ppal {
 							break;
 						}
 
-					} while (comprobacion == 1);
+					} while (comprobacion == 1 || opcion > 3 || opcion < 1);
 					comprobacion = 0;
-					
+
 					CrudCombate.actualizarCombate(c1, contCombate, h1, h2);
-					
+
 					if (p1.getSalud() <= 0) {
 						p1 = CrudPersonaje.actualizarMuerte(c1.getP1());
 					}
@@ -1697,16 +1734,22 @@ public class Ppal {
 					if (p2.getSalud() <= 0) {
 						p2 = CrudPersonaje.actualizarMuerte(c1.getP2());
 					}
-					
+
 				} while (p1.isMuerte() == false && p2.isMuerte() == false);
+				
+				if (p1.isMuerte() == true) {
+					Vista.gameOver();
+					Vista.introduceNumero();
+					comprobacion = Leer.datoInt();
+					comprobacion = 0;
+					break;
+				}
 
 				p1.setContCurar(0);
 				p2.setContCurar(0);
 				contCombate++;
-				
-				
-				//TODO meter syso final de despedida y enhorabuena por completar el juego
-				
+
+				// TODO meter syso final de despedida y enhorabuena por completar el juego
 
 				// Es el break del case 2 (Jugar)
 				break;
