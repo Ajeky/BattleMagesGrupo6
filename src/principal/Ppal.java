@@ -330,6 +330,8 @@ public class Ppal {
 						false, 0);
 
 				Vista.descripcionJugadores();
+				
+				Vista.antesDani();
 
 				posInicialP2 = bd.getBatalla1()[0].length - 2;
 				dani = new Personaje(bd.getVeneno(), "Dani", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
@@ -341,7 +343,7 @@ public class Ppal {
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
 
-				Vista.imagenFight();
+				Vista.imagenFight();				
 
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
@@ -691,7 +693,9 @@ public class Ppal {
 				p2.setContCurar(0);
 				contCombate++;
 
-				// TODO Meter sysos de por medio
+				Vista.despuesDani();
+				Vista.introduceNumero();
+				comprobacion = Leer.datoInt();
 
 				posInicialP2 = bd.getBatalla2()[0].length - 2;
 				alex = new Personaje(bd.getTierra(), "Alejandro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
@@ -1044,7 +1048,10 @@ public class Ppal {
 				p2.setContCurar(0);
 				contCombate++;
 
-				// TODO meter sysos para rellenar
+				Vista.despuesAlex();
+				Vista.introduceNumero();
+				comprobacion = Leer.datoInt();
+				comprobacion = 0;
 
 				posInicialP2 = bd.getBatalla3()[0].length - 2;
 				antonio = new Personaje(bd.getAgua(), "Antonio", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
@@ -1397,7 +1404,10 @@ public class Ppal {
 				p2.setContCurar(0);
 				contCombate++;
 
-				// TODO meter sysos pa rellenar
+				Vista.despuesAntonio();
+				Vista.introduceNumero();
+				comprobacion = Leer.datoInt();
+				comprobacion = 0;
 
 				posInicialP2 = bd.getBatalla4()[0].length - 2;
 				alvaro = new Personaje(bd.getFuego(), "Álvaro", p2SaludBase, p2ManaBase, posInicialP2, false, 0);
@@ -1746,9 +1756,12 @@ public class Ppal {
 					break;
 				}
 
-				Vista.despuesAlvaro();
+				Vista.despuesAlvaro();				
+				Vista.introduceNumero();
+				comprobacion = Leer.datoInt();
+				comprobacion = 0;
 
-				// Es el break del case 2 (Jugar)
+				// Break del case 2 (Jugar)
 				break;
 
 			case 3:
