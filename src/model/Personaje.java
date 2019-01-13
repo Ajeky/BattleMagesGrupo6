@@ -82,7 +82,7 @@ public class Personaje {
 	}
 
 	public String toString() {
-		return "Personaje [e=" + e + ", nombre=" + nombre + ", salud=" + salud + ", mana=" + mana + "]";
+		return "Personaje [e=" + e + ", Nombre = " + nombre + ", Salud = " + salud + ", Maná = " + mana + "]";
 	}
 
 }

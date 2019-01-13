@@ -53,7 +53,7 @@ public class Combate {
 
 	@Override
 	public String toString() {
-		return "Combate [p1=" + p1 + ", p2=" + p2 + ", campoBatalla=" + Arrays.toString(campoBatalla) + "]";
+		return "Combate [P1 = " + p1 + ", P2 = " + p2 + ", Campo de Batalla = " + Arrays.toString(campoBatalla) + "]";
 	}
 
 }

@@ -1,12 +1,15 @@
 package model;
 
+import java.util.Random;
+
 public class Habilidad {
 
 	private String nombre;
 	int potencia;
 	int costeMana;
 	int tipo;
-
+	Random probabilidadPotencia;
+	
 	public Habilidad(String nombre, int potencia, int costeMana, int tipo) {
 		super();
 		this.nombre = nombre;
@@ -53,7 +56,7 @@ public class Habilidad {
 
 	@Override
 	public String toString() {
-		return "Habilidad [nombre=" + nombre + ", potencia=" + potencia + ", costeMana=" + costeMana + "]";
+		return "Habilidad [Nombre = " + nombre + ", Potencia = " + potencia + ", Coste de Maná = " + costeMana + "]";
 	}
 
 }

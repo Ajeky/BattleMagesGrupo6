@@ -18,6 +18,7 @@ import model.Habilidad;
 //�   # Creación de la clase model "Habilidad"                      # - Daniel Troncoso Rubio	            �
 //�---------------------------------------------------------------------------------------------------------�
 //�                                                                                                         �
+//�                                                                                                         �
 //�	                              13/12/2018                                                                �
 //�---------------------------------------------------------------------------------------------------------�
 //�   # Creación de la clase vista "Vista"                          # - Alejandro Díaz Santos               �
@@ -25,6 +26,15 @@ import model.Habilidad;
 //�   # Creación de las clases CRUD "Personaje, Elemento, Habilidad"# - Álvaro Márquez Mata                 �
 //�   # Creación de la clase datos"DatosHabilidad"                  # - Daniel Troncoso Rubio			    �
 //�---------------------------------------------------------------------------------------------------------�
+//�                                                                                                         �
+//�                                12/12/2018                                                               �
+//�---------------------------------------------------------------------------------------------------------�
+//�	  # Creación de la clase model "Elemento"                     # - Alejandro Díaz Santos               �
+//�   # Creación de la clase model "Personaje"                      # - Antonio Durán Falero                �
+//�	  # Organización del juego, señalar requisitos funcionales    # - Álvaro Márquez Mata                 �
+//�   # Creación de la clase model "Habilidad"                      # - Daniel Troncoso Rubio	            �
+//�---------------------------------------------------------------------------------------------------------�
+//�                                                                                                         �
 //�_________________________________________________________________________________________________________�	
 
 public class Ppal {
@@ -76,7 +86,7 @@ public class Ppal {
 
 				// Elección del elemento
 				Vista.opcionElementos();
-
+				
 				opcElemento = Leer.datoInt() - 1;
 
 				// Creamos el primer jugador
@@ -93,7 +103,9 @@ public class Ppal {
 
 				comprobacion = Leer.datoInt();
 				comprobacion = 0;
-
+				
+				Vista.imagenFight();
+				
 				// Creamos combate
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
@@ -313,8 +325,14 @@ public class Ppal {
 				p1 = new Personaje(bd.getListaElementos()[opcElemento], nickName, p1SaludBase, p1ManaBase, posInicial,
 						false, 0);
 				
-				p2 = dani;				
-
+				
+				
+				p2 = dani;	
+				
+				System.out.println("¡Te enfrentarás contra Dani!\n");
+				
+				Vista.imagenFight();
+				
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				do {
@@ -655,7 +673,8 @@ public class Ppal {
 				//TODO Meter sysos de por medio 
 				
 				p2 = alex;
-				
+				System.out.println("¡Te enfrentarás contra Alex!\n");
+				Vista.imagenFight();
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				do {
@@ -996,7 +1015,8 @@ public class Ppal {
 				//TODO meter sysos para rellenar
 				
 				p2 = antonio;
-				
+				System.out.println("¡Te enfrentarás contra Antonio!\n");
+				Vista.imagenFight();
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				do {
@@ -1335,9 +1355,9 @@ public class Ppal {
 				contCombate++;
 				
 				//TODO meter sysos pa rellenar
-				
 				p2 = alvaro;
-				
+				System.out.println("Te enfrentarás contra Álvaro\n");
+				Vista.imagenFight();
 				c1 = CrudCombate.crearCombate(p1, p2, bd, contCombate);
 
 				do {
