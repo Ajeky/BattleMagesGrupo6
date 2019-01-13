@@ -2,6 +2,7 @@ package crud;
 
 import model.Combate;
 import model.Personaje;
+import vista.Vista;
 import datos.Datos;
 import model.Habilidad;
 import controller.ControllerCombate;
@@ -244,6 +245,14 @@ public class CrudCombate {
 		c.getP2().setMana(c.getP2().getMana() + 20);
 		if (c.getP2().getMana() > 100) {
 			c.getP2().setMana(100);
+		}
+		
+		if (h1.getTipo() == 1 || h1.getTipo() == 2 || h1.getTipo() == 3) {
+			Vista.imprimirHabilidad(h1);
+		}
+		
+		if (h2.getTipo() == 1 || h2.getTipo() == 2 || h2.getTipo() == 3) {
+			Vista.imprimirHabilidad(h2);
 		}
 
 		return c;

@@ -5,10 +5,11 @@ import java.util.Random;
 public class Habilidad {
 
 	private String nombre;
-	int potencia;
-	int costeMana;
-	int tipo;
-	Random probabilidadPotencia;
+	private int potencia;
+	private int costeMana;
+	private int tipo;
+	private Random probabilidadPotencia;
+	private String icono;
 	
 	public Habilidad(String nombre, int potencia, int costeMana, int tipo) {
 		super();
@@ -17,6 +18,17 @@ public class Habilidad {
 		this.costeMana = costeMana;
 		this.tipo = tipo;
 	}
+
+	public Habilidad(String nombre, int potencia, int costeMana, int tipo, String icono) {
+		super();
+		this.nombre = nombre;
+		this.potencia = potencia;
+		this.costeMana = costeMana;
+		this.tipo = tipo;
+		this.icono = icono;
+	}
+
+
 
 	public Habilidad() {
 
@@ -52,6 +64,14 @@ public class Habilidad {
 
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
+	}
+	
+	public String getIcono() {
+		return icono;
+	}
+
+	public void setIcono(String icono) {
+		this.icono = icono;
 	}
 
 	@Override
