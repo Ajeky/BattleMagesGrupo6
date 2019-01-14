@@ -1,16 +1,13 @@
 package model;
 
-import java.util.Random;
-
 public class Habilidad {
 
 	private String nombre;
 	private int potencia;
 	private int costeMana;
 	private int tipo;
-	private Random probabilidadPotencia;
 	private String icono;
-	
+
 	public Habilidad(String nombre, int potencia, int costeMana, int tipo) {
 		super();
 		this.nombre = nombre;
@@ -27,8 +24,6 @@ public class Habilidad {
 		this.tipo = tipo;
 		this.icono = icono;
 	}
-
-
 
 	public Habilidad() {
 
@@ -65,7 +60,7 @@ public class Habilidad {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-	
+
 	public String getIcono() {
 		return icono;
 	}

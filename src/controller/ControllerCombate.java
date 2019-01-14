@@ -6,9 +6,6 @@ import model.Habilidad;
 import vista.Vista;
 
 public class ControllerCombate {
-	private static String Fuego = "Fuego";
-	private static String Agua = "Agua", Tierra = "Tierra", Hielo = "Hielo", Aire = "Aire", Electrico = "Electrico",
-			Veneno = "Veneno";
 	// Métodos
 
 	public static int atacarP1(Combate c1, Habilidad h1) {
@@ -97,8 +94,8 @@ public class ControllerCombate {
 			if (c1.getP2().getPosicion() < c1.getCampoBatalla()[0].length - 2) {
 				c1.getP2().setPosicion(c1.getP2().getPosicion() + 1);
 			} else {
-			Vista.movimientoPers();
-		}
+				Vista.movimientoPers();
+			}
 		}
 
 		return c1;
@@ -235,12 +232,12 @@ public class ControllerCombate {
 			Vista.errorCura();
 		}
 	}
-	
+
 	public static Combate actualizarMapa(Combate c, int contCombate) {
 		int posJ1 = c.getP1().getPosicion();
 		int posJ2 = c.getP2().getPosicion();
 		int xD = 1;
-		
+
 		switch (contCombate) {
 
 		case 0:
@@ -307,7 +304,7 @@ public class ControllerCombate {
 		default:
 			break;
 		}
-		
+
 		return c;
 	}
 

@@ -7,14 +7,12 @@ import datos.Datos;
 
 public class Vista {
 	private Habilidad habilidad1;
-	private Personaje personaje1;
-	private Personaje personaje2;
 	private static Datos bd = new Datos();
 
 	public static void tituloJuego() {
 
 		System.out.println(
-				          "██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     ███████╗       \r\n"
+				"██████╗  █████╗ ████████╗████████╗██╗     ███████╗    ██████╗  ██████╗ ██╗   ██╗ █████╗ ██╗     ███████╗       \r\n"
 						+ "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔══██╗██╔═══██╗╚██╗ ██╔╝██╔══██╗██║     ██╔════╝    ██╗\r\n"
 						+ "██████╔╝███████║   ██║      ██║   ██║     █████╗      ██████╔╝██║   ██║ ╚████╔╝ ███████║██║     █████╗      ╚═╝\r\n"
 						+ "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██╔══██╗██║   ██║  ╚██╔╝  ██╔══██║██║     ██╔══╝      ██╗\r\n"
@@ -40,42 +38,41 @@ public class Vista {
 	}
 
 	public static void imagenFight() {
-		System.out.println("╔═╗╦╔═╗╦ ╦╔╦╗┬\r\n" + 
-		                   "╠╣ ║║ ╦╠═╣ ║ │\r\n" + 
-		                   "╚  ╩╚═╝╩ ╩ ╩ o");
+		System.out.println("╔═╗╦╔═╗╦ ╦╔╦╗┬\r\n" + "╠╣ ║║ ╦╠═╣ ║ │\r\n" + "╚  ╩╚═╝╩ ╩ ╩ o");
 	}
+
 	public static void menuPrincipal() {
 		System.out.println(" ██╗       ████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗ █████╗ ██╗     \r\n"
-				         + "███║       ╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔══██╗██║     \r\n"
-				         + "╚██║          ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║███████║██║     \r\n"
-				         + " ██║          ██║   ██║   ██║   ██║   ██║   ██║██╔══██╗██║██╔══██║██║     \r\n"
-				         + " ██║██╗       ██║   ╚██████╔╝   ██║   ╚██████╔╝██║  ██║██║██║  ██║███████╗\r\n"
-				         + " ╚═╝╚═╝       ╚═╝    ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\r\n"
-				         + "                                                                          \r\n"
-				         + "██████╗             ██╗██╗   ██╗ ██████╗  █████╗ ██████╗                  \r\n"
-				         + "╚════██╗            ██║██║   ██║██╔════╝ ██╔══██╗██╔══██╗                 \r\n"
-				         + " █████╔╝            ██║██║   ██║██║  ███╗███████║██████╔╝                 \r\n"
-				         + "██╔═══╝        ██   ██║██║   ██║██║   ██║██╔══██║██╔══██╗                 \r\n"
-				         + "███████╗██╗    ╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║                 \r\n"
-				         + "╚══════╝╚═╝     ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                 \r\n"
-				         + "                                                                          \r\n"
-				         + "██████╗        ███████╗ █████╗ ██╗     ██╗██████╗                         \r\n"
-				         + "╚════██╗       ██╔════╝██╔══██╗██║     ██║██╔══██╗                        \r\n"
-				         + " █████╔╝       ███████╗███████║██║     ██║██████╔╝                        \r\n"
-				         + " ╚═══██╗       ╚════██║██╔══██║██║     ██║██╔══██╗                        \r\n"
-				         + "██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n"
-				         + "╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
-		
+				+ "███║       ╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔══██╗██║     \r\n"
+				+ "╚██║          ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║███████║██║     \r\n"
+				+ " ██║          ██║   ██║   ██║   ██║   ██║   ██║██╔══██╗██║██╔══██║██║     \r\n"
+				+ " ██║██╗       ██║   ╚██████╔╝   ██║   ╚██████╔╝██║  ██║██║██║  ██║███████╗\r\n"
+				+ " ╚═╝╚═╝       ╚═╝    ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\r\n"
+				+ "                                                                          \r\n"
+				+ "██████╗             ██╗██╗   ██╗ ██████╗  █████╗ ██████╗                  \r\n"
+				+ "╚════██╗            ██║██║   ██║██╔════╝ ██╔══██╗██╔══██╗                 \r\n"
+				+ " █████╔╝            ██║██║   ██║██║  ███╗███████║██████╔╝                 \r\n"
+				+ "██╔═══╝        ██   ██║██║   ██║██║   ██║██╔══██║██╔══██╗                 \r\n"
+				+ "███████╗██╗    ╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║                 \r\n"
+				+ "╚══════╝╚═╝     ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                 \r\n"
+				+ "                                                                          \r\n"
+				+ "██████╗        ███████╗ █████╗ ██╗     ██╗██████╗                         \r\n"
+				+ "╚════██╗       ██╔════╝██╔══██╗██║     ██║██╔══██╗                        \r\n"
+				+ " █████╔╝       ███████╗███████║██║     ██║██████╔╝                        \r\n"
+				+ " ╚═══██╗       ╚════██║██╔══██║██║     ██║██╔══██╗                        \r\n"
+				+ "██████╔╝██╗    ███████║██║  ██║███████╗██║██║  ██║                        \r\n"
+				+ "╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝\n\n");
+
 	}
-	
+
 	public static void gameOver() {
-		
-		System.out.println(" ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ \r\n" + 
-				"██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗\r\n" + 
-				"██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝\r\n" + 
-				"██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗\r\n" + 
-				"╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║\r\n" + 
-				" ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝");
+
+		System.out.println(" ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ \r\n"
+				+ "██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗\r\n"
+				+ "██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝\r\n"
+				+ "██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗\r\n"
+				+ "╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║\r\n"
+				+ " ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝");
 	}
 
 	public static void tutorial() {
@@ -108,7 +105,6 @@ public class Vista {
 						+ "Introduce cualquier número cuando estés listo.");
 	}
 
-	
 	public static void opcionesCombate(Personaje p) {
 		System.out.println(p.getNombre() + ", ¿qué deseas hacer?: \n1. Lanzar una habilidad\n2. Moverse\n3. Descansar");
 	}
@@ -415,36 +411,35 @@ public class Vista {
 				+ "  ,@@@@@@@       *@@@@@@@/   \r\n" + "   &@@@@@@@      @@@@@@@@    \r\n"
 				+ "    %@@@@@@,    #@@@@@@#     \r\n" + "      @@@@@@@/#@@@@@@@       \r\n"
 				+ "         @@@@@@@@@@       ");
-		
+
 	}
-	
+
 	public static String escarchaSelecta() {
-		
-		return ("\r\n" + 
-				"                        .o+/  :oo:                      \r\n" + 
-				"              `++/`   .y`+/  -s s-   `++o.             \r\n" + 
-				"              `y.-s` `y.:s    /+`y. `s-.y`             \r\n" + 
-				"               `s:.y`s--s`     o/.y.s-:s`              \r\n" + 
-				"       `////:--.`o/.s+.y`       s--s`/s.-://///+`      \r\n" + 
-				"       .s/-----://o. `y. `///`  `y` `/:::--:///o.      \r\n" + 
-				"     -/. `.-:://////+`o/`s-`:s. /o`o////::-.`          \r\n" + 
-				"    `h.+o`          -y`/s.+y/.ss/.y.          :o/y     \r\n" + 
-				"     .s:.s:    `+////+/  s: :s`. ++///+`    `o/.o:     \r\n" + 
-				"       :s./o`  .y`.o///o:-s`.y.:+//o.`y.   /o./o`      \r\n" + 
-				"        `o/.s:  .y`o/  `o/.sy./o  ++`y.  .s:-s-        \r\n" + 
-				"   ++/////o: :///+/ +////o.``-o//// /+///+``s+/////+.  \r\n" + 
-				"   /+/////s: /+//o/ +////s-` -o////`++////`.s//////o.  \r\n" + 
-				"        `o/.s:  -y`o/   o/.ys`++  ++`y.  -s-:s.        \r\n" + 
-				"       /o.+o`  .y`.o///o:-s..y.:+//o.`y.  `++.o+`      \r\n" + 
-				"     .s:-s-    `+////+/  s: :s`. ++///+`    -s--s-     \r\n" + 
-				"     o++o`          -y.+s.+s/.ss/.y.         `+o`s-    \r\n" + 
-				"      `` `.-:///////+`o/.s-`:s` ++`o/////:--.` ./:`    \r\n" + 
-				"       `y/----:://o.``o: `///   -y` .//:::--:/+s`      \r\n" + 
-				"        -///:-.``o/.ys`s-      `y`+s`+o.-:://///       \r\n" + 
-				"               `s:-s./o`y.    `y.:o.y.:s`              \r\n" + 
-				"               y.-s`  +/.y`   o:-y` `y-.y              \r\n" + 
-				"               -/:`    s::s  ++`y.   `++/              \r\n" + 
-				"                       `+/+  o+o.             ");
+
+		return ("\r\n" + "                        .o+/  :oo:                      \r\n"
+				+ "              `++/`   .y`+/  -s s-   `++o.             \r\n"
+				+ "              `y.-s` `y.:s    /+`y. `s-.y`             \r\n"
+				+ "               `s:.y`s--s`     o/.y.s-:s`              \r\n"
+				+ "       `////:--.`o/.s+.y`       s--s`/s.-://///+`      \r\n"
+				+ "       .s/-----://o. `y. `///`  `y` `/:::--:///o.      \r\n"
+				+ "     -/. `.-:://////+`o/`s-`:s. /o`o////::-.`          \r\n"
+				+ "    `h.+o`          -y`/s.+y/.ss/.y.          :o/y     \r\n"
+				+ "     .s:.s:    `+////+/  s: :s`. ++///+`    `o/.o:     \r\n"
+				+ "       :s./o`  .y`.o///o:-s`.y.:+//o.`y.   /o./o`      \r\n"
+				+ "        `o/.s:  .y`o/  `o/.sy./o  ++`y.  .s:-s-        \r\n"
+				+ "   ++/////o: :///+/ +////o.``-o//// /+///+``s+/////+.  \r\n"
+				+ "   /+/////s: /+//o/ +////s-` -o////`++////`.s//////o.  \r\n"
+				+ "        `o/.s:  -y`o/   o/.ys`++  ++`y.  -s-:s.        \r\n"
+				+ "       /o.+o`  .y`.o///o:-s..y.:+//o.`y.  `++.o+`      \r\n"
+				+ "     .s:-s-    `+////+/  s: :s`. ++///+`    -s--s-     \r\n"
+				+ "     o++o`          -y.+s.+s/.ss/.y.         `+o`s-    \r\n"
+				+ "      `` `.-:///////+`o/.s-`:s` ++`o/////:--.` ./:`    \r\n"
+				+ "       `y/----:://o.``o: `///   -y` .//:::--:/+s`      \r\n"
+				+ "        -///:-.``o/.ys`s-      `y`+s`+o.-:://///       \r\n"
+				+ "               `s:-s./o`y.    `y.:o.y.:s`              \r\n"
+				+ "               y.-s`  +/.y`   o:-y` `y-.y              \r\n"
+				+ "               -/:`    s::s  ++`y.   `++/              \r\n"
+				+ "                       `+/+  o+o.             ");
 	}
 
 	public static String iceberg() {
@@ -472,30 +467,30 @@ public class Vista {
 	public static String sobreCarga() {
 
 		return ("     ,                                   ((                                  (.          \r\n"
-						+ "       ./                            (.      ,                           ( ((            \r\n"
-						+ "          (.((                       ,   (( *    ( /.(                 ((((              \r\n"
-						+ "            ((((         ./           /   (       (((((              /(                  \r\n"
-						+ "                ((       (/  .,        .(      (   (         (      (                    \r\n"
-						+ "                  .(            /    (            (      ( (      (                      \r\n"
-						+ "                     (           (   (    (// (/       (((      (              *(.       \r\n"
-						+ "     (/*(/             ,   /*(            (*((   ,    ( ,     ,           *              \r\n"
-						+ "              ./,         .    ((     /     (   .   (                *(((                \r\n"
-						+ "             /        /           (    *    /.(       (*         (                       \r\n"
-						+ "      *(  (              ,  ((((                  (                           ( ((   ,   \r\n"
-						+ "   (((((((                  ((((((((,   /         ((     /((                  .((((,     \r\n"
-						+ "     (((((((((((.            ((((((((((/((((((((##((            (            *(((((((    \r\n"
-						+ "   ((.((((             (        .((( ,  (,( (((((((((   (     ( /   /         (* (*      \r\n"
-						+ "      (  (         /      (       /   * (((((( *(  (((   (((   .  (    .                 \r\n"
-						+ "     (          *    (                  ((,((,  (  ((((    .*    .  (*                   \r\n"
-						+ "                   (   /        ./    /(((((((  (((((((       .       ((                 \r\n"
-						+ "                ((            *(       (((((((((((%&%%&/                /(.              \r\n"
-						+ "              ((            .*(          (((&  (  %    /                  /((            \r\n"
-						+ "           /((              (           %&  &     (                     .((((          \r\n"
-						+ "         (((((                          ((% (((((((((                        ((          \r\n"
-						+ "         .(                              (( (((((((((.                         **        \r\n"
-						+ "        (                                (( ((((((((((/                                  \r\n"
-						+ "                                         ((((((((((((( *                                 \r\n"
-						+ "                                         (((((((((((((  ");
+				+ "       ./                            (.      ,                           ( ((            \r\n"
+				+ "          (.((                       ,   (( *    ( /.(                 ((((              \r\n"
+				+ "            ((((         ./           /   (       (((((              /(                  \r\n"
+				+ "                ((       (/  .,        .(      (   (         (      (                    \r\n"
+				+ "                  .(            /    (            (      ( (      (                      \r\n"
+				+ "                     (           (   (    (// (/       (((      (              *(.       \r\n"
+				+ "     (/*(/             ,   /*(            (*((   ,    ( ,     ,           *              \r\n"
+				+ "              ./,         .    ((     /     (   .   (                *(((                \r\n"
+				+ "             /        /           (    *    /.(       (*         (                       \r\n"
+				+ "      *(  (              ,  ((((                  (                           ( ((   ,   \r\n"
+				+ "   (((((((                  ((((((((,   /         ((     /((                  .((((,     \r\n"
+				+ "     (((((((((((.            ((((((((((/((((((((##((            (            *(((((((    \r\n"
+				+ "   ((.((((             (        .((( ,  (,( (((((((((   (     ( /   /         (* (*      \r\n"
+				+ "      (  (         /      (       /   * (((((( *(  (((   (((   .  (    .                 \r\n"
+				+ "     (          *    (                  ((,((,  (  ((((    .*    .  (*                   \r\n"
+				+ "                   (   /        ./    /(((((((  (((((((       .       ((                 \r\n"
+				+ "                ((            *(       (((((((((((%&%%&/                /(.              \r\n"
+				+ "              ((            .*(          (((&  (  %    /                  /((            \r\n"
+				+ "           /((              (           %&  &     (                     .((((          \r\n"
+				+ "         (((((                          ((% (((((((((                        ((          \r\n"
+				+ "         .(                              (( (((((((((.                         **        \r\n"
+				+ "        (                                (( ((((((((((/                                  \r\n"
+				+ "                                         ((((((((((((( *                                 \r\n"
+				+ "                                         (((((((((((((  ");
 	}
 
 	public static String tormentaElectrica() {
@@ -702,16 +697,16 @@ public class Vista {
 	public static String maremoto() {
 
 		return ("                                                                                         \r\n"
-						+ "                                                                                         \r\n"
-						+ "                                                                                         \r\n"
-						+ "           ##                             ##**/(##                                       \r\n"
-						+ "     /***///**/(/                      .#*//#%%%%###/                    ######          \r\n"
-						+ "   **///////#%%/#       *(/##(#     ,#///*/#%                       *#(/*///*/((#%%%#    \r\n"
-						+ " (*//////////#       #(*//##      ,(///////(#          ##(/%%##(  ##//*///*///##         \r\n"
-						+ "#////*//*//////####//*/////(######////////////###   ##////(%   ##//*////////////#/(,   ##\r\n"
-						+ "(////////////////////////////////////////////////////////////////////////////////////////\r\n"
-						+ "/////////////////////////////////////////////////////////////////////////////////////////\r\n"
-						+ "(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((");
+				+ "                                                                                         \r\n"
+				+ "                                                                                         \r\n"
+				+ "           ##                             ##**/(##                                       \r\n"
+				+ "     /***///**/(/                      .#*//#%%%%###/                    ######          \r\n"
+				+ "   **///////#%%/#       *(/##(#     ,#///*/#%                       *#(/*///*/((#%%%#    \r\n"
+				+ " (*//////////#       #(*//##      ,(///////(#          ##(/%%##(  ##//*///*///##         \r\n"
+				+ "#////*//*//////####//*/////(######////////////###   ##////(%   ##//*////////////#/(,   ##\r\n"
+				+ "(////////////////////////////////////////////////////////////////////////////////////////\r\n"
+				+ "/////////////////////////////////////////////////////////////////////////////////////////\r\n"
+				+ "(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((");
 	}
 
 	public static String torrenteCascada() {
@@ -827,7 +822,7 @@ public class Vista {
 				+ "                                  %                                  \r\n"
 				+ "                                  %  ");
 	}
-	
+
 	public static void imprimirHabilidad(Habilidad h1) {
 		System.out.println(h1.getIcono());
 	}
@@ -851,7 +846,7 @@ public class Vista {
 				+ bd.getHabilidadesFuego()[1].getCosteMana());
 		System.out.println("3. Barrera Napalm. Potencia: " + bd.getHabilidadesFuego()[2].getPotencia() + " Maná: "
 				+ bd.getHabilidadesFuego()[2].getCosteMana());
-		System.out.println("4. Curar. Potencia: " + bd.getHabilidadesFuego()[3].getPotencia() + " Maná:" 
+		System.out.println("4. Curar. Potencia: " + bd.getHabilidadesFuego()[3].getPotencia() + " Maná:"
 				+ bd.getHabilidadesFuego()[3].getCosteMana());
 	}
 
@@ -938,71 +933,79 @@ public class Vista {
 
 		}
 	}
-	
+
 	public static void introduccionJuego() {
-		
+
 		System.out.println("Bienvenido a Battle Mages. Te parecerá un ambiente bonito con el cielo soleado"
 				+ ", los pájaros cantando, las abejas absorbiendo el néctar de las flores y los magos jugando"
 				+ " a las magic, pero cuando suena el famoso BOM-BOM de las campanadas del lugar oscuro... todo se transforma...");
 	}
-	
+
 	public static void descripcionJugadores() {
-		
-		System.out.println("¿¡Pero qué...!? ¿Poor-por qué el cielo ahora está oscuro y tormentoso? ¿Y... yy... y esos sonidos tan fuertes?");
-		
+
+		System.out.println(
+				"¿¡Pero qué...!? ¿Poor-por qué el cielo ahora está oscuro y tormentoso? ¿Y... yy... y esos sonidos tan fuertes?");
+
 		System.out.println("Esos 4 de ahí enfrente me están mirando mal , de izquierda a derecha puedo"
 				+ " ver como a cada uno le sobresale una aureola de su elemento y van vestidos totalmente diferentes el uno del otro.");
-		
+
 		System.out.println("Parece ser que me quieren a mi, pero no soy una pieza fácil de conseguir. Yo también tengo"
 				+ " unos poderes ocultos que enseñarles, jeje.. veníd aquí.");
 	}
-	
+
 	public static void antesDani() {
 
-        System.out.println("\nQué raro, de repente tengo mucho frío y noto como si hubiese una presencia detrás de mi..."
-                + " ¡Joder! ¡Qué susto! \nMe doy la vuelta y veo al mago de hielo. Tendré que abrigarme bien"
-                + " antes de enfrentarme a él...");
-    }
-	
+		System.out
+				.println("\nQué raro, de repente tengo mucho frío y noto como si hubiese una presencia detrás de mi..."
+						+ " ¡Joder! ¡Qué susto! \nMe doy la vuelta y veo al mago de hielo. Tendré que abrigarme bien"
+						+ " antes de enfrentarme a él...");
+	}
+
 	public static void despuesDani() {
-		System.out.println("\n\nTe sacudes las estalactitas que cuelgan de tu nariz y tus orejas, contemplando el frío cuerpo que yace ante ti. \n"
-				+ "Todavía estás recuperándote del susto cuando sientes un temblor bajo tus pies. La tierra se separa y empiezan a crecer rocas donde antes no había nada. \n"
-				+ "Te giras y ves a un mago envuelto en una túnica marrón que te sonríe desafiante, mientras con la mano te hace gestos para que te acerques. \n"
-				+ "No te queda otra. Empiezas a canalizar energía arcana hacia tus manos mientras caminas decidido hacia él.");
+		System.out.println(
+				"\n\nTe sacudes las estalactitas que cuelgan de tu nariz y tus orejas, contemplando el frío cuerpo que yace ante ti. \n"
+						+ "Todavía estás recuperándote del susto cuando sientes un temblor bajo tus pies. La tierra se separa y empiezan a crecer rocas donde antes no había nada. \n"
+						+ "Te giras y ves a un mago envuelto en una túnica marrón que te sonríe desafiante, mientras con la mano te hace gestos para que te acerques. \n"
+						+ "No te queda otra. Empiezas a canalizar energía arcana hacia tus manos mientras caminas decidido hacia él.");
 	}
-	
+
 	public static void despuesAlex() {
-        System.out.println("\n\nDespués del combate, Alex no dudó en levantar un pilar de Tierra para hacerle recordar a aquellos que pasaran por esa arena al grandioso mago que \n"
-                + "derrotó a 'Alex, el guardián de la Tierra'. Durante unos minutos, el mago talló el pilar con runas de sabiduría en un idioma que le transmitió al nuevo heredero, \n"
-                + "dejándole estas últimas palabras: 'Tú... Ahora defenderás aquello que me costó una vida aprender a mi.. La sabiduría recorrerá todos tus sentidos..."); }
-	
-	public static void despuesAntonio() {
-        System.out.println("\n\nTras derrotar a tu último rival  te das cuenta de que la Tormenta sigue avanzando, lo que solo indica una cosa todaváa hay enemigos vivos \n"
-                + "Tomas unos segundos de descanso sabiendo que en cualquier momento entablarás contacto visual con otro enemigo que esperas que sea el último.\n"
-                +"Tras unos segundos ves como alguien aparece en el horizonte, ahí está el otro enemigo al que derrotar, y puede ser el último para alzarte con la victoria.\n\n");
-    }
-	
-	public static void despuesAlvaro() {
-		System.out.println("\n\nCaes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
-				+ "Pero no sientes felicidad. No sientes nada. Estás demasiado cansado como para que nada importe. Solo piensas en qué pasará ahora. \nEn cómo vas a volver a casa "
-				+ "si apenas puedes mantener los ojos abiertos. Te duele cada músculo, incluso algunos que ni siquiera sabías que tenías. \nLa Tormenta se disipa rápidamente, dejando "
-				+ "ver un cálido sol que despierta una tímida brisa por todo el valle. El mundo ha recuperado su color. Y tú eres el único que queda para verlo. \n"
-				+ "Encuentras este pensamiento extrañamente reconfortante, y por fin te decides a intentar levantarte. Tras unos cuantos tropiezos y un dolor intenso consigues erguirte, \n"
-				+ "y esbozando una ligera sonrisa, emprendes el camino a casa.\n\n\n\n\n");
+		System.out.println(
+				"\n\nDespués del combate, Alex no dudó en levantar un pilar de Tierra para hacerle recordar a aquellos que pasaran por esa arena al grandioso mago que \n"
+						+ "derrotó a 'Alex, el guardián de la Tierra'. Durante unos minutos, el mago talló el pilar con runas de sabiduría en un idioma que le transmitió al nuevo heredero, \n"
+						+ "dejándole estas últimas palabras: 'Tú... Ahora defenderás aquello que me costó una vida aprender a mi.. La sabiduría recorrerá todos tus sentidos...");
 	}
-	
+
+	public static void despuesAntonio() {
+		System.out.println(
+				"\n\nTras derrotar a tu último rival  te das cuenta de que la Tormenta sigue avanzando, lo que solo indica una cosa todaváa hay enemigos vivos \n"
+						+ "Tomas unos segundos de descanso sabiendo que en cualquier momento entablarás contacto visual con otro enemigo que esperas que sea el último.\n"
+						+ "Tras unos segundos ves como alguien aparece en el horizonte, ahí está el otro enemigo al que derrotar, y puede ser el último para alzarte con la victoria.\n\n");
+	}
+
+	public static void despuesAlvaro() {
+		System.out.println(
+				"\n\nCaes de rodillas, exhausto. No te quedan fuerzas. No sabes cómo, pero has derrotado uno a uno a todos tus oponentes, alzándote con la victoria. \n"
+						+ "Pero no sientes felicidad. No sientes nada. Estás demasiado cansado como para que nada importe. Solo piensas en qué pasará ahora. \nEn cómo vas a volver a casa "
+						+ "si apenas puedes mantener los ojos abiertos. Te duele cada músculo, incluso algunos que ni siquiera sabías que tenías. \nLa Tormenta se disipa rápidamente, dejando "
+						+ "ver un cálido sol que despierta una tímida brisa por todo el valle. El mundo ha recuperado su color. Y tú eres el único que queda para verlo. \n"
+						+ "Encuentras este pensamiento extrañamente reconfortante, y por fin te decides a intentar levantarte. Tras unos cuantos tropiezos y un dolor intenso consigues erguirte, \n"
+						+ "y esbozando una ligera sonrisa, emprendes el camino a casa.\n\n\n\n\n");
+	}
+
 	public static void introduceNumero() {
 		System.out.println("Introduce cualquier número para continuar.");
 	}
-	
+
 	public static void victoria() {
-		
-		System.out.println("███╗   ███╗ █████╗  ██████╗ ██╗ ██████╗ █████╗ ██╗         ██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗\r\n" + 
-				"████╗ ████║██╔══██╗██╔════╝ ██║██╔════╝██╔══██╗██║         ██║   ██║██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗╚██╗ ██╔╝\r\n" + 
-				"██╔████╔██║███████║██║  ███╗██║██║     ███████║██║         ██║   ██║██║██║        ██║   ██║   ██║██████╔╝ ╚████╔╝ \r\n" + 
-				"██║╚██╔╝██║██╔══██║██║   ██║██║██║     ██╔══██║██║         ╚██╗ ██╔╝██║██║        ██║   ██║   ██║██╔══██╗  ╚██╔╝  \r\n" + 
-				"██║ ╚═╝ ██║██║  ██║╚██████╔╝██║╚██████╗██║  ██║███████╗     ╚████╔╝ ██║╚██████╗   ██║   ╚██████╔╝██║  ██║   ██║   \r\n" + 
-				"╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝      ╚═══╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝");
+
+		System.out.println(
+				"███╗   ███╗ █████╗  ██████╗ ██╗ ██████╗ █████╗ ██╗         ██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗\r\n"
+						+ "████╗ ████║██╔══██╗██╔════╝ ██║██╔════╝██╔══██╗██║         ██║   ██║██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗╚██╗ ██╔╝\r\n"
+						+ "██╔████╔██║███████║██║  ███╗██║██║     ███████║██║         ██║   ██║██║██║        ██║   ██║   ██║██████╔╝ ╚████╔╝ \r\n"
+						+ "██║╚██╔╝██║██╔══██║██║   ██║██║██║     ██╔══██║██║         ╚██╗ ██╔╝██║██║        ██║   ██║   ██║██╔══██╗  ╚██╔╝  \r\n"
+						+ "██║ ╚═╝ ██║██║  ██║╚██████╔╝██║╚██████╗██║  ██║███████╗     ╚████╔╝ ██║╚██████╗   ██║   ╚██████╔╝██║  ██║   ██║   \r\n"
+						+ "╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝      ╚═══╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝");
 	}
 
 }

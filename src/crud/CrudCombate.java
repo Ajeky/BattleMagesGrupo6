@@ -6,7 +6,6 @@ import vista.Vista;
 import datos.Datos;
 import model.Habilidad;
 import controller.ControllerCombate;
-import crud.CrudPersonaje;
 
 public class CrudCombate {
 
@@ -73,11 +72,8 @@ public class CrudCombate {
 
 	public static Combate actualizarCombate(Combate c, int contCombate, Habilidad h1, Habilidad h2) {
 
-		int posJ1 = c.getP1().getPosicion();
-		int posJ2 = c.getP2().getPosicion();
-		int xD = 1;
 		int danoP1 = 0, danoP2 = 0;
-		
+
 		if (h1.getTipo() == 4) {
 			c.getP1().setSalud(c.getP1().getSalud() + ControllerCombate.curarP1(c, h1));
 		}
@@ -165,16 +161,14 @@ public class CrudCombate {
 		if (c.getP2().getMana() > 100) {
 			c.getP2().setMana(100);
 		}
-		
+
 		if (h1.getTipo() == 1 || h1.getTipo() == 2 || h1.getTipo() == 3) {
 			Vista.imprimirHabilidad(h1);
 		}
-		
+
 		if (h2.getTipo() == 1 || h2.getTipo() == 2 || h2.getTipo() == 3) {
 			Vista.imprimirHabilidad(h2);
 		}
-		
-		
 
 		return c;
 	}

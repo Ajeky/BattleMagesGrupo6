@@ -56,14 +56,14 @@ Si la probabilidad del método de atacar p1 es mayor que la de esquivar de P2, P
 --------------------------------------------------------------------Álvaro Márquez Mata------------------------------------------------------------------------------
 12/12/2018
 -Creadas clases:	ControllerElemento, ControllerHabilidad, ControllerPersonaje
-			CrudHabilidad, DatosElemento, DatosHabilidad, Habilidad
+					CrudHabilidad, DatosElemento, DatosHabilidad, Habilidad
 13/12/2018
 -Creados métodos:	CrudElemento: anadir, eliminar
-			CrudPersonaje: actualizarposicion
-			DatosElemento: Elemento[] listaElementos
-			DatosHabilidad: Habilidad[] HabilidadesFuego, Habilidad[] HabilidadesTierra, HabilidadesHielo, HabilidadesElec,
+					CrudPersonaje: actualizarposicion
+					DatosElemento: Elemento[] listaElementos
+					DatosHabilidad: Habilidad[] HabilidadesFuego, Habilidad[] HabilidadesTierra, HabilidadesHielo, HabilidadesElec,
 					y creados getters&setters
-			Personaje: Constructor, nuevo atributo "posicion", getter&setter.
+					Personaje: Constructor, nuevo atributo "posicion", getter&setter.
 14/12/2018
 #Añadido array listaElementos a la clase DatosElemento. Getter&Setter.
 #Añadidos arrays de Habilidades a la clase DatosHabilidad. Getter&Setter.
@@ -136,10 +136,8 @@ public class Ppal {
 	public static void main(String[] args) {
 
 		String nickName, iaName = "BOT Francisco";
-		String[][] campoBatalla;
 		int opcion = 0, opcExit = 3, contCombate = 0, opcElemento, p2SaludBase = 200, p2ManaBase = 100,
-				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, posInicialP2 = 0, opcHabilidad = 0, uno = 1,
-				comprobacion = 0, p1Mover = 2, p2Mover = 2, p1Descansar = 0, p2Descansar = 0;
+				p1SaludBase = 800, p1ManaBase = 100, posInicial = 1, posInicialP2 = 0, opcHabilidad = 0, comprobacion = 0;
 		Combate c1;
 		Personaje p1 = null, p2 = null, alvaro, antonio, alex, dani;
 		Datos bd = new Datos();
